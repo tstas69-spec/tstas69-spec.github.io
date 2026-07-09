@@ -1,1 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>3 модели GPT-5.6: Sol, Terra и Luna</title>
+    <meta name="description" content="GPT-5.6 Sol, Terra и Luna: чем отличаются, цены, какую выбрать. Что изменилось для бизнеса и разработчиков после выхода.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* Стили из образца-без меню.html */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .step-label {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            background: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card strong, .block strong {
+            color: #2c3e50;
+        }
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
 
+        /* Стили для таблицы */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            min-width: 500px;
+        }
+        thead {
+            background: #2c3e50;
+            color: white;
+        }
+        th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background-color: #f5f9ff;
+        }
+        .model-name {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .model-sol .model-name { color: #e67e22; }
+        .model-terra .model-name { color: #27ae60; }
+        .model-luna .model-name { color: #8e44ad; }
+        .price-badge {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #2c3e50;
+            white-space: nowrap;
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .pic {
+                margin: 15px 0;
+            }
+            .card, .block {
+                padding: 12px 15px;
+            }
+            .comment-form {
+                padding: 15px;
+            }
+            .comment-form button {
+                max-width: 100%;
+            }
+            ul, ol {
+                padding-left: 18px;
+            }
+            .toc {
+                padding: 12px 15px;
+            }
+            .table-wrapper {
+                border-radius: 6px;
+            }
+            table {
+                font-size: 0.85em;
+                min-width: 400px;
+            }
+            th, td {
+                padding: 10px 12px;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+            table {
+                font-size: 0.78em;
+                min-width: 320px;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <h1>GPT-5.6 Sol, Terra и Luna: чем отличаются новые модели OpenAI и какую выбрать</h1>
+
+            <p class="lead">
+                9 июля 2026 года OpenAI официально начала глобальный запуск семейства <strong>GPT-5.6</strong>, в которое вошли сразу три модели — <strong>Sol, Terra и Luna</strong>.
+                Вместо одной универсальной нейросети компания предложила линейку с разной производительностью, стоимостью и сценариями использования.
+                Это один из самых крупных релизов OpenAI за последнее время, который может изменить подход к работе с искусственным интеллектом как для обычных пользователей ChatGPT, так и для разработчиков.
+            </p>
+            <p>
+                Главная особенность обновления заключается не только в появлении новых моделей.
+                OpenAI фактически меняет стратегию развития своих продуктов:
+                теперь пользователям предлагается выбирать между максимальной производительностью, балансом цены и качества или минимальной стоимостью обработки запросов.
+                Такой подход уже давно используют облачные провайдеры, а теперь он становится стандартом и для современных языковых моделей.
+            </p>
+
+            <h2>Что произошло: OpenAI выпустила семейство GPT-5.6</h2>
+            <p>
+                После нескольких недель ограниченного тестирования OpenAI открыла доступ к новой линейке GPT-5.6 через ChatGPT, API и платформу Codex.
+                Вместе с моделями компания представила обновлённую систему кэширования промптов, которая снижает стоимость повторных запросов, а также голосовые модели GPT-Live с более естественным синтезом речи.
+            </p>
+            <p>
+                В отличие от предыдущих поколений, где основное внимание уделялось одной флагманской модели, теперь каждая версия получила собственную специализацию.
+            </p>
+            <ul>
+                <li><strong>Sol</strong> ориентирована на самые сложные вычислительные задачи, глубокое рассуждение, программирование и исследования безопасности.</li>
+                <li><strong>Terra</strong> занимает промежуточное положение и рассчитана на корпоративные сервисы, обработку документов, внутренних ИИ-помощников и большинство рабочих сценариев.</li>
+                <li><strong>Luna</strong> стала самой доступной моделью семейства и предназначена для массовой автоматизации, создания черновиков, кратких пересказов текстов и других повседневных задач.</li>
+            </ul>
+            <p>Такое разделение позволяет значительно снизить стоимость эксплуатации без необходимости использовать наиболее дорогую модель для каждой операции.</p>
+
+            <h2>Чем отличаются модели Sol, Terra и Luna</h2>
+            <p>На первый взгляд различия между моделями сводятся к цене, однако на практике они затрагивают практически все аспекты работы.</p>
+
+            <!-- Таблица -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Модель</th>
+                            <th>Основное назначение</th>
+                            <th>Стоимость API</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="model-sol">
+                            <td><span class="model-name">Sol</span></td>
+                            <td>сложные рассуждения, программирование, исследования</td>
+                            <td><span class="price-badge">около $5 / $30</span> за миллион входящих и исходящих токенов</td>
+                        </tr>
+                        <tr class="model-terra">
+                            <td><span class="model-name">Terra</span></td>
+                            <td>корпоративные сервисы, анализ данных, рабочие процессы</td>
+                            <td><span class="price-badge">около $2,5 / $15</span></td>
+                        </tr>
+                        <tr class="model-luna">
+                            <td><span class="model-name">Luna</span></td>
+                            <td>быстрые и массовые задачи</td>
+                            <td><span class="price-badge">около $1 / $6</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                Разница заметна и по результатам первых тестов производительности.
+                Sol ожидаемо показывает лучшие результаты в сложных сценариях, связанных с написанием кода и выполнением агентных задач.
+                Terra немного уступает флагману, но обеспечивает значительно более выгодное соотношение цены и качества.
+                Luna ориентирована прежде всего на скорость и экономичность, поэтому для большинства рутинных операций её возможностей оказывается вполне достаточно.
+            </p>
+            <p>
+                Именно поэтому сравнивать эти модели между собой так же, как раньше сравнивали GPT-4 и GPT-5, уже не совсем корректно.
+                Они создавались для разных категорий пользователей.
+            </p>
+
+            <h2>Почему OpenAI отказалась от одной универсальной модели</h2>
+            <p>Самое интересное в сегодняшнем релизе — вовсе не появление новых названий.</p>
+            <p><strong>OpenAI фактически признала, что эпоха одной универсальной модели подходит к концу.</strong></p>
+            <p>
+                Большинство современных ИИ-сервисов используют сразу несколько моделей одновременно.
+                Пользователь может даже не замечать этого: простой вопрос обрабатывается быстрой и дешёвой моделью, а сложная аналитическая задача автоматически передаётся более мощной системе.
+            </p>
+            <p>
+                Такой подход позволяет одновременно увеличить скорость работы, снизить расходы на вычисления и сделать ИИ доступнее для массового использования.
+                Вероятно, именно поэтому OpenAI разделила линейку GPT-5.6 на три самостоятельных продукта вместо одной максимально универсальной модели.
+            </p>
+
+            <h2>Какую модель выбрать для разных задач</h2>
+            <p>Для большинства пользователей главным вопросом остаётся не производительность, а практическое применение.</p>
+            <ul>
+                <li>
+                    <strong>Sol</strong> — если основная работа связана с программированием, анализом сложных проектов или многоэтапными рассуждениями.
+                </li>
+                <li>
+                    <strong>Terra</strong> — для бизнеса, внутренних корпоративных помощников, анализа документов, подготовки отчётов и большинства рабочих процессов.
+                    Именно эта модель, скорее всего, станет основной для многих компаний благодаря удачному балансу качества и стоимости.
+                </li>
+                <li>
+                    <strong>Luna</strong> — если требуется обрабатывать большие объёмы однотипных запросов, создавать краткие пересказы, автоматически писать черновики писем, генерировать описания товаров или обслуживать массовые чат-боты.
+                </li>
+            </ul>
+            <p>Именно благодаря появлению Terra и Luna использование современных языковых моделей становится значительно дешевле, чем ещё несколько месяцев назад.</p>
+
+            <h2>Что изменилось для пользователей ChatGPT и разработчиков</h2>
+            <p>
+                Для пользователей ChatGPT изменения будут происходить постепенно.
+                OpenAI уже начала поэтапное подключение новых моделей в платных тарифах, а затем они станут доступны более широкой аудитории.
+            </p>
+            <p>
+                Разработчики получили ещё больше возможностей.
+                Помимо доступа через API, новые модели поддерживаются в Codex, а улучшенное кэширование промптов позволяет снизить расходы в сценариях, где одни и те же инструкции используются многократно.
+                Это особенно важно для ИИ-агентов, корпоративных помощников и сервисов автоматизации.
+            </p>
+            <p>
+                Фактически OpenAI предлагает разработчикам более гибкую модель управления затратами: теперь можно выбирать не только функциональность, но и оптимальный уровень вычислительных ресурсов под конкретную задачу.
+            </p>
+
+            <h2>Какие ограничения важно учитывать после релиза</h2>
+            <p>Несмотря на масштабный запуск, говорить о полном переходе на GPT-5.6 пока рано.</p>
+            <ul>
+                <li>Во-первых, доступ открывается постепенно и зависит от используемого тарифа ChatGPT и региона.</li>
+                <li>
+                    Во-вторых, независимые тесты только начинают появляться.
+                    Первые результаты выглядят многообещающе, однако реальные преимущества новых моделей станут понятны после их массового использования в различных проектах.
+                </li>
+                <li>
+                    Кроме того, многие корпоративные сервисы ещё только начинают адаптировать свои продукты под новую линейку OpenAI, поэтому некоторое время пользователи будут одновременно работать как со старыми, так и с новыми моделями.
+                </li>
+            </ul>
+
+            <h2>Почему выпуск GPT-5.6 важен для всего рынка ИИ</h2>
+            <p>
+                Практически одновременно с релизом GPT-5.6 компания xAI представила Grok 4.5, а ранее свои обновления выпустили Anthropic и Meta.
+                Это говорит о том, что конкуренция между ведущими разработчиками искусственного интеллекта заметно усиливается.
+            </p>
+            <p>
+                Главная тенденция второй половины 2026 года — уже не только рост качества моделей, но и существенное снижение стоимости их использования.
+                Для бизнеса это означает возможность запускать сложные ИИ-сервисы с меньшими затратами, а для обычных пользователей — получать более мощные инструменты без значительного увеличения стоимости подписок.
+            </p>
+            <p>
+                Если эта тенденция сохранится, в ближайшие месяцы рынок будет конкурировать уже не столько по максимальному качеству моделей, сколько по удобству, скорости работы и цене выполнения реальных задач.
+            </p>
+
+            <h2>Выводы: стоит ли следить за GPT-5.6</h2>
+            <p>
+                Появление <strong>GPT-5.6 Sol, Terra и Luna</strong> стало не просто очередным обновлением OpenAI.
+                Компания предложила новый подход к использованию искусственного интеллекта, где пользователь может выбирать модель под конкретную задачу, а не переплачивать за универсальное решение.
+            </p>
+            <ul>
+                <li>Для разработчиков это означает более гибкое управление затратами и новые возможности при создании ИИ-приложений.</li>
+                <li>Для бизнеса — доступ к мощным инструментам автоматизации по более низкой цене.</li>
+                <li>Для пользователей ChatGPT — более широкий выбор и постепенное появление новых функций в привычном интерфейсе.</li>
+            </ul>
+            <p>
+                Если первые результаты независимых тестов подтвердятся, сегодняшний релиз вполне может стать началом нового этапа развития рынка, где ключевую роль будут играть не только возможности моделей, но и эффективность их практического применения.
+            </p>
+
+            <!-- Форма комментариев -->
+            <div class="comment-form">
+                <h3>Оставить комментарий</h3>
+                <p>Задавайте вопросы, делитесь опытом или предложениями</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
+                    <button type="submit">Отправить комментарий</button>
+                </form>
+                <p>Все комментарии проходят модерацию перед публикацией.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2023-2026 Мой Блог. Все материалы защищены.</p>
+    </footer>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+</body>
+</html>
