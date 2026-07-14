@@ -290,6 +290,112 @@
                 padding: 8px 10px;
             }
         }
+        /* === Стили для баннеров follow1 и follow2 === */
+#follow1,
+#follow2 {
+    background-color: #e6eeee;
+    z-index: 199;
+    top: 10px;
+    position: fixed;
+}
+
+/* === Стили для скрытия/показа баннеров === */
+.hidemobile {
+    visibility: visible;
+    display: block;
+}
+
+.showmobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .hidemobile {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .showmobile {
+        display: inline;
+    }
+}
+
+/* === Стили для затемненного фона поп-апа === */
+#bg_popup1 {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* === Стили для окна поп-апа === */
+#popup1 {
+    background: #204a55;
+    width: 480px;
+    height: 250px;
+    margin: 5% auto;
+    padding: 5px 20px 13px;
+    border: 2px solid #1ba600;
+    position: relative;
+    -webkit-box-shadow: 0 0 20px #000;
+    -moz-box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #000;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+@media all and (max-width: 480px) {
+    #popup1 {
+        width: 100%;
+    }
+}
+
+/* === Стили для кнопки закрытия === */
+.close1 {
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    line-height: 28px;
+    color: #fff;
+    background: #1ba600;
+    cursor: pointer;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    text-decoration: none;
+}
+
+.close1:hover {
+    background-color: #f30;
+}
+
+/* === Стили для заголовков поп-апа === */
+.hi6 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 10px 0;
+    padding: 5px 0;
+    line-height: 1.3;
+}
     </style>
 </head>
 <body>
@@ -487,6 +593,60 @@
         <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <script type="text/javascript">
+    var delay_popup = 16000;
+    setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
+</script>
+
+
+<div id="bg_popup1">
+  <div id="popup1">
+<h3 class="hi6">AI Аниматор!</h3>
+<h3 class="hi6">Попробуй новую нейронку - AI - Аниматор!</h3>
+<div style="text-align: center;">
+<a style="align: center;padding:10px 25px; cursor: pointer; background-image:
+linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059)
+0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1)
+rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px;
+font-family: Arial, Helvetica, sans-serif; font-size: 14px;
+font-weight: bold; font-style: italic; text-decoration: none;
+height: 54px; width: 100%; margin: auto;"
+href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank"
+rel="noopener">Попробывать!</a></div>
+<a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none'; return false;">X</a>
+</div>
+</div>
+
+<div id='follow1'>
+<div class="hidemobile">
+
+<a style="align: center;padding:10px 25px; cursor: pointer; background-image:
+linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059)
+0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1)
+rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px;
+font-family: Arial, Helvetica, sans-serif; font-size: 14px;
+font-weight: bold; font-style: italic; text-decoration: none;
+height: 54px; width: 100%; margin: auto;"
+href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank"
+rel="noopener">Самоучитель Python!</a></p>
+</div>
+</div>
+
+<div id='follow2'>
+
+<div class="showmobile">
+<a style="align: center;padding:10px 25px; cursor: pointer; background-image:
+linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059)
+0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1)
+rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px;
+font-family: Arial, Helvetica, sans-serif; font-size: 14px;
+font-weight: bold; font-style: italic; text-decoration: none;
+height: 54px; width: 100%; margin: auto;"
+href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank"
+rel="noopener">Самоучитель Python</a></p>
+</div>
+</div>
 
 </body>
 </html>
