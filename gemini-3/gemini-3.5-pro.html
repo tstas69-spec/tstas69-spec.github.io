@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>7 фактов о Gemini 3.5 Pro до официального релиза</title>
+    <meta name="description" content="Что известно о Gemini 3.5 Pro до официального релиза: дата выхода, возможные характеристики, Deep Think, контекст 2 млн токенов и сравнение с GPT-5.6.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* === ПОЛНЫЙ КОМПЛЕКТ СТИЛЕЙ ИЗ ОБРАЗЦА === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            padding-top: 100px;
+            background-color: #f9f9f9;
+        }
+        main {
+            margin-top: 100px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin-top: 130px;
+            }
+            body {
+                padding-top: 130px;
+            }
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .step-label {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            background: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card strong, .block strong {
+            color: #2c3e50;
+        }
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* === Стили для таблиц === */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            min-width: 500px;
+        }
+        thead {
+            background: #2c3e50;
+            color: white;
+        }
+        th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background-color: #f5f9ff;
+        }
+        .model-name {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .badge {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #2c3e50;
+            white-space: nowrap;
+        }
+        .badge-leak {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-confirmed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        /* === Стили для иконок в таблице === */
+        .icon-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .icon-group .icon {
+            font-size: 1.3em;
+            line-height: 1;
+        }
+        .icon-group .label {
+            font-size: 0.85em;
+            background: #f1f4fa;
+            padding: 2px 10px;
+            border-radius: 30px;
+            color: #1e2a44;
+        }
+
+        /* === Стили для графика контекстного окна === */
+        .chart-area {
+            margin: 20px 0 16px;
+        }
+        .chart-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .chart-row .label {
+            width: 150px;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95em;
+            flex-shrink: 0;
+        }
+        .chart-row .label small {
+            font-weight: 400;
+            color: #7a8aa5;
+            font-size: 0.8em;
+            display: block;
+        }
+        .chart-bar-bg {
+            flex: 1;
+            height: 30px;
+            background: #eef2f8;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 14px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: white;
+            min-width: 40px;
+        }
+        .bar-gemini-pro { background: linear-gradient(90deg, #1a73e8, #4a9af5); }
+        .bar-gpt { background: linear-gradient(90deg, #10a37f, #34d399); }
+        .bar-claude { background: linear-gradient(90deg, #d97706, #f59e0b); }
+        .bar-gemini-flash { background: linear-gradient(90deg, #7c8ba0, #a8b8cf); }
+
+        .chart-row .value {
+            width: 70px;
+            text-align: right;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        .chart-row .value small {
+            font-weight: 400;
+            font-size: 0.7em;
+            color: #7a8aa5;
+        }
+
+        .note {
+            background: #f8faff;
+            border: 1px dashed #d0d9e8;
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 0.9em;
+            color: #3d4e6b;
+            margin: 16px 0;
+        }
+        .note strong {
+            color: #2c3e50;
+        }
+
+        /* === Mobile optimization === */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .pic {
+                margin: 15px 0;
+            }
+            .card, .block {
+                padding: 12px 15px;
+            }
+            .comment-form {
+                padding: 15px;
+            }
+            .comment-form button {
+                max-width: 100%;
+            }
+            ul, ol {
+                padding-left: 18px;
+            }
+            .toc {
+                padding: 12px 15px;
+            }
+            .table-wrapper {
+                border-radius: 6px;
+            }
+            table {
+                font-size: 0.85em;
+                min-width: 400px;
+            }
+            th, td {
+                padding: 10px 12px;
+            }
+            .chart-row {
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+            .chart-row .label {
+                width: 100%;
+                font-size: 0.9em;
+            }
+            .chart-row .label small {
+                display: inline;
+                margin-left: 6px;
+            }
+            .chart-row .value {
+                width: auto;
+                text-align: left;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+            table {
+                font-size: 0.78em;
+                min-width: 320px;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+
+        /* === Стили для баннеров follow1 и follow2 === */
+        #follow1,
+        #follow2 {
+            background-color: #e6eeee;
+            z-index: 199;
+            top: 10px;
+            position: fixed;
+        }
+
+        /* === Стили для скрытия/показа баннеров === */
+        .hidemobile {
+            visibility: visible;
+            display: block;
+        }
+        .showmobile {
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .hidemobile {
+                visibility: hidden;
+                display: none;
+            }
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            .showmobile {
+                display: inline;
+            }
+        }
+
+        /* === Стили для затемненного фона поп-апа === */
+        #bg_popup1 {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* === Стили для окна поп-апа === */
+        #popup1 {
+            background: #204a55;
+            width: 480px;
+            height: 250px;
+            margin: 5% auto;
+            padding: 5px 20px 13px;
+            border: 2px solid #1ba600;
+            position: relative;
+            -webkit-box-shadow: 0 0 20px #000;
+            -moz-box-shadow: 0 0 20px #000;
+            box-shadow: 0 0 20px #000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+        @media all and (max-width: 480px) {
+            #popup1 {
+                width: 100%;
+            }
+        }
+
+        /* === Стили для кнопки закрытия === */
+        .close1 {
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 1px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            line-height: 28px;
+            color: #fff;
+            background: #1ba600;
+            cursor: pointer;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+            text-decoration: none;
+        }
+        .close1:hover {
+            background-color: #f30;
+        }
+
+        /* === Стили для заголовков поп-апа === */
+        .hi6 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            padding: 5px 0;
+            line-height: 1.3;
+        }
+
+        /* Стиль для изображения */
+        .featured-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 16px 0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .img-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: -8px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <h1>Gemini 3.5 Pro: что известно до официального релиза в 2026 году</h1>
+
+            <p class="lead">
+                <strong>Gemini 3.5 Pro</strong> — одна из самых ожидаемых моделей искусственного интеллекта лета 2026 года.
+                Несмотря на отсутствие официального анонса, в сети уже появилось множество утечек, результатов внутренних тестов и сообщений инсайдеров.
+                Часть информации подтверждается косвенными фактами, часть пока остается на уровне предположений. Разбираемся, что
+                уже известно, каким данным можно доверять и чего стоит ждать от новой флагманской модели Google.
+            </p>
+
+            <!-- Изображение -->
+            <img class="featured-img" src="https://tstas69-spec.github.io/images/gemini-1/gemini-3-5-pro.png" alt="Gemini 3.5 Pro нейросеть Google — что нового" loading="lazy" />
+            <p class="img-caption">Gemini 3.5 Pro — флагманская модель Google, которая может выйти уже в июле 2026</p>
+
+            <h2>Что известно официально</h2>
+            <p>
+                На конференции <strong>Google I/O 2026</strong> компания представила семейство моделей Gemini 3.5 и рассказала о развитии своей экосистемы искусственного интеллекта.
+                Уже доступны Gemini 3.5 Flash, инструменты для разработчиков, новые возможности AI Studio и Vertex AI.
+            </p>
+            <p>
+                Однако полноценная версия <strong>Gemini 3.5 Pro</strong> пока официально не представлена.
+                Google не раскрыла ни дату релиза, ни окончательные технические характеристики модели.
+                Именно поэтому сегодня вокруг нее существует большое количество слухов и утечек.
+                Важно отделять подтвержденные факты от неподтвержденной информации.
+            </p>
+
+            <h2>1. Релиз может состояться уже в середине июля</h2>
+            <p>
+                Несколько источников сообщают, что выпуск новой модели ожидается примерно <strong>17 июля 2026 года</strong>.
+                Официального подтверждения этой даты пока нет, однако косвенно на скорый релиз указывают сразу несколько факторов:
+            </p>
+            <ul>
+                <li>завершение тестирования;</li>
+                <li>появление модели в закрытых внутренних системах;</li>
+                <li>активность тестировщиков;</li>
+                <li>подготовка документации;</li>
+                <li>рост количества публикаций о Gemini 3.5 Pro.</li>
+            </ul>
+            <p>Подобная картина уже наблюдалась перед запуском предыдущих моделей Google.</p>
+            <p><strong>Вероятность:</strong> высокая, но пока не подтверждена официально.</p>
+
+            <h2>2. Контекстное окно может увеличиться до 2 миллионов токенов</h2>
+            <p>
+                Самая обсуждаемая особенность новой модели — огромный объем контекста.
+                Если информация подтвердится, Gemini 3.5 Pro сможет анализировать:
+            </p>
+            <ul>
+                <li>большие книги;</li>
+                <li>техническую документацию;</li>
+                <li>длинные переписки;</li>
+                <li>крупные программные проекты;</li>
+                <li>научные исследования.</li>
+            </ul>
+            <p>
+                Для обычного пользователя цифра в два миллиона токенов мало о чем говорит.
+                На практике это означает возможность работать практически со всей документацией проекта за один запрос без необходимости разбивать материал на части.
+                Если Google действительно сохранит такой объем контекста при высокой скорости работы, это станет одним из главных преимуществ модели.
+            </p>
+            <p><span class="badge badge-leak">Статус: утечка</span></p>
+
+            <!-- ===== ГРАФИК КОНТЕКСТНОГО ОКНА ===== -->
+            <div class="card">
+                <h3 style="margin-top:0; border-bottom: none; padding-bottom:0;">📊 Контекстное окно (токенов)</h3>
+                <div class="chart-area">
+                    <!-- Gemini 3.5 Pro -->
+                    <div class="chart-row">
+                        <div class="label">
+                            Gemini 3.5 Pro
+                            <small>по утечкам</small>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill bar-gemini-pro" style="width:100%;">2M</div>
+                        </div>
+                        <div class="value">2 000 000</div>
+                    </div>
+                    <!-- GPT-5.6 -->
+                    <div class="chart-row">
+                        <div class="label">
+                            GPT-5.6
+                            <small>доступна</small>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill bar-gpt" style="width:75%;">1.5M</div>
+                        </div>
+                        <div class="value">1 500 000</div>
+                    </div>
+                    <!-- Gemini 3.5 Flash -->
+                    <div class="chart-row">
+                        <div class="label">
+                            Gemini 3.5 Flash
+                            <small>официально</small>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill bar-gemini-flash" style="width:50%;">1M</div>
+                        </div>
+                        <div class="value">1 000 000</div>
+                    </div>
+                    <!-- Claude Fable 5 -->
+                    <div class="chart-row">
+                        <div class="label">
+                            Claude Fable 5
+                            <small>доступна</small>
+                        </div>
+                        <div class="chart-bar-bg">
+                            <div class="chart-bar-fill bar-claude" style="width:10%;">200K</div>
+                        </div>
+                        <div class="value">200 000</div>
+                    </div>
+                </div>
+                <div class="note" style="margin-top:8px;">
+                    <strong>💡 Наглядно:</strong> Gemini 3.5 Pro (по утечкам) может обработать за один запрос
+                    <strong>в 10 раз больше</strong>, чем Claude Fable 5, и на 33% больше, чем GPT-5.6.
+                    Это позволяет анализировать целые книги, код проектов и многотомную документацию целиком.
+                    <br><span style="color:#6b7a93; font-size:0.9em;">* 2 млн токенов — пока слух, но даже 1,5 млн (как у GPT-5.6) уже считается огромным объёмом.</span>
+                </div>
+            </div>
+
+            <h2>3. Deep Think может стать главным отличием новой модели</h2>
+            <p>
+                Практически во всех утечках фигурирует технология <strong>Deep Think</strong>.
+                Предполагается, что это отдельный режим глубокого рассуждения, который будет использоваться для сложных задач:
+            </p>
+            <ul>
+                <li>программирования;</li>
+                <li>математических вычислений;</li>
+                <li>анализа больших массивов информации;</li>
+                <li>построения логических цепочек;</li>
+                <li>проверки гипотез.</li>
+            </ul>
+            <p>
+                Подобный подход уже используют и другие разработчики ИИ, однако Google может реализовать его иначе,
+                сделав переключение между обычным и глубоким режимами максимально незаметным для пользователя.
+            </p>
+            <p>Если информация подтвердится, модель станет значительно сильнее в задачах, где важны не скорость ответа, а качество рассуждений.</p>
+
+            <h2>4. Основной упор сделан на программирование</h2>
+            <p>
+                Практически все тестировщики отмечают серьезный прогресс в генерации кода.
+                В публикациях упоминаются примеры создания:
+            </p>
+            <ul>
+                <li>полноценных веб-приложений;</li>
+                <li>игровых проектов;</li>
+                <li>больших программ без разбиения на десятки запросов;</li>
+                <li>интерфейсов уровня настольных операционных систем.</li>
+            </ul>
+            <p>
+                Подобные демонстрации всегда стоит воспринимать осторожно. Они показывают максимальные возможности модели
+                в специально подобранных сценариях, а не типичные результаты повседневной работы.
+                Тем не менее тенденция очевидна: Google делает ставку именно на разработчиков.
+            </p>
+
+            <h2>5. Gemini 3.5 Pro готовят как ответ GPT-5.6 и Claude Fable 5</h2>
+            <p>
+                За последние недели рынок искусственного интеллекта заметно изменился.
+                OpenAI выпустила GPT-5.6. Anthropic продолжает активно развивать семейство Claude.
+                На этом фоне Google уже не может позволить себе долго откладывать выпуск собственного флагмана.
+            </p>
+            <p>
+                По имеющимся данным, в закрытых тестах модель показывает очень сильные результаты в:
+                zero-shot задачах, агентных сценариях, программировании, анализе длинных документов и многошаговых рассуждениях.
+                Пока все эти данные основаны на внутренних тестах и утечках. Независимые сравнения появятся только после официального запуска.
+            </p>
+
+            <!-- ===== СРАВНИТЕЛЬНАЯ ТАБЛИЦА ===== -->
+            <div class="card">
+                <h3 style="margin-top:0; border-bottom: none; padding-bottom:0;">⚖️ Сравнение флагманов</h3>
+                <div class="table-wrapper" style="margin-top:12px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Модель</th>
+                                <th>Контекстное окно</th>
+                                <th>Режим рассуждений</th>
+                                <th>Основной сценарий</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Gemini 3.5 Pro -->
+                            <tr style="background:#f0f7ff;">
+                                <td><span class="model-name">Gemini 3.5 Pro</span> <span class="badge badge-leak">по утечкам</span></td>
+                                <td><strong>2 000 000</strong> токенов</td>
+                                <td>
+                                    <div class="icon-group">
+                                        <span class="icon">🧠</span>
+                                        <span class="label">Deep Think</span>
+                                        <span style="font-size:0.8em; color:#4a5a7a;">(отдельный режим)</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="icon-group">
+                                        <span class="icon">⚡</span>
+                                        <span class="label">универсальный флагман</span>
+                                        <span style="font-size:0.8em; color:#4a5a7a;">+ объём</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- GPT-5.6 -->
+                            <tr>
+                                <td><span class="model-name">GPT-5.6</span> <span class="badge badge-confirmed">доступна</span></td>
+                                <td><strong>1 500 000</strong> токенов</td>
+                                <td>
+                                    <div class="icon-group">
+                                        <span class="icon">🧠</span>
+                                        <span class="label">собственный режим</span>
+                                        <span style="font-size:0.8em; color:#4a5a7a;">(рассуждения)</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="icon-group">
+                                        <span class="icon">⚡</span>
+                                        <span class="label">универсальный</span>
+                                        <span style="font-size:0.8em; color:#4a5a7a;">+ скорость</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Claude Fable 5 -->
+                            <tr>
+                                <td><span class="model-name">Claude Fable 5</span> <span class="badge badge-confirmed">доступна</span></td>
+                                <td><strong>200 000</strong> токенов</td>
+                                <td>
+                                    <div class="icon-group">
+                                        <span class="icon">🧠</span>
+                                        <span class="label">собственные механизмы</span>
+                                        <span style="font-size:0.8em; color:#4a5a7a;">(глубокие)</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="icon-group">
+                                        <span class="icon">🎯</span>
+                                        <span class="label">сложные рассуждения</span>
+                                        <span style="font-size:0.8em; color:#4a5a7a;">+ анализ</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="font-size:0.85em; color:#6b7a93; margin-top:6px;">
+                    ⚡ — скорость / универсальность &nbsp;·&nbsp; 🧠 — глубина мышления / рассуждения
+                </div>
+                <div class="note" style="margin-top:12px;">
+                    <strong>Ключевое отличие:</strong> Gemini делает ставку на <strong>объём контекста</strong> (2M токенов),
+                    а конкуренты — на глубину рассуждений в узких задачах. При этом все три модели имеют собственные механизмы "медленного" мышления.
+                </div>
+            </div>
+
+            <h2>6. Не вся информация об утечках одинаково надежна</h2>
+            <p>Именно здесь многие публикации вводят читателей в заблуждение. Сегодня можно выделить три уровня достоверности информации.</p>
+            <ul>
+                <li><strong>Высокая вероятность:</strong> существование Gemini 3.5 Pro, развитие семейства Gemini 3.5, ориентация на разработчиков, интеграция с Google AI Studio и Vertex AI.</li>
+                <li><strong>Средняя вероятность:</strong> режим Deep Think, увеличение автономности агентных задач, существенный рост качества программирования.</li>
+                <li><strong>Пока не подтверждено:</strong> точная дата релиза, контекстное окно в 2 млн токенов, лидерство над GPT-5.6 и Claude Fable 5 во всех бенчмарках, окончательные цены API.</li>
+            </ul>
+            <p>Такой подход позволяет избежать распространенной ошибки, когда слухи подаются как уже свершившийся факт.</p>
+
+            <h2>7. После релиза рынок ИИ может снова измениться</h2>
+            <p>
+                Даже если часть характеристик окажется менее впечатляющей, Gemini 3.5 Pro почти наверняка станет одной из ключевых моделей 2026 года.
+                Причин несколько:
+            </p>
+            <ul>
+                <li>Во-первых, Google обладает огромной собственной экосистемой.</li>
+                <li>Во-вторых, модель практически сразу получит интеграцию с сервисами компании.</li>
+                <li>В-третьих, разработчики смогут использовать ее через AI Studio и Vertex AI.</li>
+            </ul>
+            <p>Все это значительно ускоряет распространение новой технологии по сравнению с независимыми ИИ-проектами.</p>
+
+            <!-- ===== ВТОРАЯ ТАБЛИЦА ИЗ СТАТЬИ (Сравнение известных характеристик) ===== -->
+            <h2>Сравнение известных характеристик</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Характеристика</th>
+                            <th>Gemini 3.5 Flash</th>
+                            <th>Gemini 3.5 Pro*</th>
+                            <th>GPT-5.6</th>
+                            <th>Claude Fable 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Статус</strong></td>
+                            <td>доступна</td>
+                            <td>ожидается</td>
+                            <td>доступна</td>
+                            <td>доступна</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Основной сценарий</strong></td>
+                            <td>скорость</td>
+                            <td>универсальный флагман</td>
+                            <td>универсальный</td>
+                            <td>сложные рассуждения</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deep Think</strong></td>
+                            <td>нет данных</td>
+                            <td>ожидается</td>
+                            <td>собственный режим рассуждений</td>
+                            <td>собственные механизмы</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Контекст</strong></td>
+                            <td>официальный</td>
+                            <td>до 2 млн токенов (по утечкам)</td>
+                            <td>официальный</td>
+                            <td>официальный</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Программирование</strong></td>
+                            <td>высокое качество</td>
+                            <td>ожидается значительный рост</td>
+                            <td>очень высокий уровень</td>
+                            <td>очень высокий уровень</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size:0.85em; color:#666;">* Характеристики Gemini 3.5 Pro основаны на доступных утечках и могут измениться после официального анонса.</p>
+
+            <h2>Что это означает для пользователей из России</h2>
+            <p>
+                После выхода модели наиболее вероятными способами работы останутся:
+            </p>
+            <ul>
+                <li>веб-интерфейс Gemini;</li>
+                <li>Google AI Studio;</li>
+                <li>API для разработчиков;</li>
+                <li>Vertex AI для корпоративных клиентов.</li>
+            </ul>
+            <p>При этом доступность отдельных функций может зависеть от региона и политики Google. Поэтому после релиза стоит дождаться официального списка стран и условий использования.</p>
+
+            <h2>Стоит ли ждать Gemini 3.5 Pro</h2>
+            <p>
+                Если вы уже работаете с современными ИИ-моделями, ждать релиза определенно имеет смысл.
+                Однако не стоит воспринимать сегодняшние публикации как окончательные характеристики новой модели.
+                До официального анонса часть возможностей может измениться, а некоторые громкие заявления вовсе не подтвердятся.
+            </p>
+            <p>
+                Главная интрига заключается не только в том, насколько мощной окажется Gemini 3.5 Pro,
+                но и сможет ли Google предложить пользователям реальные преимущества перед GPT-5.6 и Claude Fable 5 в повседневной работе.
+                Ответ на этот вопрос станет известен уже после официального релиза, когда появятся независимые тесты, практические обзоры и первые отзывы разработчиков.
+            </p>
+
+            <!-- ===== ФОРМА КОММЕНТАРИЕВ (из образца) ===== -->
+            <div class="comment-form">
+                <h3>Оставить комментарий</h3>
+                <p>Задавайте вопросы, делитесь опытом или предложениями</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
+                    <button type="submit">Отправить комментарий</button>
+                </form>
+                <p>Все комментарии проходят модерацию перед публикацией.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 — обзор основан на доступных утечках и официальных анонсах Google I/O 2026</p>
+    </footer>
+
+    <!-- ===== YANDEX.METRIKA ===== -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <!-- ===== СКРИПТ ПОП-АПА ===== -->
+    <script type="text/javascript">
+        var delay_popup = 16000;
+        setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
+    </script>
+
+    <!-- ===== ПОП-АП ===== -->
+    <div id="bg_popup1">
+        <div id="popup1">
+            <h3 class="hi6">AI Аниматор!</h3>
+            <h3 class="hi6">Попробуй новую нейронку - AI - Аниматор!</h3>
+            <div style="text-align: center;">
+                <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+                   href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank" rel="noopener">Попробывать!</a>
+            </div>
+            <a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none'; return false;">X</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW1 (десктоп) ===== -->
+    <div id='follow1'>
+        <div class="hidemobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">Удобный доступ к зарубежным нейросетям!</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW2 (мобильный) ===== -->
+    <div id='follow2'>
+        <div class="showmobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">Удобный доступ к зарубежным нейросетям!</a>
+        </div>
+    </div>
+
+</body>
+</html>
