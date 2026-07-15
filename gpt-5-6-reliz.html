@@ -3,20 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>3 модели GPT-5.6: Sol, Terra и Luna</title>
+    <title>3 модели GPT-5.6: Sol, Terra и Luna — полный обзор</title>
     <meta name="description" content="GPT-5.6 Sol, Terra и Luna: чем отличаются, цены, какую выбрать. Что изменилось для бизнеса и разработчиков после выхода.">
     <meta name="yandex-verification" content="8168fc75f48014cc" />
     <style>
-        /* Стили из образца-без меню.html */
-        main {
-    margin-top: 100px;
-}
-
-@media (max-width: 600px) {
-    main {
-        margin-top: 130px;
-    }
-}
+        /* ===== ОСНОВНЫЕ СТИЛИ (из образца) ===== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -26,11 +17,22 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
             padding: 15px;
             padding-top: 100px;
             background-color: #f9f9f9;
+        }
+        main {
+            margin-top: 100px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin-top: 130px;
+            }
+            body {
+                padding-top: 130px;
+            }
         }
         header, footer {
             text-align: center;
@@ -59,7 +61,7 @@
         }
         h2 {
             color: #3498db;
-            margin-top: 30px;
+            margin-top: 35px;
             padding-top: 10px;
             border-top: 2px solid #eee;
             font-size: 1.4em;
@@ -69,13 +71,6 @@
             margin-top: 25px;
             font-size: 1.2em;
         }
-        .step-label {
-            font-weight: bold;
-            color: #e74c3c;
-            display: block;
-            margin-bottom: 5px;
-            font-size: 1.1em;
-        }
         a {
             color: #2980b9;
             text-decoration: none;
@@ -84,16 +79,20 @@
         a:hover {
             text-decoration: underline;
         }
-        .toc {
-            background: #f1f8ff;
-            border-left: 4px solid #3498db;
-            padding: 15px 20px;
-            margin: 25px 0;
-            border-radius: 0 5px 5px 0;
+        ul, ol {
+            padding-left: 25px;
         }
-        .toc ol {
-            padding-left: 20px;
+        li {
+            margin-bottom: 8px;
         }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        /* ===== КАРТОЧКИ И БЛОКИ ===== */
         .card, .block {
             background: white;
             border: 1px solid #ddd;
@@ -102,96 +101,8 @@
             margin: 20px 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
-        .card strong, .block strong {
-            color: #2c3e50;
-        }
-        .warning {
-            color: #c0392b;
-            font-weight: bold;
-        }
-        .pic {
-            text-align: center;
-            margin: 25px 0;
-        }
-        .pic img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-        }
-        .pic-description {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 8px;
-            font-style: italic;
-        }
-        ul, ol {
-            padding-left: 25px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .comment-form {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        .comment-form h3 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-        .comment-form input,
-        .comment-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-family: inherit;
-            font-size: 1em;
-        }
-        .comment-form button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-            width: 100%;
-            max-width: 200px;
-        }
-        .comment-form button:hover {
-            background-color: #2980b9;
-        }
-        .comment-form p:last-child {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 15px;
-        }
-        code {
-            background: #f4f4f4;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.9em;
-            word-break: break-all;
-        }
-        pre {
-            background: #f4f4f4;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-size: 0.9em;
-            line-height: 1.4;
-            white-space: pre-wrap;
-            word-break: break-all;
-        }
 
-        /* Стили для таблицы */
+        /* ===== ТАБЛИЦЫ ===== */
         .table-wrapper {
             overflow-x: auto;
             margin: 25px 0;
@@ -242,7 +153,298 @@
             white-space: nowrap;
         }
 
-        /* Mobile optimization */
+        /* ===== ЦВЕТОВЫЕ ИНДИКАТОРЫ ЦЕН ===== */
+        .price-high { color: #e74c3c; font-weight: 700; }
+        .price-medium { color: #f39c12; font-weight: 700; }
+        .price-low { color: #27ae60; font-weight: 700; }
+
+        /* ===== КАРТОЧКИ МОДЕЛЕЙ (3 колонки) ===== */
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .model-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px 18px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid #3498db;
+            text-align: center;
+        }
+        .model-card .icon {
+            font-size: 2.8em;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .model-card h4 {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+        .model-card p {
+            font-size: 0.92em;
+            color: #555;
+            margin: 0;
+        }
+        .model-card.sol { border-top-color: #e67e22; }
+        .model-card.terra { border-top-color: #27ae60; }
+        .model-card.luna { border-top-color: #8e44ad; }
+
+        /* ===== ГРАФИК ЦЕН (CSS-столбцы) ===== */
+        .price-chart {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            height: 200px;
+            padding: 20px 10px 10px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        .price-bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 70px;
+        }
+        .price-bar {
+            width: 28px;
+            margin: 0 4px;
+            border-radius: 4px 4px 0 0;
+            min-height: 4px;
+            transition: height 0.3s;
+        }
+        .bar-in { background: #3498db; }
+        .bar-out { background: #e67e22; }
+        .bar-label {
+            font-size: 0.7em;
+            font-weight: 700;
+            margin-top: 6px;
+            text-align: center;
+        }
+        .bar-value {
+            font-size: 0.65em;
+            color: #666;
+            margin-top: 2px;
+        }
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+
+        /* ===== ШКАЛА REASONING EFFORT ===== */
+        .effort-scale {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        .effort-item {
+            text-align: center;
+            flex: 1;
+            min-width: 50px;
+            padding: 4px 2px;
+            position: relative;
+        }
+        .effort-item .level {
+            display: block;
+            font-weight: 700;
+            font-size: 0.85em;
+            color: #2c3e50;
+        }
+        .effort-item .example {
+            display: block;
+            font-size: 0.65em;
+            color: #888;
+        }
+        .effort-item.active {
+            background: #e8f4fd;
+            border-radius: 6px;
+        }
+        .effort-item.active .level {
+            color: #2980b9;
+        }
+        .effort-arrow {
+            text-align: center;
+            color: #bbb;
+            font-size: 0.7em;
+            padding-top: 8px;
+        }
+
+        /* ===== СХЕМА ULTRA ===== */
+        .ultra-scheme {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .ultra-box {
+            background: #f0f7ff;
+            border: 2px dashed #3498db;
+            border-radius: 8px;
+            padding: 12px 20px;
+            text-align: center;
+            min-width: 80px;
+        }
+        .ultra-box .label {
+            font-weight: 700;
+            font-size: 0.85em;
+            color: #2c3e50;
+        }
+        .ultra-box .sub {
+            font-size: 0.7em;
+            color: #777;
+        }
+        .ultra-arrow {
+            font-size: 1.8em;
+            color: #bbb;
+            align-self: center;
+        }
+        .ultra-result {
+            background: #e8f5e9;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            padding: 12px 20px;
+            text-align: center;
+        }
+
+        /* ===== ТАЙМЛАЙН ===== */
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 20px 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            right: 30px;
+            height: 3px;
+            background: #ddd;
+            transform: translateY(-50%);
+        }
+        .timeline-item {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: #f9f9f9;
+            padding: 0 10px;
+            flex: 1;
+            min-width: 60px;
+        }
+        .timeline-item .dot {
+            display: block;
+            width: 14px;
+            height: 14px;
+            background: #3498db;
+            border-radius: 50%;
+            margin: 0 auto 6px;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #3498db;
+        }
+        .timeline-item .date {
+            font-weight: 700;
+            font-size: 0.8em;
+            color: #2c3e50;
+        }
+        .timeline-item .desc {
+            font-size: 0.65em;
+            color: #888;
+        }
+
+        /* ===== КАРТОЧКИ РОССИЯ ===== */
+        .russia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .russia-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .russia-card .icon {
+            font-size: 2em;
+        }
+        .russia-card .title {
+            font-weight: 700;
+            margin: 6px 0;
+        }
+        .russia-card .desc {
+            font-size: 0.85em;
+            color: #666;
+        }
+        .russia-card.warning { border-left: 4px solid #e74c3c; }
+        .russia-card.success { border-left: 4px solid #27ae60; }
+        .russia-card.info { border-left: 4px solid #f39c12; }
+
+        /* ===== FAQ АККОРДЕОН ===== */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 12px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: 700;
+            color: #2c3e50;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question:hover {
+            color: #2980b9;
+        }
+        .faq-question .toggle {
+            font-size: 1.2em;
+            color: #999;
+        }
+        .faq-answer {
+            display: none;
+            padding-top: 8px;
+            color: #555;
+        }
+        .faq-answer.open {
+            display: block;
+        }
+
+        /* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
         @media (max-width: 600px) {
             body {
                 padding: 12px;
@@ -253,44 +455,62 @@
             h2 {
                 font-size: 1.2em;
             }
-            h3 {
-                font-size: 1.1em;
+            .price-chart {
+                height: 150px;
+                padding: 10px 5px;
             }
-            .pic {
-                margin: 15px 0;
+            .price-bar-group {
+                width: 50px;
             }
-            .card, .block {
-                padding: 12px 15px;
+            .price-bar {
+                width: 18px;
             }
-            .comment-form {
-                padding: 15px;
+            .models-grid {
+                grid-template-columns: 1fr;
             }
-            .comment-form button {
-                max-width: 100%;
+            .ultra-scheme {
+                flex-direction: column;
+                align-items: center;
             }
-            ul, ol {
-                padding-left: 18px;
+            .ultra-arrow {
+                transform: rotate(90deg);
             }
-            .toc {
-                padding: 12px 15px;
+            .timeline::before {
+                display: none;
             }
-            .table-wrapper {
+            .timeline {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .timeline-item {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding: 6px 10px;
+                background: #f5f5f5;
                 border-radius: 6px;
             }
-            table {
-                font-size: 0.85em;
-                min-width: 400px;
+            .timeline-item .dot {
+                margin: 0;
             }
-            th, td {
-                padding: 10px 12px;
+            .effort-scale {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .effort-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 4px 10px;
+                background: #f5f5f5;
+                border-radius: 4px;
+            }
+            .effort-arrow {
+                display: none;
             }
         }
         @media (max-width: 400px) {
             body {
                 padding: 8px;
-            }
-            h1 {
-                font-size: 1.3em;
             }
             table {
                 font-size: 0.78em;
@@ -300,290 +520,618 @@
                 padding: 8px 10px;
             }
         }
-        /* === Стили для баннеров follow1 и follow2 === */
-#follow1,
-#follow2 {
-    background-color: #e6eeee;
-    z-index: 199;
-    top: 10px;
-    position: fixed;
-}
 
-/* === Стили для скрытия/показа баннеров === */
-.hidemobile {
-    visibility: visible;
-    display: block;
-}
-
-.showmobile {
-    display: none;
-}
-
-@media screen and (max-width: 600px) {
-    .hidemobile {
-        visibility: hidden;
-        display: none;
-    }
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .showmobile {
-        display: inline;
-    }
-}
-
-/* === Стили для затемненного фона поп-апа === */
-#bg_popup1 {
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
-    position: fixed;
-    z-index: 99999;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-/* === Стили для окна поп-апа === */
-#popup1 {
-    background: #204a55;
-    width: 480px;
-    height: 250px;
-    margin: 5% auto;
-    padding: 5px 20px 13px;
-    border: 2px solid #1ba600;
-    position: relative;
-    -webkit-box-shadow: 0 0 20px #000;
-    -moz-box-shadow: 0 0 20px #000;
-    box-shadow: 0 0 20px #000;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-}
-
-@media all and (max-width: 480px) {
-    #popup1 {
-        width: 100%;
-    }
-}
-
-/* === Стили для кнопки закрытия === */
-.close1 {
-    text-align: center;
-    display: block;
-    position: absolute;
-    top: 1px;
-    right: 5px;
-    width: 25px;
-    height: 25px;
-    line-height: 28px;
-    color: #fff;
-    background: #1ba600;
-    cursor: pointer;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
-    -moz-box-shadow: 1px 1px 3px #000;
-    -webkit-box-shadow: 1px 1px 3px #000;
-    box-shadow: 1px 1px 3px #000;
-    text-decoration: none;
-}
-
-.close1:hover {
-    background-color: #f30;
-}
-
-/* === Стили для заголовков поп-апа === */
-.hi6 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #ffffff;
-    text-align: center;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    margin: 10px 0;
-    padding: 5px 0;
-    line-height: 1.3;
-}
-        @media (max-width: 600px) {
-    body {
-        padding-top: 130px;
-    }
-}
+        /* ===== СТИЛИ ДЛЯ ПОП-АПА И БАННЕРОВ (из образца) ===== */
+        #follow1, #follow2 {
+            background-color: #e6eeee;
+            z-index: 199;
+            top: 10px;
+            position: fixed;
+        }
+        .hidemobile {
+            visibility: visible;
+            display: block;
+        }
+        .showmobile {
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .hidemobile {
+                visibility: hidden;
+                display: none;
+            }
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            .showmobile {
+                display: inline;
+            }
+        }
+        #bg_popup1 {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        #popup1 {
+            background: #204a55;
+            width: 480px;
+            height: 250px;
+            margin: 5% auto;
+            padding: 5px 20px 13px;
+            border: 2px solid #1ba600;
+            position: relative;
+            -webkit-box-shadow: 0 0 20px #000;
+            -moz-box-shadow: 0 0 20px #000;
+            box-shadow: 0 0 20px #000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+        @media all and (max-width: 480px) {
+            #popup1 {
+                width: 100%;
+                height: auto;
+                min-height: 200px;
+            }
+        }
+        .close1 {
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 1px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            line-height: 28px;
+            color: #fff;
+            background: #1ba600;
+            cursor: pointer;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+            text-decoration: none;
+        }
+        .close1:hover {
+            background-color: #f30;
+        }
+        .hi6 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            padding: 5px 0;
+            line-height: 1.3;
+        }
+        .btn-popup, .btn-banner {
+            display: inline-block;
+            padding: 10px 25px;
+            cursor: pointer;
+            background-image: linear-gradient(#0a0002, #0033ff);
+            color: #ffffff;
+            text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px;
+            background-color: #0a0002;
+            border: 5px solid red;
+            border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1);
+            border-radius: 5px;
+            line-height: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: none;
+            height: 54px;
+            width: 100%;
+            max-width: 300px;
+            margin: 5px auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .btn-popup:hover, .btn-banner:hover {
+            opacity: 0.9;
+            text-decoration: none;
+        }
+        .banner-wrap {
+            text-align: center;
+            padding: 5px;
+        }
+        .banner-wrap a {
+            display: inline-block;
+            max-width: 300px;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 
+    <!-- ===== ВЕРХНИЙ БАННЕР (из образца) ===== -->
+    <div id="follow1">
+        <div class="hidemobile banner-wrap">
+            <a class="btn-banner" href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">Удобный доступ к зарубежным нейросетям!</a>
+        </div>
+    </div>
+
+    <div id="follow2">
+        <div class="showmobile banner-wrap">
+            <a class="btn-banner" href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">Удобный доступ к зарубежным нейросетям!</a>
+        </div>
+    </div>
+
+    <!-- ===== ПОП-АП (из образца) ===== -->
+    <div id="bg_popup1">
+        <div id="popup1">
+            <h3 class="hi6">AI Аниматор!</h3>
+            <h3 class="hi6">Попробуй новую нейронку - AI - Аниматор!</h3>
+            <div style="text-align: center;">
+                <a class="btn-popup" href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank" rel="noopener">Попробовать!</a>
+            </div>
+            <a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none'; return false;">X</a>
+        </div>
+    </div>
+
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
     <main>
         <article>
 
-            <h1>GPT-5.6 Sol, Terra и Luna: чем отличаются новые модели OpenAI и какую выбрать</h1>
+            <h1>GPT-5.6 Sol, Terra и Luna: что нового и какую модель выбрать</h1>
 
             <p class="lead">
-                9 июля 2026 года OpenAI официально начала глобальный запуск семейства <strong>GPT-5.6</strong>, в которое вошли сразу три модели — <strong>Sol, Terra и Luna</strong>.
-                Вместо одной универсальной нейросети компания предложила линейку с разной производительностью, стоимостью и сценариями использования.
-                Это один из самых крупных релизов OpenAI за последнее время, который может изменить подход к работе с искусственным интеллектом как для обычных пользователей ChatGPT, так и для разработчиков.
+                <strong>9 июля 2026 года</strong> OpenAI официально запустила семейство GPT-5.6 — три модели
+                <strong>Sol, Terra и Luna</strong>. С этого дня GPT-5.6 стал моделью по умолчанию в ChatGPT.
+                Главное здесь не сами названия, а то, что изменилось внутри: управляемая глубина рассуждений
+                (reasoning effort), мультиагентный режим Ultra и предсказуемое кэширование промптов.
             </p>
             <p>
-                Главная особенность обновления заключается не только в появлении новых моделей.
-                OpenAI фактически меняет стратегию развития своих продуктов:
-                теперь пользователям предлагается выбирать между максимальной производительностью, балансом цены и качества или минимальной стоимостью обработки запросов.
-                Такой подход уже давно используют облачные провайдеры, а теперь он становится стандартом и для современных языковых моделей.
-            </p>
-
-            <h2>Что произошло: OpenAI выпустила семейство GPT-5.6</h2>
-            <p>
-                После нескольких недель ограниченного тестирования OpenAI открыла доступ к новой линейке GPT-5.6 через ChatGPT, API и платформу Codex.
-                Вместе с моделями компания представила обновлённую систему кэширования промптов, которая снижает стоимость повторных запросов, а также голосовые модели GPT-Live с более естественным синтезом речи.
+                Все три модели получили контекст в <strong>1 миллион токенов</strong> и лимит вывода
+                <strong>128 000 токенов</strong> — а дальше начинаются принципиальные различия в цене, скорости
+                и задачах, под которые создана каждая из них.
             </p>
             <p>
-                В отличие от предыдущих поколений, где основное внимание уделялось одной флагманской модели, теперь каждая версия получила собственную специализацию.
+                Разберём, что реально нового в GPT-5.6 по сравнению с GPT-5.5, чем Sol, Terra и Luna
+                отличаются друг от друга и какую модель выбрать для конкретных задач.
             </p>
-            <ul>
-                <li><strong>Sol</strong> ориентирована на самые сложные вычислительные задачи, глубокое рассуждение, программирование и исследования безопасности.</li>
-                <li><strong>Terra</strong> занимает промежуточное положение и рассчитана на корпоративные сервисы, обработку документов, внутренних ИИ-помощников и большинство рабочих сценариев.</li>
-                <li><strong>Luna</strong> стала самой доступной моделью семейства и предназначена для массовой автоматизации, создания черновиков, кратких пересказов текстов и других повседневных задач.</li>
-            </ul>
-            <p>Такое разделение позволяет значительно снизить стоимость эксплуатации без необходимости использовать наиболее дорогую модель для каждой операции.</p>
 
-            <h2>Чем отличаются модели Sol, Terra и Luna</h2>
-            <p>На первый взгляд различия между моделями сводятся к цене, однако на практике они затрагивают практически все аспекты работы.</p>
-
-            <!-- Таблица -->
+            <!-- ===== ТАБЛИЦА 1: СРАВНЕНИЕ ===== -->
+            <h2>Sol, Terra, Luna: сравнение в одной таблице</h2>
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
                             <th>Модель</th>
-                            <th>Основное назначение</th>
-                            <th>Стоимость API</th>
+                            <th>Для чего</th>
+                            <th>Цена API (вход / выход за 1 млн токенов)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="model-sol">
                             <td><span class="model-name">Sol</span></td>
-                            <td>сложные рассуждения, программирование, исследования</td>
-                            <td><span class="price-badge">около $5 / $30</span> за миллион входящих и исходящих токенов</td>
+                            <td>сложные рассуждения, агентные сценарии, работа в терминале, кибербезопасность</td>
+                            <td><span class="price-badge price-high">$5 / $30</span></td>
                         </tr>
                         <tr class="model-terra">
                             <td><span class="model-name">Terra</span></td>
-                            <td>корпоративные сервисы, анализ данных, рабочие процессы</td>
-                            <td><span class="price-badge">около $2,5 / $15</span></td>
+                            <td>корпоративные сервисы, документы, аналитика, повседневные рабочие задачи — уровень GPT-5.5</td>
+                            <td><span class="price-badge price-medium">$2,5 / $15</span></td>
                         </tr>
                         <tr class="model-luna">
                             <td><span class="model-name">Luna</span></td>
-                            <td>быстрые и массовые задачи</td>
-                            <td><span class="price-badge">около $1 / $6</span></td>
+                            <td>массовые и простые запросы, черновики, классификация, быстрые ответы</td>
+                            <td><span class="price-badge price-low">$1 / $6</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size:0.9em; color:#666;">
+                Цены в API одинаковы для всех тарифов и не зависят от подписки в ChatGPT — это стоимость обращения к моделям напрямую через API.
+            </p>
+
+            <!-- ===== ГРАФИК ЦЕН ===== -->
+            <h3>Сравнение цен API (вход / выход)</h3>
+            <div class="chart-legend">
+                <span class="legend-item"><span class="legend-color" style="background:#3498db;"></span> Вход (за 1M токенов)</span>
+                <span class="legend-item"><span class="legend-color" style="background:#e67e22;"></span> Выход (за 1M токенов)</span>
+            </div>
+            <div class="price-chart">
+                <div class="price-bar-group">
+                    <div class="price-bar bar-in" style="height:40px;"></div>
+                    <div class="price-bar bar-out" style="height:120px;"></div>
+                    <div class="bar-label">Sol</div>
+                    <div class="bar-value">$5 / $30</div>
+                </div>
+                <div class="price-bar-group">
+                    <div class="price-bar bar-in" style="height:20px;"></div>
+                    <div class="price-bar bar-out" style="height:60px;"></div>
+                    <div class="bar-label">Terra</div>
+                    <div class="bar-value">$2.5 / $15</div>
+                </div>
+                <div class="price-bar-group">
+                    <div class="price-bar bar-in" style="height:8px;"></div>
+                    <div class="price-bar bar-out" style="height:24px;"></div>
+                    <div class="bar-label">Luna</div>
+                    <div class="bar-value">$1 / $6</div>
+                </div>
+            </div>
+            <p style="font-size:0.85em; color:#666; text-align:center;">
+                * Высота столбцов пропорциональна стоимости. Luna — самая доступная модель.
+            </p>
+
+            <!-- ===== КАРТОЧКИ МОДЕЛЕЙ ===== -->
+            <h2>Чем отличаются Sol, Terra и Luna на практике</h2>
+            <div class="models-grid">
+                <div class="model-card sol">
+                    <span class="icon">🧠</span>
+                    <h4>Sol</h4>
+                    <p>Сложные рассуждения, программирование, агентные сценарии, кибербезопасность. Режим Ultra до 16 агентов.</p>
+                </div>
+                <div class="model-card terra">
+                    <span class="icon">🏢</span>
+                    <h4>Terra</h4>
+                    <p>Корпоративные сервисы, документы, аналитика, повседневные рабочие задачи. Уровень GPT-5.5 по цене вдвое ниже.</p>
+                </div>
+                <div class="model-card luna">
+                    <span class="icon">⚡</span>
+                    <h4>Luna</h4>
+                    <p>Массовые запросы, черновики, классификация, быстрые ответы. Максимальная скорость при минимальной цене.</p>
+                </div>
+            </div>
+            <p>
+                Сравнивать эти три модели так же, как раньше сравнивали GPT-4 и GPT-5, уже не совсем корректно —
+                они создавались для разных категорий пользователей и задач, а не как ступени одной иерархии «лучше/хуже».
+            </p>
+
+            <!-- ===== ЧТО НОВОГО ===== -->
+            <h2>Что реально нового в GPT-5.6 по сравнению с GPT-5.5</h2>
+
+            <h3>Регулятор глубины рассуждений</h3>
+            <p>
+                Главное функциональное новшество релиза — параметр <strong>reasoning effort</strong>,
+                который управляет тем, насколько долго модель «думает» над конкретным запросом.
+                Доступны уровни <strong>none, low, medium, high, xhigh и max</strong>, по умолчанию используется medium.
+            </p>
+
+            <!-- ШКАЛА REASONING EFFORT -->
+            <div class="effort-scale">
+                <div class="effort-item"><span class="level">none</span><span class="example">без рассуждений</span></div>
+                <div class="effort-arrow">→</div>
+                <div class="effort-item"><span class="level">low</span><span class="example">черновик</span></div>
+                <div class="effort-arrow">→</div>
+                <div class="effort-item active"><span class="level">medium</span><span class="example">по умолчанию</span></div>
+                <div class="effort-arrow">→</div>
+                <div class="effort-item"><span class="level">high</span><span class="example">глубокий анализ</span></div>
+                <div class="effort-arrow">→</div>
+                <div class="effort-item"><span class="level">xhigh</span><span class="example">макс. глубина</span></div>
+                <div class="effort-arrow">→</div>
+                <div class="effort-item"><span class="level">max</span><span class="example">предел</span></div>
+            </div>
+            <p>
+                Раньше глубина рассуждений определялась моделью автоматически, теперь пользователь и разработчик сами решают:
+                нужен быстрый черновик — ставится low, нужен максимально проработанный ответ на сложной задаче — high, xhigh или max.
+                Это напрямую влияет на скорость, стоимость и качество ответа.
+            </p>
+
+            <h3>Мультиагентный режим Ultra</h3>
+            <p>
+                В Sol появился режим <strong>Ultra</strong>, в котором несколько агентов работают над одной задачей параллельно:
+                по умолчанию четыре, а в тяжёлых конфигурациях — например, при веб-навигации или тестах на кибербезопасность —
+                до шестнадцати.
+            </p>
+
+            <!-- СХЕМА ULTRA -->
+            <div class="ultra-scheme">
+                <div class="ultra-box">
+                    <span class="label">🧩 Задача</span>
+                    <span class="sub">сложный сценарий</span>
+                </div>
+                <span class="ultra-arrow">⬇</span>
+                <div class="ultra-box" style="background:#e3f2fd; border-color:#2980b9;">
+                    <span class="label">🤖 Агент 1</span>
+                    <span class="sub">поток A</span>
+                </div>
+                <div class="ultra-box" style="background:#e3f2fd; border-color:#2980b9;">
+                    <span class="label">🤖 Агент 2</span>
+                    <span class="sub">поток B</span>
+                </div>
+                <div class="ultra-box" style="background:#e3f2fd; border-color:#2980b9;">
+                    <span class="label">🤖 Агент 3</span>
+                    <span class="sub">поток C</span>
+                </div>
+                <div class="ultra-box" style="background:#e3f2fd; border-color:#2980b9;">
+                    <span class="label">🤖 Агент 4</span>
+                    <span class="sub">поток D</span>
+                </div>
+                <span class="ultra-arrow">⬇</span>
+                <div class="ultra-result">
+                    <span class="label">✅ Синтез результата</span>
+                    <span class="sub">параллельная обработка</span>
+                </div>
+            </div>
+            <p style="font-size:0.9em; color:#666;">
+                * В режиме Ultra до 16 агентов работают параллельно, что ускоряет сложные вычисления.
+            </p>
+            <p>
+                Это не просто ускорение расчётов, а другой подход к сложным сценариям: задача раскладывается на параллельные потоки
+                вместо последовательного решения одной моделью.
+            </p>
+
+            <h3>Кэширование промптов и голосовые модели</h3>
+            <p>
+                OpenAI обновила систему кэширования промптов: появились явные точки кэша (cache breakpoints) с минимальным временем жизни
+                30 минут, что делает повторные запросы с похожим контекстом дешевле и быстрее. Это особенно важно для ИИ-агентов
+                и сервисов автоматизации, где одни и те же инструкции используются многократно.
+            </p>
+            <p>
+                Вместе с моделями вышли и голосовые модели GPT-Live с более естественным синтезом речи.
+            </p>
+
+            <!-- ===== ТАБЛИЦА 2: ПАРАМЕТРЫ ===== -->
+            <h2>Сравнение параметров моделей</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Параметр</th>
+                            <th>Sol</th>
+                            <th>Terra</th>
+                            <th>Luna</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Контекст</strong></td>
+                            <td>1 млн токенов</td>
+                            <td>1 млн токенов</td>
+                            <td>1 млн токенов</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Лимит вывода</strong></td>
+                            <td>128K токенов</td>
+                            <td>128K токенов</td>
+                            <td>128K токенов</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reasoning effort</strong></td>
+                            <td>none – max</td>
+                            <td>none – high</td>
+                            <td>none – medium</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Режим Ultra</strong></td>
+                            <td>✅ до 16 агентов</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Кэширование</strong></td>
+                            <td>✅ полное</td>
+                            <td>✅ полное</td>
+                            <td>✅ упрощённое</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <p>
-                Разница заметна и по результатам первых тестов производительности.
-                Sol ожидаемо показывает лучшие результаты в сложных сценариях, связанных с написанием кода и выполнением агентных задач.
-                Terra немного уступает флагману, но обеспечивает значительно более выгодное соотношение цены и качества.
-                Luna ориентирована прежде всего на скорость и экономичность, поэтому для большинства рутинных операций её возможностей оказывается вполне достаточно.
-            </p>
-            <p>
-                Именно поэтому сравнивать эти модели между собой так же, как раньше сравнивали GPT-4 и GPT-5, уже не совсем корректно.
-                Они создавались для разных категорий пользователей.
-            </p>
-
-            <h2>Почему OpenAI отказалась от одной универсальной модели</h2>
-            <p>Самое интересное в сегодняшнем релизе — вовсе не появление новых названий.</p>
-            <p><strong>OpenAI фактически признала, что эпоха одной универсальной модели подходит к концу.</strong></p>
-            <p>
-                Большинство современных ИИ-сервисов используют сразу несколько моделей одновременно.
-                Пользователь может даже не замечать этого: простой вопрос обрабатывается быстрой и дешёвой моделью, а сложная аналитическая задача автоматически передаётся более мощной системе.
-            </p>
-            <p>
-                Такой подход позволяет одновременно увеличить скорость работы, снизить расходы на вычисления и сделать ИИ доступнее для массового использования.
-                Вероятно, именно поэтому OpenAI разделила линейку GPT-5.6 на три самостоятельных продукта вместо одной максимально универсальной модели.
-            </p>
-
+            <!-- ===== КАКУЮ МОДЕЛЬ ВЫБРАТЬ ===== -->
             <h2>Какую модель выбрать для разных задач</h2>
-            <p>Для большинства пользователей главным вопросом остаётся не производительность, а практическое применение.</p>
             <ul>
                 <li>
-                    <strong>Sol</strong> — если основная работа связана с программированием, анализом сложных проектов или многоэтапными рассуждениями.
+                    <strong>Sol</strong> — если основная работа связана с программированием, анализом сложных проектов,
+                    работой в терминале или многоэтапными рассуждениями.
                 </li>
                 <li>
-                    <strong>Terra</strong> — для бизнеса, внутренних корпоративных помощников, анализа документов, подготовки отчётов и большинства рабочих процессов.
-                    Именно эта модель, скорее всего, станет основной для многих компаний благодаря удачному балансу качества и стоимости.
+                    <strong>Terra</strong> — для бизнеса, внутренних корпоративных помощников, анализа документов,
+                    подготовки отчётов и большинства рабочих процессов. Благодаря удачному балансу качества и стоимости
+                    она, скорее всего, станет основной моделью для многих компаний.
                 </li>
                 <li>
-                    <strong>Luna</strong> — если требуется обрабатывать большие объёмы однотипных запросов, создавать краткие пересказы, автоматически писать черновики писем, генерировать описания товаров или обслуживать массовые чат-боты.
+                    <strong>Luna</strong> — если нужно обрабатывать большие объёмы однотипных запросов, писать черновики,
+                    генерировать описания товаров или обслуживать массовые чат-боты.
                 </li>
             </ul>
-            <p>Именно благодаря появлению Terra и Luna использование современных языковых моделей становится значительно дешевле, чем ещё несколько месяцев назад.</p>
 
-            <h2>Что изменилось для пользователей ChatGPT и разработчиков</h2>
+            <!-- ===== ТАБЛИЦА 3: ТАРИФЫ ===== -->
+            <h2>Тарифы ChatGPT: какие модели доступны бесплатно</h2>
             <p>
-                Для пользователей ChatGPT изменения будут происходить постепенно.
-                OpenAI уже начала поэтапное подключение новых моделей в платных тарифах, а затем они станут доступны более широкой аудитории.
+                С 9 июля GPT-5.6 стал моделью по умолчанию в ChatGPT, но доступ к конкретным моделям зависит от тарифа.
             </p>
-            <p>
-                Разработчики получили ещё больше возможностей.
-                Помимо доступа через API, новые модели поддерживаются в Codex, а улучшенное кэширование промптов позволяет снизить расходы в сценариях, где одни и те же инструкции используются многократно.
-                Это особенно важно для ИИ-агентов, корпоративных помощников и сервисов автоматизации.
-            </p>
-            <p>
-                Фактически OpenAI предлагает разработчикам более гибкую модель управления затратами: теперь можно выбирать не только функциональность, но и оптимальный уровень вычислительных ресурсов под конкретную задачу.
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Тариф</th>
+                            <th>Terra</th>
+                            <th>Luna</th>
+                            <th>Sol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Бесплатный</strong></td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Plus</strong></td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pro / Team</strong></td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Enterprise</strong></td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size:0.9em; color:#666;">
+                На бесплатном тарифе и младших платных тарифах пользователям доступны Terra и Luna.
+                Флагманская Sol открывается только с тарифа Plus и выше. Распределение моделей по тарифам может
+                со временем меняться.
             </p>
 
+            <!-- ===== ОГРАНИЧЕНИЯ + ТАЙМЛАЙН ===== -->
             <h2>Какие ограничения важно учитывать после релиза</h2>
-            <p>Несмотря на масштабный запуск, говорить о полном переходе на GPT-5.6 пока рано.</p>
-            <ul>
-                <li>Во-первых, доступ открывается постепенно и зависит от используемого тарифа ChatGPT и региона.</li>
-                <li>
-                    Во-вторых, независимые тесты только начинают появляться.
-                    Первые результаты выглядят многообещающе, однако реальные преимущества новых моделей станут понятны после их массового использования в различных проектах.
-                </li>
-                <li>
-                    Кроме того, многие корпоративные сервисы ещё только начинают адаптировать свои продукты под новую линейку OpenAI, поэтому некоторое время пользователи будут одновременно работать как со старыми, так и с новыми моделями.
-                </li>
-            </ul>
-
-            <h2>Почему выпуск GPT-5.6 важен для всего рынка ИИ</h2>
             <p>
-                Практически одновременно с релизом GPT-5.6 компания xAI представила Grok 4.5, а ранее свои обновления выпустили Anthropic и Meta.
-                Это говорит о том, что конкуренция между ведущими разработчиками искусственного интеллекта заметно усиливается.
-            </p>
-            <p>
-                Главная тенденция второй половины 2026 года — уже не только рост качества моделей, но и существенное снижение стоимости их использования.
-                Для бизнеса это означает возможность запускать сложные ИИ-сервисы с меньшими затратами, а для обычных пользователей — получать более мощные инструменты без значительного увеличения стоимости подписок.
-            </p>
-            <p>
-                Если эта тенденция сохранится, в ближайшие месяцы рынок будет конкурировать уже не столько по максимальному качеству моделей, сколько по удобству, скорости работы и цене выполнения реальных задач.
+                Несмотря на масштабный запуск, говорить о полном переходе на GPT-5.6 пока рано.
+                Доступ открывается постепенно и зависит от тарифа и региона.
             </p>
 
+            <!-- ТАЙМЛАЙН -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="dot"></span>
+                    <span class="date">9 июля 2026</span>
+                    <span class="desc">Релиз GPT-5.6</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="dot" style="background:#f39c12; box-shadow:0 0 0 2px #f39c12;"></span>
+                    <span class="date">Июль–авг 2026</span>
+                    <span class="desc">Постепенный доступ</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="dot" style="background:#27ae60; box-shadow:0 0 0 2px #27ae60;"></span>
+                    <span class="date">Сентябрь 2026</span>
+                    <span class="desc">Массовое внедрение</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="dot" style="background:#8e44ad; box-shadow:0 0 0 2px #8e44ad;"></span>
+                    <span class="date">Конец 2026</span>
+                    <span class="desc">Стабилизация</span>
+                </div>
+            </div>
+            <p>
+                Независимые тесты только начинают появляться: первые результаты выглядят многообещающе,
+                но реальные преимущества новых моделей станут понятны после массового использования в разных проектах.
+                Многие корпоративные сервисы также только начинают адаптировать свои продукты под новую линейку,
+                поэтому какое-то время пользователи будут одновременно работать и со старыми, и с новыми моделями.
+            </p>
+
+            <!-- ===== РОССИЯ ===== -->
+            <h2>Как пользоваться GPT-5.6 из России</h2>
+            <p>
+                ChatGPT официально недоступен в России, и это касается всех моделей линейки GPT-5.6, включая Sol, Terra и Luna.
+            </p>
+            <div class="russia-grid">
+                <div class="russia-card warning">
+                    <div class="icon">⚠️</div>
+                    <div class="title">Официально недоступен</div>
+                    <div class="desc">ChatGPT заблокирован в РФ</div>
+                </div>
+                <div class="russia-card success">
+                    <div class="icon">✅</div>
+                    <div class="title">VPN + зарубежная оплата</div>
+                    <div class="desc">Рабочий вариант для доступа</div>
+                </div>
+                <div class="russia-card info">
+                    <div class="icon">🔄</div>
+                    <div class="title">Агрегаторы</div>
+                    <div class="desc">Оплата в рублях, доступ через API</div>
+                </div>
+            </div>
+            <p>
+                При выборе агрегатора стоит отдельно проверять, какие именно модели семейства уже доступны в конкретном сервисе:
+                далеко не все каталоги обновляются сразу после релиза, и Sol может появиться там позже, чем Terra и Luna.
+            </p>
+
+            <!-- ===== FAQ ===== -->
+            <h2>Частые вопросы о GPT-5.6</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Что нового в GPT-5.6 по сравнению с GPT-5.5?</span>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Главные изменения — управляемая глубина рассуждений (reasoning effort с уровнями от none до max),
+                    мультиагентный режим Ultra с параллельной работой до 16 агентов и обновлённое кэширование промптов
+                    с явными точками кэша.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Чем Sol отличается от Terra и Luna?</span>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Sol — флагман для сложных задач и агентных сценариев с поддержкой режима Ultra,
+                    Terra — сбалансированная модель уровня GPT-5.5 для повседневной работы,
+                    Luna — самая быстрая и дешёвая модель для массовых простых запросов.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Сколько стоит GPT-5.6 в API?</span>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Sol — $5 за миллион входящих и $30 за миллион исходящих токенов,
+                    Terra — $2,5 и $15,
+                    Luna — $1 и $6 соответственно.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Какая модель GPT-5.6 доступна бесплатно в ChatGPT?</span>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    На бесплатном тарифе доступны Terra и Luna, флагманская Sol открывается только на платных тарифах от Plus и выше.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Можно ли пользоваться GPT-5.6 в России?</span>
+                    <span class="toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Официально ChatGPT в России не работает, доступ возможен через VPN с зарубежной оплатой
+                    или через российские сервисы-агрегаторы с оплатой в рублях.
+                </div>
+            </div>
+
+            <!-- ===== ВЫВОДЫ ===== -->
             <h2>Выводы: стоит ли следить за GPT-5.6</h2>
             <p>
-                Появление <strong>GPT-5.6 Sol, Terra и Luna</strong> стало не просто очередным обновлением OpenAI.
-                Компания предложила новый подход к использованию искусственного интеллекта, где пользователь может выбирать модель под конкретную задачу, а не переплачивать за универсальное решение.
+                Появление <strong>GPT-5.6 Sol, Terra и Luna</strong> — это не просто смена цифры в названии.
+                OpenAI предложила регулятор глубины рассуждений, мультиагентный режим Ultra и три модели с разной ценой
+                под разные сценарии — от сложных агентных задач до массовой автоматизации.
+                Похожие обновления почти одновременно выпустили и другие лидеры рынка ИИ, так что конкуренция в ближайшие
+                месяцы будет разворачиваться не только вокруг качества моделей, но и вокруг цены и скорости решения реальных задач.
             </p>
             <ul>
-                <li>Для разработчиков это означает более гибкое управление затратами и новые возможности при создании ИИ-приложений.</li>
+                <li>Для разработчиков — более гибкое управление затратами и новые возможности при создании ИИ-приложений.</li>
                 <li>Для бизнеса — доступ к мощным инструментам автоматизации по более низкой цене.</li>
                 <li>Для пользователей ChatGPT — более широкий выбор и постепенное появление новых функций в привычном интерфейсе.</li>
             </ul>
-            <p>
-                Если первые результаты независимых тестов подтвердятся, сегодняшний релиз вполне может стать началом нового этапа развития рынка, где ключевую роль будут играть не только возможности моделей, но и эффективность их практического применения.
-            </p>
 
-            <!-- Форма комментариев -->
-            <div class="comment-form">
-                <h3>Оставить комментарий</h3>
+            <!-- ===== ФОРМА КОММЕНТАРИЕВ ===== -->
+            <div class="comment-form" style="background:white; border:1px solid #ddd; border-radius:8px; padding:20px; margin:30px 0;">
+                <h3 style="margin-top:0;">Оставить комментарий</h3>
                 <p>Задавайте вопросы, делитесь опытом или предложениями</p>
                 <form action="#" method="post">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
-                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
-                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
-                    <button type="submit">Отправить комментарий</button>
+                    <input type="text" name="name" placeholder="Ваше имя" required style="width:100%; padding:10px; margin:10px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:1em;">
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required style="width:100%; padding:10px; margin:10px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:1em;">
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required style="width:100%; padding:10px; margin:10px 0; border:1px solid #ddd; border-radius:4px; box-sizing:border-box; font-family:inherit; font-size:1em;"></textarea>
+                    <button type="submit" style="background-color:#3498db; color:white; border:none; padding:12px 24px; border-radius:4px; cursor:pointer; font-size:1em; width:100%; max-width:200px;">Отправить</button>
                 </form>
-                <p>Все комментарии проходят модерацию перед публикацией.</p>
+                <p style="font-size:0.9em; color:#666; margin-top:15px;">Все комментарии проходят модерацию перед публикацией.</p>
             </div>
 
         </article>
@@ -593,7 +1141,7 @@
         <p>© 2023-2026 Мой Блог. Все материалы защищены.</p>
     </footer>
 
-    <!-- Yandex.Metrika counter -->
+    <!-- ===== ЯНДЕКС МЕТРИКА (из образца) ===== -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){
             m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -607,61 +1155,26 @@
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
     </noscript>
-    <!-- /Yandex.Metrika counter -->
 
-    <script type="text/javascript">
-    var delay_popup = 16000;
-    setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
-</script>
+    <!-- ===== СКРИПТЫ ===== -->
+    <script>
+        // Поп-ап
+        var delay_popup = 16000;
+        setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
 
-
-<div id="bg_popup1">
-  <div id="popup1">
-<h3 class="hi6">AI Аниматор!</h3>
-<h3 class="hi6">Попробуй новую нейронку - AI - Аниматор!</h3>
-<div style="text-align: center;">
-<a style="align: center;padding:10px 25px; cursor: pointer; background-image:
-linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059)
-0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1)
-rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px;
-font-family: Arial, Helvetica, sans-serif; font-size: 14px;
-font-weight: bold; font-style: italic; text-decoration: none;
-height: 54px; width: 100%; margin: auto;"
-href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank"
-rel="noopener">Попробывать!</a></div>
-<a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none'; return false;">X</a>
-</div>
-</div>
-
-<div id='follow1'>
-<div class="hidemobile">
-
-<a style="align: center;padding:10px 25px; cursor: pointer; background-image:
-linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059)
-0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1)
-rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px;
-font-family: Arial, Helvetica, sans-serif; font-size: 14px;
-font-weight: bold; font-style: italic; text-decoration: none;
-height: 54px; width: 100%; margin: auto;"
-href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank"
-rel="noopener">Удобный доступ к зарубежным нейросетям!</a></p>
-</div>
-</div>
-
-<div id='follow2'>
-
-<div class="showmobile">
-<a style="align: center;padding:10px 25px; cursor: pointer; background-image:
-linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059)
-0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1)
-rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px;
-font-family: Arial, Helvetica, sans-serif; font-size: 14px;
-font-weight: bold; font-style: italic; text-decoration: none;
-height: 54px; width: 100%; margin: auto;"
-href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank"
-rel="noopener">Удобный доступ к зарубежным нейросетям!</a></p>
-</div>
-</div>
+        // FAQ аккордеон
+        function toggleFAQ(el) {
+            var answer = el.nextElementSibling;
+            var toggle = el.querySelector('.toggle');
+            if (answer.classList.contains('open')) {
+                answer.classList.remove('open');
+                toggle.textContent = '+';
+            } else {
+                answer.classList.add('open');
+                toggle.textContent = '−';
+            }
+        }
+    </script>
 
 </body>
 </html>
