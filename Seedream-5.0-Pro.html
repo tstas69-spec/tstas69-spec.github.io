@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Seedream 5.0 Pro — как получить доступ из России</title>
+    <meta name="description" content="4 способа получить доступ к Seedream 5.0 Pro из России: Dreamina, API, Telegram-бот и агрегаторы. Сравнение с конкурентами.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* === ПОЛНЫЙ КОМПЛЕКТ СТИЛЕЙ === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            padding-top: 100px;
+            background-color: #f9f9f9;
+        }
+        main {
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin-top: 70px;
+            }
+            body {
+                padding-top: 130px;
+            }
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .step-label {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            background: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card strong, .block strong {
+            color: #2c3e50;
+        }
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* === Стили для таблиц === */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            min-width: 500px;
+        }
+        thead {
+            background: #2c3e50;
+            color: white;
+        }
+        th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background-color: #f5f9ff;
+        }
+        .model-name {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .badge {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #2c3e50;
+            white-space: nowrap;
+        }
+        .badge-yes {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .badge-no {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-api {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* === Стили для иконок в таблице === */
+        .icon-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .icon-group .icon {
+            font-size: 1.3em;
+            line-height: 1;
+        }
+        .icon-group .label {
+            font-size: 0.85em;
+            background: #f1f4fa;
+            padding: 2px 10px;
+            border-radius: 30px;
+            color: #1e2a44;
+        }
+
+        /* === Стили для карточек-способов === */
+        .methods-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .method-card {
+            background: white;
+            border: 1px solid #e0e7ef;
+            border-radius: 12px;
+            padding: 16px 18px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .method-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        }
+        .method-card .method-icon {
+            font-size: 1.8em;
+            margin-bottom: 6px;
+        }
+        .method-card .method-name {
+            font-weight: 700;
+            font-size: 1.05em;
+            color: #2c3e50;
+        }
+        .method-card .method-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 8px 0 6px;
+        }
+        .method-card .method-tags span {
+            font-size: 0.78em;
+            padding: 2px 10px;
+            border-radius: 30px;
+            background: #f1f4fa;
+            color: #2c3e50;
+        }
+        .method-card .method-tags .tag-yes {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .method-card .method-tags .tag-no {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .method-card .method-tags .tag-rf {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        .method-card .method-desc {
+            font-size: 0.92em;
+            color: #555;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+        @media (max-width: 600px) {
+            .methods-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .method-card {
+                padding: 12px 14px;
+            }
+            .method-card .method-icon {
+                font-size: 1.4em;
+            }
+            .method-card .method-name {
+                font-size: 0.95em;
+            }
+        }
+        @media (max-width: 420px) {
+            .methods-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === Стили для графика цен === */
+        .chart-area {
+            margin: 20px 0 16px;
+        }
+        .chart-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .chart-row .label {
+            width: 160px;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95em;
+            flex-shrink: 0;
+        }
+        .chart-row .label small {
+            font-weight: 400;
+            color: #7a8aa5;
+            font-size: 0.8em;
+            display: block;
+        }
+        .chart-bar-bg {
+            flex: 1;
+            height: 30px;
+            background: #eef2f8;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 14px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: white;
+            min-width: 40px;
+        }
+        .bar-pro { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+        .bar-nano { background: linear-gradient(90deg, #059669, #34d399); }
+        .bar-gpt { background: linear-gradient(90deg, #dc2626, #f87171); }
+        .bar-lite { background: linear-gradient(90deg, #7c8ba0, #a8b8cf); }
+
+        .chart-row .value {
+            width: 80px;
+            text-align: right;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        .chart-row .value small {
+            font-weight: 400;
+            font-size: 0.7em;
+            color: #7a8aa5;
+        }
+
+        .note {
+            background: #f8faff;
+            border: 1px dashed #d0d9e8;
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 0.9em;
+            color: #3d4e6b;
+            margin: 16px 0;
+        }
+        .note strong {
+            color: #2c3e50;
+        }
+
+        /* === Радарная матрица Pro vs Lite === */
+        .radar-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 16px 0 8px;
+        }
+        .radar-item {
+            background: #f8faff;
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid #3498db;
+        }
+        .radar-item .criteria {
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.92em;
+        }
+        .radar-item .dots {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+        .radar-item .dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .dot-pro {
+            background: #2563eb;
+        }
+        .dot-lite {
+            background: #94a3b8;
+        }
+        .dot-empty {
+            background: #e2e8f0;
+        }
+        .radar-legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 8px;
+        }
+        .radar-legend span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .radar-legend .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        @media (max-width: 500px) {
+            .radar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === Плитки кейсов === */
+        .cases-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin: 16px 0;
+        }
+        .case-item {
+            background: white;
+            border: 1px solid #e0e7ef;
+            border-radius: 10px;
+            padding: 14px 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+        .case-item .case-icon {
+            font-size: 1.6em;
+            margin-bottom: 2px;
+        }
+        .case-item .case-title {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.98em;
+        }
+        .case-item .case-desc {
+            font-size: 0.88em;
+            color: #555;
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        @media (max-width: 500px) {
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === График пути доступа === */
+        .path-flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 6px 4px;
+            margin: 16px 0 10px;
+            padding: 14px 10px;
+            background: #f1f8ff;
+            border-radius: 10px;
+            border: 1px solid #dbeafe;
+        }
+        .path-step {
+            background: white;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.85em;
+            font-weight: 500;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .path-arrow {
+            color: #94a3b8;
+            font-size: 1.1em;
+            font-weight: 300;
+        }
+        .path-label {
+            font-size: 0.75em;
+            color: #64748b;
+            width: 100%;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        /* === Mobile optimization === */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .pic {
+                margin: 15px 0;
+            }
+            .card, .block {
+                padding: 12px 15px;
+            }
+            .comment-form {
+                padding: 15px;
+            }
+            .comment-form button {
+                max-width: 100%;
+            }
+            ul, ol {
+                padding-left: 18px;
+            }
+            .toc {
+                padding: 12px 15px;
+            }
+            .table-wrapper {
+                border-radius: 6px;
+            }
+            table {
+                font-size: 0.85em;
+                min-width: 400px;
+            }
+            th, td {
+                padding: 10px 12px;
+            }
+            .chart-row {
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+            .chart-row .label {
+                width: 100%;
+                font-size: 0.9em;
+            }
+            .chart-row .label small {
+                display: inline;
+                margin-left: 6px;
+            }
+            .chart-row .value {
+                width: auto;
+                text-align: left;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+            table {
+                font-size: 0.78em;
+                min-width: 320px;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+
+        /* === Стили для баннеров follow1 и follow2 === */
+        #follow1,
+        #follow2 {
+            background-color: #e6eeee;
+            z-index: 199;
+            top: 10px;
+            position: fixed;
+        }
+
+        /* === Стили для скрытия/показа баннеров === */
+        .hidemobile {
+            visibility: visible;
+            display: block;
+        }
+        .showmobile {
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .hidemobile {
+                visibility: hidden;
+                display: none;
+            }
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            .showmobile {
+                display: inline;
+            }
+        }
+
+        /* === Стили для затемненного фона поп-апа === */
+        #bg_popup1 {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* === Стили для окна поп-апа === */
+        #popup1 {
+            background: #204a55;
+            width: 480px;
+            height: 250px;
+            margin: 5% auto;
+            padding: 5px 20px 13px;
+            border: 2px solid #1ba600;
+            position: relative;
+            -webkit-box-shadow: 0 0 20px #000;
+            -moz-box-shadow: 0 0 20px #000;
+            box-shadow: 0 0 20px #000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+        @media all and (max-width: 480px) {
+            #popup1 {
+                width: 100%;
+            }
+        }
+
+        /* === Стили для кнопки закрытия === */
+        .close1 {
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 1px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            line-height: 28px;
+            color: #fff;
+            background: #1ba600;
+            cursor: pointer;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+            text-decoration: none;
+        }
+        .close1:hover {
+            background-color: #f30;
+        }
+
+        /* === Стили для заголовков поп-апа === */
+        .hi6 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            padding: 5px 0;
+            line-height: 1.3;
+        }
+
+        /* ===== НОВЫЕ СТИЛИ ДЛЯ ФУТЕРА (ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ) ===== */
+        .footer-privacy {
+            background-color: #000000;
+            color: #A9A9A9;
+            padding: 20px 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .footer-privacy a {
+            color: #D3D3D3;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .footer-privacy a:hover {
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .footer-privacy {
+                font-size: 13px;
+                padding: 15px 10px;
+            }
+        }
+
+        /* ===== СТИЛИ ДЛЯ COOKIE-БАННЕРА ===== */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: center;
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+        #cookie-banner span {
+            display: inline-block;
+        }
+        #cookie-banner a {
+            color: #4fc3f7;
+            text-decoration: underline;
+        }
+        #cookie-banner a:hover {
+            color: #81d4fa;
+        }
+        #cookie-banner button {
+            margin-left: 0;
+            padding: 6px 18px;
+            background-color: #4fc3f7;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            flex-shrink: 0;
+            transition: background-color 0.2s;
+        }
+        #cookie-banner button:hover {
+            background-color: #81d4fa;
+        }
+        @media (max-width: 600px) {
+            #cookie-banner {
+                font-size: 13px;
+                padding: 10px 12px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            #cookie-banner button {
+                width: 100%;
+                max-width: 200px;
+                padding: 8px;
+            }
+        }
+
+        /* === Дополнительные стили === */
+        .publish-date {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .highlight-box {
+            background: #f0f7ff;
+            border-left: 4px solid #2563eb;
+            padding: 12px 16px;
+            border-radius: 0 6px 6px 0;
+            margin: 16px 0;
+        }
+        .text-full {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <!-- ===== ЗАГОЛОВОК СТАТЬИ ===== -->
+            <h1>Seedream 5.0 Pro — как получить доступ из России</h1>
+            <span class="publish-date">📅 Обновлено: 19 июля 2026</span>
+            <p class="lead">
+                Seedream 5.0 Pro — новая флагманская модель ByteDance для генерации и редактирования изображений — за неделю с релиза обросла десятками обзоров, но почти никто не написал внятно, как её вообще запустить из России. Разбираю четыре рабочих варианта — от официального сайта до Telegram-бота с оплатой рублёвой картой, а заодно смотрю, чем Pro-версия отличается от бесплатной Lite и оправдывает ли она цену.
+            </p>
+
+            <!-- ===== ГРАФИК ПУТИ ДОСТУПА ===== -->
+            <div class="path-flow">
+                <span class="path-step">🌐 Dreamina — официальная платформа ByteDance</span>
+                <span class="path-arrow">→</span>
+                <span class="path-step">⚙️ API через BytePlus / fal.ai</span>
+                <span class="path-arrow">→</span>
+                <span class="path-step">🤖 Telegram и сайт SYNTX.AI</span>
+                <span class="path-arrow">→</span>
+                <span class="path-step">📦 Российские нейросети-агрегаторы</span>
+                <span class="path-label">Сложность доступа ↑ / Доступность из РФ ↓</span>
+            </div>
+
+            <!-- ===== ОГЛАВЛЕНИЕ ===== -->
+            <div class="toc">
+                <strong>📑 Содержание</strong>
+                <ol>
+                    <li><a href="#what-can">Что умеет Seedream 5.0 Pro</a></li>
+                    <li><a href="#pro-vs-lite">Pro или Lite — в чём разница</a></li>
+                    <li><a href="#methods">4 способа доступа</a></li>
+                    <li><a href="#competitors">Seedream 5.0 Pro и конкуренты — что выгоднее</a></li>
+                    <li><a href="#cases">Где это реально пригождается</a></li>
+                    <li><a href="#faq">Частые вопросы</a></li>
+                </ol>
+            </div>
+
+            <!-- ===== ЧТО УМЕЕТ ===== -->
+            <h2 id="what-can">Что умеет Seedream 5.0 Pro</h2>
+            <p>Модель вышла 8 июля 2026 года и возглавила линейку Seedream от исследовательского подразделения ByteDance Seed. Из того, что реально отличает её от рядового генератора изображений:</p>
+            <ul>
+                <li><strong>разбивает готовую картинку на до 20 независимых слоёв</strong> — фон, объект, текст, декор — с сохранением прозрачности, каждый слой можно перетаскивать и масштабировать отдельно</li>
+                <li><strong>редактирует по точке, лассо или наброску</strong>, не перегенерируя весь кадр целиком</li>
+                <li><strong>рендерит текст на 14–15 языках</strong>, включая русский и арабский с правильным направлением письма справа налево</li>
+                <li><strong>собирает плотную инфографику</strong> — графики, таблицы, схемы — в один связный макет</li>
+                <li><strong>выдаёт разрешение до 2K</strong>, местами растягивается до 3K</li>
+                <li><strong>совместима как исходный кадр для видеогенерации</strong> в Seedance 2.0</li>
+            </ul>
+            <div class="highlight-box">
+                <strong>💡 Суть:</strong> это уже не «нарисуй мне кота», а рабочий инструмент для тех, кто собирает макеты руками — дизайнеров, маркетологов, e-commerce.
+            </div>
+
+            <!-- ===== PRO VS LITE С РАДАРОМ ===== -->
+            <h2 id="pro-vs-lite">Pro или Lite — в чём разница</h2>
+            <p>Seedream 5.0 Lite вышла раньше, в феврале, и рассчитана на быстрые простые генерации без глубокого редактирования. Pro — это рабочая лошадка для сложных сцен: слои, точечная правка, плотные макеты. Если нужна одна красивая картинка — хватит Lite. Если нужен файл, который потом ещё дорабатывают в Figma или Photoshop — берите Pro.</p>
+
+            <!-- Радарная матрица Pro vs Lite -->
+            <div class="radar-grid">
+                <div class="radar-item">
+                    <span class="criteria">📐 Слои (до 20 независимых слоёв с сохранением прозрачности)</span>
+                    <div class="dots">
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-lite"></span>
+                    </div>
+                </div>
+                <div class="radar-item">
+                    <span class="criteria">✏️ Точечное редактирование по точке, лассо или наброску</span>
+                    <div class="dots">
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-lite"></span>
+                        <span class="dot dot-lite"></span>
+                    </div>
+                </div>
+                <div class="radar-item">
+                    <span class="criteria">🔤 Текст на 14–15 языках с правильным направлением письма</span>
+                    <div class="dots">
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-lite"></span>
+                    </div>
+                </div>
+                <div class="radar-item">
+                    <span class="criteria">📊 Сборка плотной инфографики (графики, таблицы, схемы)</span>
+                    <div class="dots">
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-lite"></span>
+                    </div>
+                </div>
+                <div class="radar-item">
+                    <span class="criteria">📷 Разрешение до 2K (местами до 3K)</span>
+                    <div class="dots">
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-lite"></span>
+                        <span class="dot dot-lite"></span>
+                    </div>
+                </div>
+                <div class="radar-item">
+                    <span class="criteria">⚡ Скорость генерации (быстрые простые генерации)</span>
+                    <div class="dots">
+                        <span class="dot dot-lite"></span>
+                        <span class="dot dot-lite"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                        <span class="dot dot-pro"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="radar-legend">
+                <span><span class="dot dot-pro"></span> Pro (сильнее)</span>
+                <span><span class="dot dot-lite"></span> Lite (слабее)</span>
+            </div>
+
+            <!-- ===== 4 СПОСОБА ДОСТУПА (КАРТОЧКИ) ===== -->
+            <h2 id="methods">Способ 1. Dreamina — официальная платформа ByteDance</h2>
+            <p>Dreamina (dreamina.capcut.com) — официальная творческая площадка ByteDance, там Seedream 5.0 Pro появилась в числе первых. Из России без VPN сайт открывается нестабильно, плюс на оплату обычно нужна иностранная карта. Вариант рабочий, но требует подготовки инфраструктуры — если у вас уже есть VPN и способ оплаты, это самый полный доступ ко всем функциям модели.</p>
+
+            <h2>Способ 2. API через BytePlus ModelArk и Volcano Engine</h2>
+            <p>Для разработчиков Seedream 5.0 Pro доступна под идентификатором seedream-5-0-pro в документации BytePlus ModelArk — поддерживает генерацию по тексту и мультиреференс (от 2 до 10 референсных изображений). Тот же доступ дублируется через fal.ai — там модель уже в каталоге и работает по API-ключу, что удобнее для интеграции в собственные пайплайны без привязки к личному аккаунту ByteDance.</p>
+
+            <h2>Способ 3. Telegram и сайт SYNTX.AI</h2>
+            <p>Из более простых вариантов — сервисы вроде SYNTX.AI, где модель доступна и на сайте, и прямо в Telegram-боте (раздел «Изображения» → Seedream → Seedream 5.0 Pro). Оплата картой РФ, новым пользователям обычно начисляют небольшое количество бесплатных токенов на пробу — удобно, чтобы понять, нужна ли вам вообще Pro-версия, прежде чем платить за подписку где-то ещё.</p>
+
+            <h2>Способ 4. Российские нейросети-агрегаторы</h2>
+            <p>Отдельная категория — каталоги нейросетей, которые оперативно добавляют новые модели с оплатой картой РФ. Seedream 5.0 Pro как свежий релиз туда подключают постепенно, поэтому стоит проверять актуальный список моделей у конкретного агрегатора перед оплатой — не все успевают обновиться сразу после релиза.</p>
+
+            <!-- Карточки-способы (краткая сводка) -->
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">🌐</div>
+                    <div class="method-name">Dreamina — официальная платформа ByteDance</div>
+                    <div class="method-tags">
+                        <span class="tag-no">VPN нужен</span>
+                        <span class="tag-no">Иностранная карта</span>
+                    </div>
+                    
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">⚙️</div>
+                    <div class="method-name">BytePlus / fal.ai (API)</div>
+                    <div class="method-tags">
+                        <span class="tag-yes">VPN обычно не нужен</span>
+                        <span class="tag-rf">Карта / крипто</span>
+                    </div>
+                    
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">🤖</div>
+                    <div class="method-name">SYNTX.AI (сайт и Telegram-бот)</div>
+                    <div class="method-tags">
+                        <span class="tag-yes">VPN не нужен</span>
+                        <span class="tag-rf">Карта РФ</span>
+                    </div>
+                    
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">📦</div>
+                    <div class="method-name">Российские нейросети-агрегаторы</div>
+                    <div class="method-tags">
+                        <span class="tag-yes">VPN не нужен</span>
+                        <span class="tag-rf">Карта РФ</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- ===== ТАБЛИЦА 1: СРАВНЕНИЕ СПОСОБОВ ===== -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Способ</th>
+                            <th>Нужен VPN</th>
+                            <th>Оплата</th>
+                            <th>Для кого</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Dreamina</strong> (официально)</td>
+                            <td><span class="badge badge-no">Да</span></td>
+                            <td>Иностранная карта</td>
+                            <td>Полный функционал</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BytePlus / fal.ai</strong> (API)</td>
+                            <td><span class="badge badge-yes">Обычно нет</span></td>
+                            <td>Карта / крипто</td>
+                            <td>Разработчики</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SYNTX.AI</strong> (сайт, Telegram)</td>
+                            <td><span class="badge badge-yes">Нет</span></td>
+                            <td>Карта РФ</td>
+                            <td>Быстрый старт без подготовки</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Российские агрегаторы</strong></td>
+                            <td><span class="badge badge-yes">Нет</span></td>
+                            <td>Карта РФ</td>
+                            <td>Разовые задачи</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== КОНКУРЕНТЫ С ГИСТОГРАММОЙ ===== -->
+            <h2 id="competitors">Seedream 5.0 Pro и конкуренты — что выгоднее</h2>
+            <p>По открытым данным на старте продаж Seedream 5.0 Pro заметно дешевле прямых конкурентов при сопоставимом качестве:</p>
+
+            <!-- Гистограмма цен -->
+            <div class="chart-area">
+                <div class="chart-row">
+                    <div class="label">Seedream 5.0 Pro <small>до 2K (растяжка до 3K), до 20 слоёв, 14–15 языков</small></div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill bar-pro" style="width: 15%;">$0.045</div>
+                    </div>
+                    <div class="value">$0.045</div>
+                </div>
+                <div class="chart-row">
+                    <div class="label">Nano Banana 2 (Google) <small>сопоставимое разрешение, без слоёв</small></div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill bar-nano" style="width: 50%;">+11–55%</div>
+                    </div>
+                    <div class="value">$0.05–0.07</div>
+                </div>
+                <div class="chart-row">
+                    <div class="label">GPT Image 2 (OpenAI) <small>сопоставимое разрешение, без слоёв</small></div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill bar-gpt" style="width: 100%;">>4×</div>
+                    </div>
+                    <div class="value">$0.19+</div>
+                </div>
+                <div class="chart-row">
+                    <div class="label">Seedream 5.0 Lite <small>до 4K, без слоёв и глубокого редактирования</small></div>
+                    <div class="chart-bar-bg">
+                        <div class="chart-bar-fill bar-lite" style="width: 10%;">дешевле</div>
+                    </div>
+                    <div class="value">~$0.02</div>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>💡 Пояснение:</strong> Разброс в цене против Nano Banana 2 объясняется разрешением: чем выше запрошенное разрешение, тем меньше разница. У GPT Image 2 разница почти всегда ощутимая — за счёт того, что там платят за каждое референсное изображение, а у Seedream первое референсное включено бесплатно.
+            </div>
+
+            <!-- ===== ТАБЛИЦА 2: СРАВНЕНИЕ МОДЕЛЕЙ ===== -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Модель</th>
+                            <th>Разрешение</th>
+                            <th>Слои</th>
+                            <th>Языки</th>
+                            <th>Цена за изображение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="model-name">Seedream 5.0 Pro</td>
+                            <td>до 2K (растяжка до 3K)</td>
+                            <td>до 20</td>
+                            <td>14–15</td>
+                            <td><strong>$0.045</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Nano Banana 2 (Google)</td>
+                            <td>сопоставимо</td>
+                            <td>нет</td>
+                            <td>меньше</td>
+                            <td>на 11–55% дороже</td>
+                        </tr>
+                        <tr>
+                            <td>GPT Image 2 (OpenAI)</td>
+                            <td>сопоставимо</td>
+                            <td>нет</td>
+                            <td>меньше</td>
+                            <td>дороже более чем в 4 раза</td>
+                        </tr>
+                        <tr>
+                            <td>Seedream 5.0 Lite</td>
+                            <td>до 4K</td>
+                            <td>нет</td>
+                            <td>меньше</td>
+                            <td>дешевле, но без глубокого редактирования</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== ГДЕ ПРИГОЖДАЕТСЯ (ПЛИТКИ) ===== -->
+            <h2 id="cases">Где это реально пригождается</h2>
+
+            <div class="cases-grid">
+                <div class="case-item">
+                    <div class="case-icon">📊</div>
+                    <div class="case-title">Инфографика с данными</div>
+                    <div class="case-desc">Модель умеет держать в одном кадре график, таймлайн и фотореалистичный элемент — например, в демо ByteDance это показано на карточке «Антарктическая станция», где совмещены линейный график, столбчатая диаграмма и реалистичный вид объекта.</div>
+                </div>
+                <div class="case-item">
+                    <div class="case-icon">✏️</div>
+                    <div class="case-title">Лендинги от руки</div>
+                    <div class="case-desc">Рисуете черновой макет на бумаге или в редакторе — модель собирает из наброска готовый цифровой дизайн.</div>
+                </div>
+                <div class="case-item">
+                    <div class="case-icon">🌍</div>
+                    <div class="case-title">Мультиязычные баннеры и упаковка</div>
+                    <div class="case-desc">Один запрос — и текст на нескольких языках с корректной типографикой, без отдельного прогона через переводчика и вёрстку под каждый язык.</div>
+                </div>
+                <div class="case-item">
+                    <div class="case-icon">🎬</div>
+                    <div class="case-title">Кейфреймы для видео</div>
+                    <div class="case-desc">Сгенерированное изображение можно сразу передать в Seedance 2.0 для анимации — удобно для рекламных роликов и карточек товара.</div>
+                </div>
+            </div>
+
+            <!-- ===== ЧАСТЫЕ ВОПРОСЫ ===== -->
+            <h2 id="faq">Частые вопросы</h2>
+
+            <div class="card">
+                <p><strong>Чем Pro отличается от Lite?</strong><br>
+                Lite — для быстрой генерации одной картинки. Pro — для работы со слоями, точечным редактированием и сложными макетами с текстом.</p>
+            </div>
+            <div class="card">
+                <p><strong>Сколько стоит генерация?</strong><br>
+                Ориентировочно $0.045 за изображение Seedream 5.0 Pro при использовании через API — дешевле GPT Image 2 более чем в 4 раза.</p>
+            </div>
+            <div class="card">
+                <p><strong>Можно ли работать без VPN?</strong><br>
+                Да — через Telegram-боты и российские агрегаторы, если не нужен именно официальный сайт Dreamina.</p>
+            </div>
+            <div class="card">
+                <p><strong>Подходит ли для коммерческого использования?</strong><br>
+                Да, Seedream 5.0 Pro прямо позиционируется ByteDance как инструмент для дизайна, маркетинга и продакшена, а не для разовых картинок.</p>
+            </div>
+
+            <!-- ===== ФОРМА КОММЕНТАРИЕВ ===== -->
+            <div class="comment-form">
+                <h3>💬 Оставить комментарий</h3>
+                <p>Задавайте вопросы, делитесь опытом или предложениями</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
+                    <button type="submit">Отправить комментарий</button>
+                </form>
+                <p>Все комментарии проходят модерацию перед публикацией.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- ===== ФУТЕР С ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ ===== -->
+    <footer class="footer-privacy">
+        <div style="font-size: 14px; color: #A9A9A9; line-height: 1.5;">
+            Отправляя формы заявки,<br />
+            вы подтверждаете согласие на обработку<br />
+            Администрацией сайта ваших персональных данных:<br />
+            имени и e-mail.<br />
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank" 
+               style="color: #D3D3D3; text-decoration: underline; display: inline-block; margin-top: 5px;">
+                Политика конфиденциальности
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===== COOKIE-БАННЕР ===== -->
+    <div id="cookie-banner">
+        <span>
+            Мы используем cookie для улучшения работы сайта. Продолжая просмотр, вы соглашаетесь с 
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank">политикой конфиденциальности</a>.
+        </span>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'">
+            Принять и закрыть
+        </button>
+    </div>
+
+    <!-- ===== YANDEX.METRIKA ===== -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <!-- ===== СКРИПТ ПОП-АПА ===== -->
+    <script type="text/javascript">
+        var delay_popup = 16000;
+        setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
+    </script>
+
+    <!-- ===== ПОП-АП ===== -->
+    <div id="bg_popup1">
+        <div id="popup1">
+            <h3 class="hi6">AI Аниматор!</h3>
+            <h3 class="hi6">Попробуй новую нейронку - AI - Аниматор!</h3>
+            <div style="text-align: center;">
+                <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+                   href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank" rel="noopener">Попробывать!</a>
+            </div>
+            <a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none'; return false;">X</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW1 (десктоп) ===== -->
+    <div id='follow1'>
+        <div class="hidemobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">Удобный доступ к зарубежным нейросетям!</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW2 (мобильный) ===== -->
+    <div id='follow2'>
+        <div class="showmobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">Удобный доступ к зарубежным нейросетям!</a>
+        </div>
+    </div>
+
+</body>
+</html>
