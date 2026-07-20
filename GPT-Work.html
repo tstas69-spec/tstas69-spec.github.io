@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>7 возможностей GPT Work после релиза</title>
+    <meta name="description" content="GPT Work — новый режим ChatGPT, превращающий чат-бота в автономного облачного агента. 7 возможностей после релиза.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* === БАЗОВЫЕ СТИЛИ ИЗ ШАБЛОНА === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            padding-top: 100px;
+            background-color: #f9f9f9;
+        }
+        main {
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin-top: 70px;
+            }
+            body {
+                padding-top: 130px;
+            }
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .step-label {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            background: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card strong, .block strong {
+            color: #2c3e50;
+        }
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* === Стили для таблиц === */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            min-width: 500px;
+        }
+        thead {
+            background: #2c3e50;
+            color: white;
+        }
+        th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background-color: #f5f9ff;
+        }
+        .model-name {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .badge {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #2c3e50;
+            white-space: nowrap;
+        }
+        .badge-leak {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-confirmed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        /* === Стили для иконок в таблице === */
+        .icon-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .icon-group .icon {
+            font-size: 1.3em;
+            line-height: 1;
+        }
+        .icon-group .label {
+            font-size: 0.85em;
+            background: #f1f4fa;
+            padding: 2px 10px;
+            border-radius: 30px;
+            color: #1e2a44;
+        }
+
+        /* === Стили для графиков (из шаблона, но адаптированы) === */
+        .chart-area {
+            margin: 20px 0 16px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px 15px;
+            border: 1px solid #ddd;
+        }
+        .chart-area .chart-title {
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 18px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        .chart-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .chart-row .label {
+            width: 150px;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95em;
+            flex-shrink: 0;
+        }
+        .chart-row .label small {
+            font-weight: 400;
+            color: #7a8aa5;
+            font-size: 0.8em;
+            display: block;
+        }
+        .chart-bar-group {
+            flex: 1;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .chart-bar-bg {
+            flex: 1;
+            height: 26px;
+            background: #eef2f8;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+            position: relative;
+        }
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            font-size: 0.75em;
+            font-weight: 600;
+            color: white;
+            min-width: 30px;
+            transition: width 0.3s;
+        }
+        .bar-chatgpt { background: linear-gradient(90deg, #6c8ebf, #4a7db5); }
+        .bar-chatgpt-work { background: linear-gradient(90deg, #10a37f, #34d399); }
+        .bar-chatgpt-work-alt { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+
+        .chart-row .value {
+            width: 70px;
+            text-align: right;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        .chart-row .value small {
+            font-weight: 400;
+            font-size: 0.7em;
+            color: #7a8aa5;
+        }
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: #2c3e50;
+        }
+        .chart-legend span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .legend-color {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+        }
+        .legend-chatgpt { background: #4a7db5; }
+        .legend-chatgpt-work { background: #34d399; }
+
+        @media (max-width: 600px) {
+            .chart-row {
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+            .chart-row .label {
+                width: 100%;
+                font-size: 0.9em;
+            }
+            .chart-row .label small {
+                display: inline;
+                margin-left: 6px;
+            }
+            .chart-row .value {
+                width: auto;
+                text-align: left;
+            }
+            .chart-bar-group {
+                flex-wrap: wrap;
+            }
+            .chart-bar-bg {
+                height: 22px;
+            }
+        }
+
+        /* === Стили для схемы Plan Mode === */
+        .plan-scheme {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 25px 0;
+            background: white;
+            border-radius: 8px;
+            padding: 20px 10px;
+            border: 1px solid #ddd;
+            gap: 8px;
+        }
+        .plan-step {
+            flex: 1 1 80px;
+            text-align: center;
+            padding: 8px 4px;
+            background: #f8faff;
+            border-radius: 8px;
+            border: 1px solid #e0e7f0;
+            min-width: 70px;
+        }
+        .plan-step .step-num {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-bottom: 4px;
+        }
+        .plan-step .step-label {
+            font-weight: 600;
+            font-size: 0.85em;
+            color: #2c3e50;
+            display: block;
+        }
+        .plan-step .step-desc {
+            font-size: 0.75em;
+            color: #666;
+            display: block;
+        }
+        .plan-arrow {
+            font-size: 1.8em;
+            color: #b0c4de;
+            flex-shrink: 0;
+        }
+        @media (max-width: 600px) {
+            .plan-scheme {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .plan-arrow {
+                transform: rotate(90deg);
+                margin: 0;
+            }
+        }
+
+        /* === Стили для карты интеграций === */
+        .integration-map {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            padding: 20px 15px;
+            border: 1px solid #ddd;
+        }
+        .integration-center {
+            background: #2c3e50;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1em;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex: 0 0 auto;
+        }
+        .integration-item {
+            background: #f1f8ff;
+            border-radius: 30px;
+            padding: 8px 16px;
+            font-size: 0.9em;
+            border: 1px solid #d0e0f0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        .integration-item .icon {
+            font-size: 1.3em;
+        }
+        @media (max-width: 600px) {
+            .integration-map {
+                gap: 10px;
+            }
+            .integration-item {
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+        }
+
+        /* === Остальные стили из шаблона (баннеры, поп-ап, футер) === */
+        #follow1,
+        #follow2 {
+            background-color: #e6eeee;
+            z-index: 199;
+            top: 10px;
+            position: fixed;
+        }
+        .hidemobile {
+            visibility: visible;
+            display: block;
+        }
+        .showmobile {
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .hidemobile {
+                visibility: hidden;
+                display: none;
+            }
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            .showmobile {
+                display: inline;
+            }
+        }
+        #bg_popup1 {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        #popup1 {
+            background: #204a55;
+            width: 480px;
+            height: 250px;
+            margin: 5% auto;
+            padding: 5px 20px 13px;
+            border: 2px solid #1ba600;
+            position: relative;
+            -webkit-box-shadow: 0 0 20px #000;
+            -moz-box-shadow: 0 0 20px #000;
+            box-shadow: 0 0 20px #000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+        @media all and (max-width: 480px) {
+            #popup1 {
+                width: 100%;
+            }
+        }
+        .close1 {
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 1px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            line-height: 28px;
+            color: #fff;
+            background: #1ba600;
+            cursor: pointer;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+            text-decoration: none;
+        }
+        .close1:hover {
+            background-color: #f30;
+        }
+        .hi6 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            padding: 5px 0;
+            line-height: 1.3;
+        }
+        .featured-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 16px 0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .img-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: -8px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .footer-privacy {
+            background-color: #000000;
+            color: #A9A9A9;
+            padding: 20px 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .footer-privacy a {
+            color: #D3D3D3;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .footer-privacy a:hover {
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .footer-privacy {
+                font-size: 13px;
+                padding: 15px 10px;
+            }
+        }
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: center;
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+        #cookie-banner span {
+            display: inline-block;
+        }
+        #cookie-banner a {
+            color: #4fc3f7;
+            text-decoration: underline;
+        }
+        #cookie-banner a:hover {
+            color: #81d4fa;
+        }
+        #cookie-banner button {
+            margin-left: 0;
+            padding: 6px 18px;
+            background-color: #4fc3f7;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            flex-shrink: 0;
+            transition: background-color 0.2s;
+        }
+        #cookie-banner button:hover {
+            background-color: #81d4fa;
+        }
+        @media (max-width: 600px) {
+            #cookie-banner {
+                font-size: 13px;
+                padding: 10px 12px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            #cookie-banner button {
+                width: 100%;
+                max-width: 200px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <!-- ===== ВСТАВЛЕННЫЙ ТЕКСТ СТАТЬИ (БЕЗ ИЗМЕНЕНИЙ) ===== -->
+            
+
+            <h1>GPT Work: что это и 7 возможностей нового режима ChatGPT</h1>
+
+            <p><strong>GPT Work</strong> — это новый режим ChatGPT, который превращает привычный чат с искусственным интеллектом в автономного облачного агента. Вместо того чтобы отвечать на один вопрос за раз, он способен самостоятельно планировать многоэтапную работу, подключаться к корпоративным сервисам, анализировать документы и продолжать выполнять задачи даже после того, как пользователь закроет браузер или выключит ноутбук.</p>
+
+            <p>Если раньше ChatGPT был скорее умным собеседником, то после выхода GPT Work он сделал заметный шаг в сторону полноценного цифрового помощника. Теперь можно поручить агенту подготовку отчёта, собрать данные из нескольких источников, оформить презентацию или провести анализ информации — и заниматься своими делами, пока работа выполняется в облаке.</p>
+
+            <p>В этой статье разберём, <strong>что такое GPT Work</strong>, как работает новый режим ChatGPT, чем он отличается от обычного чата и какие семь возможностей делают его одним из самых интересных релизов OpenAI в 2026 году.</p>
+
+            <h2>Что такое GPT Work</h2>
+
+            <p>После анонса многие решили, что GPT Work — это очередная языковая модель наподобие <a href="https://tstas69-spec.github.io/gpt-5-6-reliz.html">GPT-5.6 Sol или Terra</a>. На самом деле это не совсем так.</p>
+
+            <p>GPT Work — <strong>не новая модель</strong>, а специальный режим работы ChatGPT, который использует возможности семейства GPT-5.6 для выполнения длительных и сложных задач. Его главное отличие заключается не в качестве ответов, а в принципе взаимодействия с пользователем.</p>
+
+            <p>В обычном чате всё выглядит привычно: вы задаёте вопрос, модель отвечает, после чего ожидает следующую команду.</p>
+
+            <p>В режиме Work процесс становится совсем другим.</p>
+
+            <p>Пользователь формулирует конечную цель, например:</p>
+
+            <p>«Подготовь отчёт по продажам за неделю, используй документы из Google Drive, сообщения из Slack и оформи результат в презентацию.»</p>
+
+            <p>После этого агент самостоятельно начинает работу.</p>
+
+            <p>Типичный процесс выглядит так:</p>
+
+            <p><strong>Постановка задачи → анализ контекста → построение плана → выполнение этапов → проверка результата → готовый документ.</strong></p>
+
+            <p>Во многих случаях вмешательство человека требуется только в самом начале или для подтверждения отдельных действий, связанных с безопасностью.</p>
+
+            <p>Именно поэтому OpenAI называет ChatGPT Work не чатом, а <strong>рабочим агентом</strong>.</p>
+
+            <h2>Чем GPT Work отличается от обычного ChatGPT</h2>
+
+            <p>На первый взгляд интерфейс почти не изменился, однако внутри различия очень серьёзные.</p>
+
+            <!-- Таблица из статьи -->
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Возможность</th>
+                            <th>ChatGPT</th>
+                            <th>GPT Work</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Отвечает на вопросы</td><td>✅</td><td>✅</td></tr>
+                        <tr><td>Выполняет одну команду</td><td>✅</td><td>✅</td></tr>
+                        <tr><td>Сам планирует работу</td><td>❌</td><td>✅</td></tr>
+                        <tr><td>Работает с несколькими сервисами</td><td>Ограниченно</td><td>✅</td></tr>
+                        <tr><td>Выполняет длинные процессы</td><td>❌</td><td>✅</td></tr>
+                        <tr><td>Может работать часами</td><td>❌</td><td>✅</td></tr>
+                        <tr><td>Продолжает работу без пользователя</td><td>❌</td><td>✅</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== ВИЗУАЛИЗАЦИЯ №1: Сравнительная диаграмма (ChatGPT vs ChatGPT Work) ===== -->
+            <div class="chart-area">
+                <div class="chart-title">Сравнение возможностей: ChatGPT и ChatGPT Work</div>
+                <div class="chart-row">
+                    <span class="label">Отвечает на вопросы</span>
+                    <div class="chart-bar-group">
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt" style="width:100%;">1.0</div></div>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt-work" style="width:100%;">1.0</div></div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <span class="label">Выполняет одну команду</span>
+                    <div class="chart-bar-group">
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt" style="width:100%;">1.0</div></div>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt-work" style="width:100%;">1.0</div></div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <span class="label">Сам планирует работу</span>
+                    <div class="chart-bar-group">
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt" style="width:0%;">0</div></div>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt-work" style="width:100%;">1.0</div></div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <span class="label">Работает с несколькими сервисами</span>
+                    <div class="chart-bar-group">
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt" style="width:50%;">0.5</div></div>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt-work" style="width:100%;">1.0</div></div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <span class="label">Выполняет длинные процессы</span>
+                    <div class="chart-bar-group">
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt" style="width:0%;">0</div></div>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt-work" style="width:100%;">1.0</div></div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <span class="label">Может работать часами</span>
+                    <div class="chart-bar-group">
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt" style="width:0%;">0</div></div>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt-work" style="width:100%;">1.0</div></div>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <span class="label">Продолжает работу без пользователя</span>
+                    <div class="chart-bar-group">
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt" style="width:0%;">0</div></div>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-chatgpt-work" style="width:100%;">1.0</div></div>
+                    </div>
+                </div>
+                <div class="chart-legend">
+                    <span><span class="legend-color legend-chatgpt"></span> ChatGPT</span>
+                    <span><span class="legend-color legend-chatgpt-work"></span> ChatGPT Work</span>
+                </div>
+                <div style="font-size:0.85em; color:#666; text-align:center; margin-top:10px;">
+                    * 0 — нет, 0.5 — ограниченно, 1 — полностью поддерживается
+                </div>
+            </div>
+
+            <p>Именно автономность стала главным отличием нового режима.</p>
+
+            <p>Раньше пользователь фактически руководил каждым шагом: задавал вопрос, уточнял детали, просил изменить результат. Теперь можно описать конечную цель, а остальное агент возьмёт на себя.</p>
+
+            <p>Это особенно удобно для задач, которые раньше приходилось разбивать на десятки отдельных запросов.</p>
+
+            <h2>1. ChatGPT Work продолжает работать даже после закрытия ноутбука</h2>
+
+            <p>Самой обсуждаемой особенностью релиза стала возможность выполнять задачи полностью в облаке.</p>
+
+            <p>Раньше любой долгий процесс был жёстко привязан к открытому окну браузера или приложения. Если пользователь закрывал вкладку или выключал компьютер, работа прекращалась.</p>
+
+            <p>Теперь ситуация изменилась.</p>
+
+            <p>После запуска задания вычисления происходят на стороне OpenAI. Это означает, что агент способен продолжать выполнение независимо от состояния компьютера пользователя.</p>
+
+            <p>Например, можно запустить:</p>
+
+            <ul>
+                <li>анализ нескольких сотен документов;</li>
+                <li>подготовку большой презентации;</li>
+                <li>исследование рынка;</li>
+                <li>обработку корпоративной базы знаний;</li>
+                <li>сбор информации сразу из нескольких подключённых сервисов.</li>
+            </ul>
+
+            <p>Пока агент выполняет работу, пользователь может:</p>
+
+            <ul>
+                <li>выключить ноутбук;</li>
+                <li>закрыть приложение;</li>
+                <li>заниматься другими проектами;</li>
+                <li>работать с другими программами.</li>
+            </ul>
+
+            <p>После завершения задачи ChatGPT уведомит о готовом результате.</p>
+
+            <p>На первый взгляд изменение кажется незначительным, однако именно оно превращает ChatGPT из обычного помощника в сервис, который начинает напоминать виртуального сотрудника.</p>
+
+            <p>Для бизнеса это особенно важно. Многие аналитические задачи раньше требовали постоянного присутствия человека возле компьютера. Теперь большая часть подобных процессов может выполняться полностью автономно.</p>
+
+            <h2>2. ChatGPT Work сначала строит план, а потом начинает выполнять задачу</h2>
+
+            <p>Ещё одна важная возможность нового режима — <strong>Plan Mode</strong>.</p>
+
+            <p>Большинство пользователей привыкло к тому, что чат сразу начинает отвечать после получения запроса.</p>
+
+            <p>ChatGPT Work действует иначе.</p>
+
+            <p>Перед запуском он анализирует цель, собирает контекст и составляет последовательность действий.</p>
+
+            <p>Например, если попросить:</p>
+
+            <p>«Подготовь презентацию по рынку электромобилей за первое полугодие.»</p>
+
+            <p>агент не станет сразу создавать слайды.</p>
+
+            <p>Сначала он определит, какие данные понадобятся, какие документы следует изучить, какие источники подключить и в каком порядке выполнять работу.</p>
+
+            <p>Если информации недостаточно, ChatGPT Work задаст уточняющие вопросы.</p>
+
+            <p>Например:</p>
+
+            <ul>
+                <li>какой период анализировать;</li>
+                <li>какие страны учитывать;</li>
+                <li>какой формат презентации нужен;</li>
+                <li>сколько должно быть слайдов;</li>
+                <li>требуется ли добавить диаграммы.</li>
+            </ul>
+
+            <p>После этого пользователь видит сформированный план и может:</p>
+
+            <ul>
+                <li>согласиться с ним;</li>
+                <li>изменить отдельные пункты;</li>
+                <li>убрать ненужные действия;</li>
+                <li>добавить новые требования.</li>
+            </ul>
+
+            <p>Только после подтверждения начинается выполнение.</p>
+
+            <p>Такой подход значительно снижает вероятность ошибок при сложных проектах. Вместо того чтобы исправлять результат после нескольких часов работы, пользователь получает возможность скорректировать логику ещё до запуска процесса.</p>
+
+            <p>На практике именно Plan Mode делает GPT Work заметно удобнее обычного ChatGPT при работе с объёмными задачами. Агент сначала думает о последовательности действий, а уже затем приступает к их выполнению — подход, который ближе к тому, как организуют работу опытные специалисты и проектные команды.</p>
+
+            <!-- ===== ВИЗУАЛИЗАЦИЯ №2: Схема Plan Mode (Chat GPT Work) ===== -->
+            <div class="plan-scheme">
+                <div class="plan-step">
+                    <span class="step-num">1</span>
+                    <span class="step-label">Постановка цели</span>
+                    <span class="step-desc">Формулировка задачи</span>
+                </div>
+                <span class="plan-arrow">→</span>
+                <div class="plan-step">
+                    <span class="step-num">2</span>
+                    <span class="step-label">Сбор контекста</span>
+                    <span class="step-desc">Анализ и уточнение</span>
+                </div>
+                <span class="plan-arrow">→</span>
+                <div class="plan-step" style="background:#e8f4fd; border-color:#3498db;">
+                    <span class="step-num">3</span>
+                    <span class="step-label"><strong>Plan Mode</strong></span>
+                    <span class="step-desc">Построение плана</span>
+                </div>
+                <span class="plan-arrow">→</span>
+                <div class="plan-step">
+                    <span class="step-num">4</span>
+                    <span class="step-label">Подтверждение</span>
+                    <span class="step-desc">Корректировка</span>
+                </div>
+                <span class="plan-arrow">→</span>
+                <div class="plan-step">
+                    <span class="step-num">5</span>
+                    <span class="step-label">Выполнение</span>
+                    <span class="step-desc">В облаке автономно</span>
+                </div>
+            </div>
+
+            <h2>3. GPT Work подключается к Google Drive, Slack и другим сервисам</h2>
+
+            <p>Ещё недавно главным ограничением ChatGPT было то, что он работал преимущественно с информацией, которую пользователь вводил вручную. Если нужно было собрать данные из корпоративного хранилища, переписки или CRM, приходилось самостоятельно копировать документы и загружать их в чат.</p>
+
+            <p>Chat GPT Work решает эту проблему с помощью системы коннекторов.</p>
+
+            <p>После подключения необходимых сервисов агент может самостоятельно получать данные из внешних источников, анализировать их и использовать в рамках одной задачи.</p>
+
+            <p>На момент релиза поддерживаются десятки популярных сервисов, а каталог интеграций насчитывает более тысячи приложений.</p>
+
+            <p>Среди наиболее востребованных:</p>
+
+            <ul>
+                <li>Google Drive;</li>
+                <li>Gmail;</li>
+                <li>Google Calendar;</li>
+                <li>Slack;</li>
+                <li>Microsoft Teams;</li>
+                <li>Microsoft 365;</li>
+                <li>Dropbox;</li>
+                <li>корпоративные CRM;</li>
+                <li>внутренние базы знаний;</li>
+                <li>другие подключаемые сервисы через каталог интеграций.</li>
+            </ul>
+
+            <p>Например, руководитель проекта может поставить задачу:</p>
+
+            <p>«Проанализируй переписку команды за неделю в Slack, сравни её с задачами из документов Google Drive и подготовь итоговую презентацию для совещания.»</p>
+
+            <p>GPT Work самостоятельно получает необходимые данные, связывает их между собой и формирует готовый результат.</p>
+
+            <p>Именно работа с несколькими источниками одновременно делает новый режим особенно интересным для бизнеса. Раньше подобный анализ требовал участия нескольких сотрудников, теперь значительную часть работы можно автоматизировать.</p>
+
+            <!-- ===== ВИЗУАЛИЗАЦИЯ №3: Карта интеграций (ChatGPT Work в центре) ===== -->
+            <div class="integration-map">
+                <div class="integration-center">ChatGPT Work</div>
+                <span class="integration-item"><span class="icon">📁</span> Google Drive</span>
+                <span class="integration-item"><span class="icon">📧</span> Gmail</span>
+                <span class="integration-item"><span class="icon">📅</span> Google Calendar</span>
+                <span class="integration-item"><span class="icon">💬</span> Slack</span>
+                <span class="integration-item"><span class="icon">👥</span> Microsoft Teams</span>
+                <span class="integration-item"><span class="icon">📄</span> Microsoft 365</span>
+                <span class="integration-item"><span class="icon">☁️</span> Dropbox</span>
+                <span class="integration-item"><span class="icon">🏢</span> CRM</span>
+                <span class="integration-item"><span class="icon">🧠</span> Базы знаний</span>
+                <span class="integration-item"><span class="icon">🔌</span> 1000+ интеграций</span>
+            </div>
+
+            <h2>4. Выполняет задачи по расписанию</h2>
+
+            <p>Ещё одна функция, которая приближает GPT Work к полноценному цифровому помощнику, — <strong>Scheduled Tasks</strong>.</p>
+
+            <p>Она позволяет запускать задания автоматически без участия пользователя.</p>
+
+            <p>Например, можно настроить:</p>
+
+            <ul>
+                <li>еженедельный отчёт по продажам;</li>
+                <li>ежедневный анализ обращений клиентов;</li>
+                <li>мониторинг изменений на сайте конкурентов;</li>
+                <li>подготовку утренней сводки новостей;</li>
+                <li>обновление презентации после появления новых данных.</li>
+            </ul>
+
+            <p>После настройки агент самостоятельно запускает процесс по заданному расписанию.</p>
+
+            <p>Для компаний это особенно полезно в ситуациях, когда одни и те же действия приходится выполнять регулярно. Вместо ручного запуска ChatGPT каждое утро достаточно один раз создать сценарий, после чего GPT Work будет выполнять его автоматически.</p>
+
+            <p>Это экономит время и снижает вероятность человеческих ошибок.</p>
+
+            <h2>5. Создаёт документы, таблицы, сайты и презентации</h2>
+
+            <p>Во время презентации OpenAI показала, что ChatGPT Work способен не только анализировать информацию, но и сразу оформлять её в готовый результат.</p>
+
+            <p>После обработки данных агент может создать:</p>
+
+            <ul>
+                <li>текстовый документ;</li>
+                <li>электронную таблицу;</li>
+                <li>презентацию;</li>
+                <li>аналитический отчёт;</li>
+                <li>небольшое веб-приложение или сайт.</li>
+            </ul>
+
+            <p>Особый интерес вызывает функция <strong>Sites</strong>.</p>
+
+            <p>Она позволяет превращать результаты работы в небольшие интерактивные веб-страницы. Например, вместо обычного PDF-отчёта можно получить мини-сайт с диаграммами, фильтрами и автоматически обновляемыми данными.</p>
+
+            <p>Такой подход особенно удобен для внутренних корпоративных проектов, где информация постоянно меняется и её необходимо регулярно обновлять.</p>
+
+            <p>Фактически GPT Work начинает выполнять роль не только аналитика, но и помощника по подготовке материалов для презентаций, совещаний и совместной работы команды.</p>
+
+            <h2>6. Работает с компьютером пользователя</h2>
+
+            <p>Одной из самых необычных возможностей релиза стала функция <strong>Computer Use</strong>.</p>
+
+            <p>Если раньше ChatGPT ограничивался генерацией текста, то теперь агент способен взаимодействовать с приложениями так же, как это делает человек.</p>
+
+            <p>В зависимости от предоставленных разрешений он может:</p>
+
+            <ul>
+                <li>открывать программы;</li>
+                <li>вводить текст;</li>
+                <li>нажимать кнопки;</li>
+                <li>работать с файлами;</li>
+                <li>выполнять повторяющиеся операции.</li>
+            </ul>
+
+            <p>Например, можно поручить агенту подготовить документ, открыть нужное приложение и перенести туда готовый материал.</p>
+
+            <p>При этом OpenAI уделяет большое внимание безопасности. Для потенциально опасных действий пользователь получает запрос на подтверждение, а доступ к данным можно ограничить в настройках.</p>
+
+            <p>Полностью автономным такой режим назвать нельзя — критически важные операции всё ещё требуют участия человека. Однако даже в текущем виде Computer Use способен значительно сократить количество рутинной работы.</p>
+
+            <h2>7. Использует возможности GPT-5.6 для сложных задач</h2>
+
+            <p>Сам режим Work работает на семействе моделей GPT-5.6.</p>
+
+            <p>В зависимости от сложности задачи ChatGPT может использовать разные модели.</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Модель</th>
+                            <th>Для каких задач подходит</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Luna</strong></td><td>Быстрые повседневные запросы, черновики, простые документы</td></tr>
+                        <tr><td><strong>Terra</strong></td><td>Универсальная работа, анализ данных, создание отчётов</td></tr>
+                        <tr><td><strong>Sol</strong></td><td>Исследования, программирование, большие проекты и сложная аналитика</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Для флагманской модели Sol доступны дополнительные режимы рассуждений, позволяющие уделять больше времени поиску оптимального решения или использовать несколько параллельных цепочек анализа для сложных проектов.</p>
+
+            <p>На практике большинство пользователей даже не замечает, какая именно модель выполняет задачу. Однако именно GPT-5.6 обеспечивает тот уровень анализа и планирования, который необходим для работы автономного агента.</p>
+
+            <h2>Кому действительно пригодится GPT Work</h2>
+
+            <p>Новый режим рассчитан прежде всего на пользователей, которые регулярно работают со сложными проектами и большим количеством информации.</p>
+
+            <p>Максимальную пользу ChatGPT Work принесёт:</p>
+
+            <ul>
+                <li>маркетологам;</li>
+                <li>SEO-специалистам;</li>
+                <li>аналитикам;</li>
+                <li>разработчикам;</li>
+                <li>руководителям проектов;</li>
+                <li>владельцам бизнеса;</li>
+                <li>исследователям;</li>
+                <li>сотрудникам корпоративных команд.</li>
+            </ul>
+
+            <p>Если основная работа сводится к коротким вопросам вроде «напиши письмо» или «объясни тему», возможностей обычного ChatGPT чаще всего будет достаточно.</p>
+
+            <p>Но когда задача состоит из десятков последовательных действий, автономный режим начинает экономить часы рабочего времени.</p>
+
+            <h2>Ограничения GPT Work</h2>
+
+            <p>Несмотря на впечатляющие возможности, GPT Work нельзя назвать универсальным решением для любых сценариев.</p>
+
+            <p>Стоит учитывать несколько ограничений.</p>
+
+            <p>Во-первых, часть функций зависит от выбранного тарифа ChatGPT и развёртывается постепенно.</p>
+
+            <p>Во-вторых, работа с корпоративными сервисами требует предварительного подключения соответствующих коннекторов и предоставления необходимых разрешений.</p>
+
+            <p>Кроме того, многие действия, связанные с безопасностью, подтверждением платежей или доступом к конфиденциальной информации, по-прежнему требуют участия пользователя.</p>
+
+            <p>Для компаний это скорее преимущество, чем недостаток, поскольку снижает риск случайных действий со стороны ИИ.</p>
+
+            <h2>GPT Work или обычный ChatGPT — что выбрать</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Возможность</th>
+                            <th>ChatGPT</th>
+                            <th>GPT Work</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ответы на вопросы</td><td>✅</td><td>✅</td></tr>
+                        <tr><td>Генерация текста</td><td>✅</td><td>✅</td></tr>
+                        <tr><td>Автономная работа</td><td>❌</td><td>✅</td></tr>
+                        <tr><td>Выполнение длительных задач</td><td>❌</td><td>✅</td></tr>
+                        <tr><td>Работа по расписанию</td><td>❌</td><td>✅</td></tr>
+                        <tr><td>Подключение внешних сервисов</td><td>Ограниченно</td><td>✅</td></tr>
+                        <tr><td>Анализ нескольких источников</td><td>Ограниченно</td><td>✅</td></tr>
+                        <tr><td>Создание интерактивных сайтов</td><td>Частично</td><td>✅</td></tr>
+                        <tr><td>Работа после закрытия ноутбука</td><td>❌</td><td>✅</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Главное отличие заключается не в качестве ответов, а в организации рабочего процесса.</p>
+
+            <p>Обычный ChatGPT остаётся мощным инструментом для общения с ИИ, тогда как GPT Work берёт на себя выполнение целых проектов — от планирования до подготовки готового результата.</p>
+
+            <h2>Часто задаваемые вопросы</h2>
+
+            <h3>GPT Work — что это?</h3>
+            <p>Это специальный режим ChatGPT, который превращает чат-бота в автономного ИИ-агента для выполнения длительных и многоэтапных задач.</p>
+
+            <h3>Чем ChatGPT Work отличается от обычного ChatGPT?</h3>
+            <p>GPT Work умеет самостоятельно планировать работу, использовать подключённые сервисы, выполнять задачи по расписанию и продолжать работу в облаке даже после закрытия компьютера.</p>
+
+            <h3>Работает ли GPT Work бесплатно?</h3>
+            <p>Базовые возможности постепенно появляются на разных тарифах ChatGPT, однако наиболее продвинутые функции доступны прежде всего подписчикам платных планов.</p>
+
+            <h3>Нужно ли держать компьютер включённым?</h3>
+            <p>Нет. После запуска задания обработка происходит на серверах OpenAI, поэтому агент может продолжить выполнение задачи без участия пользователя.</p>
+
+            <h3>Можно ли использовать GPT Work в России?</h3>
+            <p>Функциональность зависит от доступности сервисов OpenAI и используемого тарифа. Кроме того, часть интеграций может быть ограничена из-за особенностей работы отдельных зарубежных сервисов.</p>
+
+            <h2>Выводы</h2>
+
+            <p>Релиз ChatGPT Work показывает, что OpenAI постепенно меняет сам подход к взаимодействию с искусственным интеллектом. Вместо модели, которая отвечает на отдельные вопросы, пользователи получают автономного помощника, способного самостоятельно планировать работу, использовать внешние сервисы и выполнять сложные задачи без постоянного контроля.</p>
+
+            <p>Главной особенностью нового режима стала не только поддержка моделей GPT-5.6, но и переход к облачному выполнению процессов. Возможность закрыть ноутбук и вернуться к уже готовому результату делает GPT Work одним из самых заметных обновлений ChatGPT за последнее время.</p>
+
+            <p>Для обычных пользователей преимущества нового режима проявятся прежде всего при работе с крупными проектами, а для бизнеса GPT Work может стать инструментом, который возьмёт на себя значительную часть рутинных процессов — от подготовки отчётов до анализа данных и создания готовых материалов. Именно поэтому этот релиз многие эксперты рассматривают как очередной шаг от привычного чат-бота к полноценному цифровому сотруднику.</p>
+
+            <!-- ===== ФОРМА КОММЕНТАРИЕВ (из шаблона) ===== -->
+            <div class="comment-form">
+                <h3>Оставить комментарий</h3>
+                <p>Задавайте вопросы, делитесь опытом или предложениями</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
+                    <button type="submit">Отправить комментарий</button>
+                </form>
+                <p>Все комментарии проходят модерацию перед публикацией.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- ===== ФУТЕР С ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ ===== -->
+    <footer class="footer-privacy">
+        <div style="font-size: 14px; color: #A9A9A9; line-height: 1.5;">
+            Отправляя формы заявки,<br />
+            вы подтверждаете согласие на обработку<br />
+            Администрацией сайта ваших персональных данных:<br />
+            имени и e-mail.<br />
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank" 
+               style="color: #D3D3D3; text-decoration: underline; display: inline-block; margin-top: 5px;">
+                Политика конфиденциальности
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===== COOKIE-БАННЕР ===== -->
+    <div id="cookie-banner">
+        <span>
+            Мы используем cookie для улучшения работы сайта. Продолжая просмотр, вы соглашаетесь с 
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank">политикой конфиденциальности</a>.
+        </span>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'">
+            Принять и закрыть
+        </button>
+    </div>
+
+    <!-- ===== YANDEX.METRIKA ===== -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <!-- ===== СКРИПТ ПОП-АПА ===== -->
+    <script type="text/javascript">
+        var delay_popup = 16000;
+        setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
+    </script>
+
+    <!-- ===== ПОП-АП ===== -->
+    <div id="bg_popup1">
+        <div id="popup1">
+            <h3 class="hi6">AI Аниматор!</h3>
+            <h3 class="hi6">Попробуй новую нейронку - AI - Аниматор!</h3>
+            <div style="text-align: center;">
+                <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+                   href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank" rel="noopener">Попробывать!</a>
+            </div>
+            <a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none'; return false;">X</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW1 (десктоп) ===== -->
+    <div id='follow1'>
+        <div class="hidemobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">ChatGPT без VPN</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW2 (мобильный) ===== -->
+    <div id='follow2'>
+        <div class="showmobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">ChatGPT без VPN</a>
+        </div>
+    </div>
+
+</body>
+</html>
