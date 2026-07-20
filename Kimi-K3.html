@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>9 возможностей Kimi K3 после релиза</title>
+    <meta name="description" content="Kimi K3: что умеет новая открытая нейросеть Moonshot AI. 9 возможностей, сравнение с GPT-5.6, Gemini и Claude, контекст 1 млн токенов.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* === ПОЛНЫЙ КОМПЛЕКТ СТИЛЕЙ ИЗ ОБРАЗЦА С НЕБОЛЬШИМИ ДОПОЛНЕНИЯМИ === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            padding-top: 100px;
+            background-color: #f9f9f9;
+        }
+        main {
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin-top: 70px;
+            }
+            body {
+                padding-top: 130px;
+            }
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .step-label {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            background: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card strong, .block strong {
+            color: #2c3e50;
+        }
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* === Стили для таблиц === */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            min-width: 500px;
+        }
+        thead {
+            background: #2c3e50;
+            color: white;
+        }
+        th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background-color: #f5f9ff;
+        }
+        .model-name {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .badge {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #2c3e50;
+            white-space: nowrap;
+        }
+        .badge-leak {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-confirmed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        /* === Стили для иконок в таблице === */
+        .icon-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .icon-group .icon {
+            font-size: 1.3em;
+            line-height: 1;
+        }
+        .icon-group .label {
+            font-size: 0.85em;
+            background: #f1f4fa;
+            padding: 2px 10px;
+            border-radius: 30px;
+            color: #1e2a44;
+        }
+
+        /* === Стили для графика контекстного окна === */
+        .chart-area {
+            margin: 20px 0 16px;
+        }
+        .chart-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .chart-row .label {
+            width: 150px;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95em;
+            flex-shrink: 0;
+        }
+        .chart-row .label small {
+            font-weight: 400;
+            color: #7a8aa5;
+            font-size: 0.8em;
+            display: block;
+        }
+        .chart-bar-bg {
+            flex: 1;
+            height: 30px;
+            background: #eef2f8;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 14px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: white;
+            min-width: 40px;
+        }
+        .bar-kimi { background: linear-gradient(90deg, #e63946, #ff6b7a); }
+        .bar-gpt { background: linear-gradient(90deg, #10a37f, #34d399); }
+        .bar-claude { background: linear-gradient(90deg, #d97706, #f59e0b); }
+        .bar-gemini { background: linear-gradient(90deg, #1a73e8, #4a9af5); }
+
+        .chart-row .value {
+            width: 70px;
+            text-align: right;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        .chart-row .value small {
+            font-weight: 400;
+            font-size: 0.7em;
+            color: #7a8aa5;
+        }
+
+        .note {
+            background: #f8faff;
+            border: 1px dashed #d0d9e8;
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 0.9em;
+            color: #3d4e6b;
+            margin: 16px 0;
+        }
+        .note strong {
+            color: #2c3e50;
+        }
+
+        /* === Mobile optimization === */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .pic {
+                margin: 15px 0;
+            }
+            .card, .block {
+                padding: 12px 15px;
+            }
+            .comment-form {
+                padding: 15px;
+            }
+            .comment-form button {
+                max-width: 100%;
+            }
+            ul, ol {
+                padding-left: 18px;
+            }
+            .toc {
+                padding: 12px 15px;
+            }
+            .table-wrapper {
+                border-radius: 6px;
+            }
+            table {
+                font-size: 0.85em;
+                min-width: 400px;
+            }
+            th, td {
+                padding: 10px 12px;
+            }
+            .chart-row {
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+            .chart-row .label {
+                width: 100%;
+                font-size: 0.9em;
+            }
+            .chart-row .label small {
+                display: inline;
+                margin-left: 6px;
+            }
+            .chart-row .value {
+                width: auto;
+                text-align: left;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+            table {
+                font-size: 0.78em;
+                min-width: 320px;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+
+        /* === Стили для баннеров follow1 и follow2 === */
+        #follow1,
+        #follow2 {
+            background-color: #e6eeee;
+            z-index: 199;
+            top: 10px;
+            position: fixed;
+        }
+
+        /* === Стили для скрытия/показа баннеров === */
+        .hidemobile {
+            visibility: visible;
+            display: block;
+        }
+        .showmobile {
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .hidemobile {
+                visibility: hidden;
+                display: none;
+            }
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            .showmobile {
+                display: inline;
+            }
+        }
+
+        /* === Стили для затемненного фона поп-апа === */
+        #bg_popup1 {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* === Стили для окна поп-апа === */
+        #popup1 {
+            background: #204a55;
+            width: 480px;
+            height: 250px;
+            margin: 5% auto;
+            padding: 5px 20px 13px;
+            border: 2px solid #1ba600;
+            position: relative;
+            -webkit-box-shadow: 0 0 20px #000;
+            -moz-box-shadow: 0 0 20px #000;
+            box-shadow: 0 0 20px #000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+        @media all and (max-width: 480px) {
+            #popup1 {
+                width: 100%;
+            }
+        }
+
+        /* === Стили для кнопки закрытия === */
+        .close1 {
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 1px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            line-height: 28px;
+            color: #fff;
+            background: #1ba600;
+            cursor: pointer;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+            text-decoration: none;
+        }
+        .close1:hover {
+            background-color: #f30;
+        }
+
+        /* === Стили для заголовков поп-апа === */
+        .hi6 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            padding: 5px 0;
+            line-height: 1.3;
+        }
+
+        /* Стиль для изображения */
+        .featured-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 16px 0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .img-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: -8px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* ===== НОВЫЕ СТИЛИ ДЛЯ ФУТЕРА (ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ) ===== */
+        .footer-privacy {
+            background-color: #000000;
+            color: #A9A9A9;
+            padding: 20px 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .footer-privacy a {
+            color: #D3D3D3;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .footer-privacy a:hover {
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .footer-privacy {
+                font-size: 13px;
+                padding: 15px 10px;
+            }
+        }
+
+        /* ===== СТИЛИ ДЛЯ COOKIE-БАННЕРА ===== */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: center;
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+        #cookie-banner span {
+            display: inline-block;
+        }
+        #cookie-banner a {
+            color: #4fc3f7;
+            text-decoration: underline;
+        }
+        #cookie-banner a:hover {
+            color: #81d4fa;
+        }
+        #cookie-banner button {
+            margin-left: 0;
+            padding: 6px 18px;
+            background-color: #4fc3f7;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            flex-shrink: 0;
+            transition: background-color 0.2s;
+        }
+        #cookie-banner button:hover {
+            background-color: #81d4fa;
+        }
+        @media (max-width: 600px) {
+            #cookie-banner {
+                font-size: 13px;
+                padding: 10px 12px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            #cookie-banner button {
+                width: 100%;
+                max-width: 200px;
+                padding: 8px;
+            }
+        }
+
+        /* === ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СПИСКА ВОЗМОЖНОСТЕЙ === */
+        .ability-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 15px 0;
+        }
+        .ability-item {
+            background: white;
+            border-left: 4px solid #3498db;
+            padding: 10px 16px;
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .ability-item strong {
+            color: #2c3e50;
+        }
+
+        .highlight-box {
+            background: #f0f7ff;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border: 1px solid #d6e8ff;
+        }
+        .highlight-box strong {
+            color: #1a5a9c;
+        }
+
+        /* Карточки выбора в конце */
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .choice-card {
+            background: white;
+            border-radius: 8px;
+            padding: 16px 18px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+        .choice-card .emoji {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .choice-card h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        .choice-card ul {
+            text-align: left;
+            padding-left: 18px;
+            font-size: 0.92em;
+        }
+        .choice-card ul li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <!-- ===== ЗАГОЛОВОК СТАТЬИ ===== -->
+            <h1>Kimi K3: что умеет новая открытая нейросеть Moonshot AI</h1>
+            <p class="lead" style="margin-bottom: 10px;">
+                Еще несколько лет назад большинство громких новостей в мире искусственного интеллекта приходило из США. OpenAI выпускала новые версии GPT, Anthropic развивала Claude, Google совершенствовала Gemini. Однако летом 2026 года ситуация заметно изменилась. Китайский стартап Moonshot AI представил <strong>Kimi K3</strong> — одну из самых масштабных языковых моделей с открытым исходным кодом.
+            </p>
+            <p>
+                Практически сразу после анонса модель оказалась в центре внимания разработчиков. По результатам независимых тестов Kimi K3 приблизилась к ведущим американским ИИ, а в отдельных задачах по программированию и работе с длинными запросами смогла показать результаты не хуже признанных лидеров. Дополнительный интерес вызвала новость о том, что из-за резко выросшего спроса Moonshot AI была вынуждена временно ограничить оформление новых подписок.
+            </p>
+            <p>
+                Разберемся, что представляет собой Kimi K3, почему вокруг нее возник такой ажиотаж и действительно ли китайские открытые модели начинают менять расстановку сил на мировом рынке искусственного интеллекта.
+            </p>
+
+            <!-- ===== БЛОК "ЧТО ТАКОЕ KIMI K3" ===== -->
+            <h2>Что такое Kimi K3</h2>
+            <p>
+                Kimi K3 — это большая языковая модель (LLM), разработанная компанией <strong>Moonshot AI</strong>. Она относится к новому поколению открытых моделей, которые можно использовать не только через облачный сервис, но и локально после публикации весов.
+            </p>
+            <p>
+                Главной особенностью новинки стали ее масштабы. По данным разработчиков, модель содержит около <strong>2,8 триллиона параметров</strong>, что делает ее крупнейшей среди открытых языковых моделей на момент релиза.
+            </p>
+            <p>
+                При этом разработчики сделали ставку не только на размер. Kimi K3 создавалась как универсальная система для решения сложных интеллектуальных задач:
+            </p>
+            <ul>
+                <li>написания и анализа программного кода;</li>
+                <li>обработки очень больших документов;</li>
+                <li>поиска информации;</li>
+                <li>логических рассуждений;</li>
+                <li>генерации текстов;</li>
+                <li>работы с изображениями и видео.</li>
+            </ul>
+            <p>
+                Поддержка контекста объемом до <strong>1 миллиона токенов</strong> позволяет анализировать книги, техническую документацию, большие базы знаний и длинные диалоги без постоянной потери контекста. Для корпоративных пользователей это особенно важно, поскольку многие современные модели до сих пор ограничены значительно меньшим объемом памяти.
+            </p>
+            <p>
+                Еще одна особенность — архитектура <strong>Kimi Delta Attention (KDA)</strong>. Она оптимизирует обработку длинных запросов, уменьшая вычислительные затраты и позволяя модели эффективнее работать с большим количеством информации.
+            </p>
+
+            <!-- ===== ГРАФИК: СРАВНЕНИЕ КОНТЕКСТНОГО ОКНА ===== -->
+            <div class="card">
+                <h3 style="margin-top: 0; color: #2c3e50;">📊 Сравнение длины контекста (токенов)</h3>
+                <p style="font-size: 0.95em; color: #555;">Kimi K3 поддерживает до 1 млн токенов — это значительно больше, чем у ведущих конкурентов.</p>
+                <div class="chart-area">
+                    <div class="chart-row">
+                        <span class="label">Kimi K3 <small>1 000 000</small></span>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-kimi" style="width: 100%;">1M</div></div>
+                        <span class="value">1M</span>
+                    </div>
+                    <div class="chart-row">
+                        <span class="label">GPT-5.6 <small>~200 000</small></span>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-gpt" style="width: 20%;">200K</div></div>
+                        <span class="value">200K</span>
+                    </div>
+                    <div class="chart-row">
+                        <span class="label">Claude Fable 5 <small>~200 000</small></span>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-claude" style="width: 20%;">200K</div></div>
+                        <span class="value">200K</span>
+                    </div>
+                    <div class="chart-row">
+                        <span class="label">Gemini 3.5 Pro <small>~128 000</small></span>
+                        <div class="chart-bar-bg"><div class="chart-bar-fill bar-gemini" style="width: 12.8%;">128K</div></div>
+                        <span class="value">128K</span>
+                    </div>
+                </div>
+                <div class="note">
+                    <strong>💡 На практике:</strong> 1 млн токенов ≈ 5000 страниц текста. Это позволяет загружать в модель целые книги, техническую документацию и большие базы знаний.
+                </div>
+            </div>
+
+            <!-- ===== ПОЧЕМУ АЖИОТАЖ ===== -->
+            <h2>Почему вокруг модели возник такой ажиотаж</h2>
+            <p>
+                Если посмотреть на последние два года развития ИИ, становится заметна интересная тенденция. Раньше большинство открытых моделей заметно уступали коммерческим продуктам OpenAI или Anthropic. Их использовали в основном исследователи и энтузиасты.
+            </p>
+            <p>
+                Kimi K3 изменила ситуацию.
+            </p>
+            <p>
+                <strong>Во-первых</strong>, модель показала высокие результаты сразу в нескольких независимых бенчмарках. Особенно хорошо она проявила себя в задачах программирования, создании веб-интерфейсов и выполнении сложных многошаговых инструкций.
+            </p>
+            <p>
+                <strong>Во-вторых</strong>, разработчики сделали ставку на открытость. Для бизнеса это означает возможность запускать модель на собственной инфраструктуре без передачи корпоративных данных стороннему поставщику. Именно поэтому вокруг проекта возник огромный интерес со стороны компаний, работающих с конфиденциальной информацией.
+            </p>
+            <p>
+                <strong>В-третьих</strong>, Moonshot AI пообещала опубликовать полные веса модели. После этого разработчики смогут адаптировать Kimi K3 под собственные проекты, дообучать ее и интегрировать в специализированные решения.
+            </p>
+            <p>
+                Наконец, важную роль сыграла сама рыночная ситуация. В 2026 году конкуренция между американскими и китайскими разработчиками искусственного интеллекта заметно усилилась. Если раньше открытые модели воспринимались как компромисс между стоимостью и качеством, то теперь они все чаще становятся полноценной альтернативой закрытым коммерческим сервисам.
+            </p>
+
+            <!-- ===== 9 ВОЗМОЖНОСТЕЙ (КОМПАКТНЫЙ СПИСОК) ===== -->
+            <h2>9 возможностей Kimi K3</h2>
+            <div class="ability-list">
+                <div class="ability-item"><strong>№1. Работа с огромными объемами информации</strong> — контекст до 1 млн токенов позволяет анализировать тысячи страниц текста.</div>
+                <div class="ability-item"><strong>№2. Генерация и анализ программного кода</strong> — написание, отладка, рефакторинг, SQL-запросы.</div>
+                <div class="ability-item"><strong>№3. Работа с изображениями и видео</strong> — мультимодальный режим, анализ скриншотов, интерфейсов, видеоданных.</div>
+                <div class="ability-item"><strong>№4. Эффективная работа с длинными запросами</strong> — архитектура Kimi Delta Attention (KDA) снижает вычислительные затраты.</div>
+                <div class="ability-item"><strong>№5. Производительность уровня ведущих мировых моделей</strong> — результаты на уровне GPT-5.6, Claude и Gemini.</div>
+                <div class="ability-item"><strong>№6. Локальный запуск после публикации весов</strong> — возможность запуска на собственных серверах без передачи данных.</div>
+                <div class="ability-item"><strong>№7. Использование в России</strong> — доступ через официальный сайт, после публикации весов — локальный запуск.</div>
+                <div class="ability-item"><strong>№8. Конкуренция с GPT-5.6, Gemini и Claude</strong> — открытая архитектура + высокая производительность.</div>
+                <div class="ability-item"><strong>№9. Влияние на мировой рынок ИИ</strong> — китайские открытые модели меняют расстановку сил.</div>
+            </div>
+
+            <!-- ===== ПОДРОБНО ПО ВОЗМОЖНОСТЯМ (ВЫБОРОЧНО) ===== -->
+            <h3>Возможность №1. Работа с огромными объемами информации</h3>
+            <p>
+                Одно из главных преимуществ Kimi K3 — поддержка контекста до <strong>1 миллиона токенов</strong>.
+            </p>
+            <p>
+                Для обычного пользователя эта цифра мало о чем говорит. На практике это означает возможность загрузить в модель тысячи страниц текста и получать ответы с учетом практически всего документа.
+            </p>
+            <ul>
+                <li>анализировать объемные юридические документы;</li>
+                <li>работать с техническими спецификациями;</li>
+                <li>искать ошибки в крупных программных проектах;</li>
+                <li>сравнивать несколько больших отчетов одновременно;</li>
+                <li>создавать сводки по длинным перепискам.</li>
+            </ul>
+            <p>Подобные сценарии становятся особенно востребованными в корпоративной среде, где объем информации постоянно растет.</p>
+
+            <h3>Возможность №2. Генерация и анализ программного кода</h3>
+            <p>
+                Еще одно направление, в котором Kimi K3 получила высокие оценки, — программирование.
+            </p>
+            <p>Модель умеет:</p>
+            <ul>
+                <li>писать код по текстовому описанию;</li>
+                <li>находить ошибки;</li>
+                <li>объяснять работу алгоритмов;</li>
+                <li>проводить рефакторинг;</li>
+                <li>создавать SQL-запросы;</li>
+                <li>помогать при разработке веб-приложений.</li>
+            </ul>
+            <p>По ряду тестов Kimi K3 приблизилась к ведущим американским моделям, а в отдельных задачах даже превзошла некоторые из них.</p>
+
+            <h3>Возможность №3. Работа с изображениями и видео</h3>
+            <p>
+                Современные языковые модели уже давно перестали быть исключительно текстовыми.
+            </p>
+            <p>
+                Kimi K3 поддерживает мультимодальный режим работы. Она способна анализировать изображения, понимать их содержание и использовать визуальную информацию при построении ответов. Кроме того, заявлена работа с видеоданными, что постепенно становится стандартом для моделей нового поколения.
+            </p>
+            <ul>
+                <li>анализ скриншотов;</li>
+                <li>разбор интерфейсов;</li>
+                <li>описание изображений;</li>
+                <li>поиск ошибок в дизайне;</li>
+                <li>обработка видеоматериалов совместно с текстовыми инструкциями.</li>
+            </ul>
+
+            <h3>Возможность №4. Эффективная работа с длинными запросами</h3>
+            <p>
+                Одной из наиболее интересных особенностей Kimi K3 стала собственная архитектура <strong>Kimi Delta Attention (KDA)</strong>.
+            </p>
+            <p>
+                Большинство современных языковых моделей начинают работать менее эффективно по мере увеличения объема входных данных. Чем длиннее документ или диалог, тем выше вычислительная нагрузка и стоимость обработки.
+            </p>
+            <p>
+                В Moonshot AI предложили собственный механизм оптимизации внимания, который позволяет значительно эффективнее обрабатывать длинные последовательности данных.
+            </p>
+
+            <h3>Возможность №5. Производительность уровня ведущих мировых моделей</h3>
+            <p>
+                До недавнего времени считалось, что открытые модели неизбежно уступают закрытым разработкам OpenAI, Anthropic и Google. Kimi K3 заставила многих пересмотреть это мнение.
+            </p>
+            <p>
+                По результатам опубликованных тестов модель показывает конкурентоспособные результаты в нескольких важных направлениях:
+            </p>
+            <ul>
+                <li>программирование;</li>
+                <li>выполнение сложных многошаговых инструкций;</li>
+                <li>логические рассуждения;</li>
+                <li>создание веб-интерфейсов;</li>
+                <li>работа с длинным контекстом.</li>
+            </ul>
+            <p>
+                Конечно, отдельные бенчмарки нельзя воспринимать как абсолютную истину. Производительность модели всегда зависит от конкретной задачи. Однако сам факт того, что открытая китайская модель регулярно оказывается рядом с <a href="https://tstas69-spec.github.io/gpt-5-6-reliz.html" target="_blank">GPT-5.6</a>, Claude и <a href="https://tstas69-spec.github.io/gemini-3/gemini-3.5-pro.html" target="_blank">Gemini</a>, говорит о серьезном технологическом прогрессе.
+            </p>
+
+            <h3>Возможность №6. Локальный запуск после публикации весов</h3>
+            <p>
+                Одной из самых ожидаемых новостей стало обещание Moonshot AI опубликовать полные веса модели.
+            </p>
+            <p>
+                Для обычного пользователя это событие может показаться не слишком важным, однако для разработчиков и компаний оно имеет огромное значение.
+            </p>
+            <p>После публикации весов появляется возможность:</p>
+            <ul>
+                <li>запускать модель на собственных серверах;</li>
+                <li>создавать специализированные версии для бизнеса;</li>
+                <li>дообучать модель под внутренние задачи;</li>
+                <li>интегрировать Kimi K3 в корпоративные продукты;</li>
+                <li>не передавать конфиденциальные данные сторонним облачным сервисам.</li>
+            </ul>
+            <p>
+                При этом стоит понимать, что запустить Kimi K3 дома на обычном игровом компьютере практически невозможно. Для полноценной работы модели требуются серверные графические ускорители, большой объем видеопамяти и дорогостоящая инфраструктура.
+            </p>
+
+            <h3>Возможность №7. Использование Kimi K3 в России</h3>
+            <p>
+                Отдельный вопрос, который все чаще появляется в поисковых системах, — можно ли пользоваться Kimi K3 из России.
+            </p>
+            <p>
+                На момент подготовки статьи сервис доступен через официальный сайт Moonshot AI, однако условия доступа могут меняться. Для части функций может потребоваться регистрация, а некоторые платные возможности зависят от региона и способа оплаты.
+            </p>
+            <p>
+                Если после публикации открытых весов модель появится в популярных фреймворках и репозиториях, российские разработчики смогут запускать ее на собственных серверах без зависимости от зарубежной облачной инфраструктуры.
+            </p>
+
+            <!-- ===== ТАБЛИЦА СРАВНЕНИЯ ===== -->
+            <h3>Возможность №8. Конкуренция с GPT-5.6, Gemini и Claude</h3>
+            <p>Главный вопрос после релиза Kimi K3 звучит просто: сможет ли она заменить ведущие американские модели? Однозначного ответа пока нет. Каждая система остается сильной в своих задачах.</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Характеристика</th>
+                            <th>Kimi K3</th>
+                            <th>GPT-5.6</th>
+                            <th>Gemini 3.5 Pro</th>
+                            <th>Claude Fable 5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Исходный код</strong></td>
+                            <td><span class="badge badge-confirmed">Планируется открытый</span></td>
+                            <td><span class="badge">Закрытый</span></td>
+                            <td><span class="badge">Закрытый</span></td>
+                            <td><span class="badge">Закрытый</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Контекст</strong></td>
+                            <td><strong>До 1 млн токенов</strong></td>
+                            <td>Большой</td>
+                            <td>Большой</td>
+                            <td>Большой</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Программирование</strong></td>
+                            <td><span class="badge badge-confirmed">Очень высокий уровень</span></td>
+                            <td>Один из лидеров</td>
+                            <td>Очень высокий</td>
+                            <td>Очень высокий</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Локальный запуск</strong></td>
+                            <td><span class="badge badge-confirmed">После публикации весов</span></td>
+                            <td>Нет</td>
+                            <td>Нет</td>
+                            <td>Нет</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Дообучение</strong></td>
+                            <td><span class="badge badge-confirmed">Да</span></td>
+                            <td>Нет</td>
+                            <td>Нет</td>
+                            <td>Нет</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>
+                Главное преимущество Kimi K3 — не столько отдельные тесты, сколько сочетание высокой производительности и открытой архитектуры. Для исследовательских организаций, университетов и компаний это может оказаться важнее, чем небольшой выигрыш в одном из бенчмарков.
+            </p>
+
+            <h3>Возможность №9. Влияние на мировой рынок искусственного интеллекта</h3>
+            <p>
+                Пожалуй, самая важная особенность Kimi K3 заключается даже не в количестве параметров и не в новых технологиях. Она показывает, насколько быстро меняется мировой рынок ИИ.
+            </p>
+            <p>
+                Еще недавно считалось, что лидерами останутся исключительно американские компании. Теперь все чаще именно китайские разработчики предлагают крупнейшие открытые модели, активно сокращая технологическое отставание.
+            </p>
+            <p>
+                Дополнительным подтверждением интереса пользователей стала реакция рынка после релиза. По сообщениям компании, спрос оказался настолько высоким, что Moonshot AI была вынуждена временно ограничить оформление новых подписок. Для молодой модели это стало своеобразным индикатором востребованности.
+            </p>
+
+            <!-- ===== СТОИТ ЛИ ПЕРЕХОДИТЬ ===== -->
+            <h2>Стоит ли переходить на Kimi K3</h2>
+            <p>Ответ зависит от ваших задач.</p>
+
+            <div class="choice-grid">
+                <div class="choice-card">
+                    <span class="emoji">👤</span>
+                    <h4>Обычный пользователь</h4>
+                    <ul>
+                        <li>✅ Поиск информации</li>
+                        <li>✅ Написание текстов</li>
+                        <li>✅ Повседневные задачи</li>
+                        <li>⚡ Разница с лидерами может быть незаметна</li>
+                    </ul>
+                </div>
+                <div class="choice-card">
+                    <span class="emoji">👨‍💻</span>
+                    <h4>Разработчик</h4>
+                    <ul>
+                        <li>✅ Локальный запуск</li>
+                        <li>✅ Открытая архитектура</li>
+                        <li>✅ Сильные результаты в программировании</li>
+                        <li>🔥 Перспективная платформа для проектов</li>
+                    </ul>
+                </div>
+                <div class="choice-card">
+                    <span class="emoji">🏢</span>
+                    <h4>Компания</h4>
+                    <ul>
+                        <li>✅ Работа с конфиденциальными данными</li>
+                        <li>✅ Альтернатива облачным сервисам</li>
+                        <li>✅ Контроль безопасности</li>
+                        <li>📈 После появления инструментов развертывания</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== ГЛАВНЫЕ ВЫВОДЫ ===== -->
+            <h2>Главные выводы</h2>
+            <div class="highlight-box">
+                <p>
+                    <strong>Релиз Kimi K3 стал одним из самых заметных событий в мире искусственного интеллекта в 2026 году.</strong>
+                </p>
+                <p>
+                    Модель объединила сразу несколько факторов, которые привлекли внимание рынка: около 2,8 триллиона параметров, контекст до одного миллиона токенов, современную архитектуру Kimi Delta Attention, сильные результаты в программировании и планы по публикации открытых весов.
+                </p>
+                <p>
+                    Не менее важным оказался и сам рыночный эффект. Огромный интерес пользователей, временная приостановка новых подписок и активное обсуждение Kimi K3 показывают, что открытые модели постепенно перестают быть нишевым инструментом для энтузиастов.
+                </p>
+                <p>
+                    Пока рано говорить о безоговорочном лидерстве Moonshot AI. GPT-5.6, Gemini и Claude по-прежнему остаются сильнейшими коммерческими платформами. Однако появление таких проектов, как Kimi K3, делает конкуренцию значительно острее, а значит, пользователи будут быстрее получать новые возможности, более доступные цены и еще более мощные инструменты искусственного интеллекта.
+                </p>
+            </div>
+
+            
+
+            <!-- ===== ФОРМА КОММЕНТАРИЕВ ===== -->
+            <div class="comment-form">
+                <h3>Оставить комментарий</h3>
+                <p>Задавайте вопросы, делитесь опытом или предложениями</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
+                    <button type="submit">Отправить комментарий</button>
+                </form>
+                <p>Все комментарии проходят модерацию перед публикацией.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- ===== ФУТЕР С ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ ===== -->
+    <footer class="footer-privacy">
+        <div style="font-size: 14px; color: #A9A9A9; line-height: 1.5;">
+            Отправляя формы заявки,<br />
+            вы подтверждаете согласие на обработку<br />
+            Администрацией сайта ваших персональных данных:<br />
+            имени и e-mail.<br />
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank" 
+               style="color: #D3D3D3; text-decoration: underline; display: inline-block; margin-top: 5px;">
+                Политика конфиденциальности
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===== COOKIE-БАННЕР ===== -->
+    <div id="cookie-banner">
+        <span>
+            Мы используем cookie для улучшения работы сайта. Продолжая просмотр, вы соглашаетесь с 
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank">политикой конфиденциальности</a>.
+        </span>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'">
+            Принять и закрыть
+        </button>
+    </div>
+
+    <!-- ===== YANDEX.METRIKA ===== -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <!-- ===== СКРИПТ ПОП-АПА ===== -->
+    <script type="text/javascript">
+        var delay_popup = 16000;
+        setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
+    </script>
+
+    <!-- ===== ПОП-АП ===== -->
+    <div id="bg_popup1">
+        <div id="popup1">
+            <h3 class="hi6">AI Аниматор!</h3>
+            <h3 class="hi6">Попробуй новую нейронку - AI - Аниматор!</h3>
+            <div style="text-align: center;">
+                <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+                   href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank" rel="noopener">Попробывать!</a>
+            </div>
+            <a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none'; return false;">X</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW1 (десктоп) ===== -->
+    <div id='follow1'>
+        <div class="hidemobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">GPT 5.6 без VPN</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW2 (мобильный) ===== -->
+    <div id='follow2'>
+        <div class="showmobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">GPT 5.6 без VPN</a>
+        </div>
+    </div>
+
+</body>
+</html>
