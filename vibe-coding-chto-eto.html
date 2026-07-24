@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>7 фактов о вайбкодинге простыми словами</title>
+    <meta name="description" content="Вайбкодинг что это такое простыми словами, как работает, инструменты, мифы и практические примеры в 2026 году.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* === БАЗОВЫЕ СТИЛИ === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            padding-top: 100px;
+            background-color: #f9f9f9;
+            padding-bottom: 80px;
+        }
+        main {
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin-top: 70px;
+            }
+            body {
+                padding-top: 130px;
+                padding-bottom: 100px;
+            }
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 40px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        p {
+            margin-bottom: 1.2em;
+        }
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 1.2em;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        blockquote {
+            margin: 1.2em 0;
+            padding: 0 1.5em;
+            border-left: 4px solid #3498db;
+            color: #555;
+            font-style: italic;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .featured-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 16px 0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        /* === ТАБЛИЦЫ === */
+        .table-wrapper {
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+            overflow: hidden;
+        }
+
+        /* Десктопная версия таблицы */
+        .table-desktop {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+        }
+        .table-desktop thead {
+            background: #2c3e50;
+            color: white;
+        }
+        .table-desktop th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .table-desktop td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .table-desktop tr:last-child td {
+            border-bottom: none;
+        }
+        .table-desktop tbody tr:hover {
+            background-color: #f5f9ff;
+        }
+        .stars {
+            color: #f59e0b;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+        .user-type {
+            font-size: 0.8em;
+            background: #eef2f8;
+            padding: 2px 10px;
+            border-radius: 30px;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        /* Мобильная версия таблицы — карточки */
+        .table-mobile {
+            display: none;
+        }
+        .table-mobile .card {
+            background: white;
+            border-bottom: 2px solid #e0e0e0;
+            padding: 15px;
+            margin: 0;
+        }
+        .table-mobile .card:last-child {
+            border-bottom: none;
+        }
+        .table-mobile .card .field {
+            display: flex;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9em;
+        }
+        .table-mobile .card .field:last-child {
+            border-bottom: none;
+        }
+        .table-mobile .card .field .label {
+            font-weight: 600;
+            color: #2c3e50;
+            flex: 0 0 40%;
+            min-width: 100px;
+        }
+        .table-mobile .card .field .value {
+            flex: 1;
+            color: #333;
+        }
+        .table-mobile .card .field .value .stars {
+            font-size: 1em;
+        }
+        .table-mobile .card .field .value .user-type {
+            font-size: 0.75em;
+            padding: 1px 8px;
+        }
+        .table-mobile .card .field .value strong {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        /* === ГРАФИК === */
+        .chart-area {
+            margin: 20px 0 16px;
+        }
+        .chart-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+        .chart-row .label {
+            width: 150px;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95em;
+            flex-shrink: 0;
+        }
+        .chart-row .label small {
+            font-weight: 400;
+            color: #7a8aa5;
+            font-size: 0.8em;
+            display: block;
+        }
+        .chart-bar-bg {
+            flex: 1;
+            height: 30px;
+            background: #eef2f8;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+            min-width: 100px;
+        }
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 14px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: white;
+            min-width: 40px;
+        }
+        .bar-positive { background: linear-gradient(90deg, #059669, #34d399); }
+        .bar-negative { background: linear-gradient(90deg, #b91c1c, #ef4444); }
+        .bar-neutral { background: linear-gradient(90deg, #2563eb, #60a5fa); }
+        .chart-row .value {
+            width: 70px;
+            text-align: right;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        .chart-title {
+            font-weight: 600;
+            margin: 10px 0 6px;
+            color: #2c3e50;
+        }
+        .note {
+            background: #f8faff;
+            border: 1px dashed #d0d9e8;
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 0.9em;
+            color: #3d4e6b;
+            margin: 16px 0;
+        }
+        .note strong {
+            color: #2c3e50;
+        }
+
+        /* === АДАПТИВ === */
+        @media (max-width: 768px) {
+            .table-desktop {
+                display: none;
+            }
+            .table-mobile {
+                display: block;
+            }
+            body {
+                padding: 12px;
+                padding-top: 130px;
+                padding-bottom: 120px;
+            }
+            h1 {
+                font-size: 1.4em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .table-mobile .card .field {
+                font-size: 0.85em;
+                padding: 5px 0;
+            }
+            .table-mobile .card .field .label {
+                flex: 0 0 35%;
+                min-width: 80px;
+                font-size: 0.9em;
+            }
+            .chart-row .label {
+                width: 100%;
+            }
+            .chart-row .label small {
+                display: inline;
+                margin-left: 6px;
+            }
+            .chart-row .value {
+                width: auto;
+                text-align: left;
+            }
+        }
+        @media (max-width: 480px) {
+            .table-mobile .card {
+                padding: 12px;
+            }
+            .table-mobile .card .field {
+                font-size: 0.8em;
+                padding: 4px 0;
+            }
+            .table-mobile .card .field .label {
+                flex: 0 0 30%;
+                min-width: 70px;
+                font-size: 0.85em;
+            }
+            .stars {
+                font-size: 0.9em;
+                letter-spacing: 1px;
+            }
+            .user-type {
+                font-size: 0.7em;
+                padding: 1px 6px;
+            }
+        }
+
+        /* === БАННЕРЫ === */
+        #follow1, #follow2 {
+            background-color: #e6eeee;
+            z-index: 199;
+            top: 10px;
+            position: fixed;
+        }
+        .hidemobile { visibility: visible; display: block; }
+        .showmobile { display: none; }
+        @media screen and (max-width: 600px) {
+            .hidemobile { visibility: hidden; display: none; }
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            .showmobile { display: inline; }
+        }
+
+        /* === ПОП-АП === */
+        #bg_popup1 {
+            background-color: rgba(0,0,0,0.8);
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top:0; right:0; bottom:0; left:0;
+        }
+        #popup1 {
+            background: #204a55;
+            width: 480px;
+            height: 250px;
+            margin: 5% auto;
+            padding: 5px 20px 13px;
+            border: 2px solid #1ba600;
+            position: relative;
+            box-shadow: 0 0 20px #000;
+            border-radius: 15px;
+        }
+        @media all and (max-width: 480px) {
+            #popup1 { width: 100%; height: auto; min-height: 200px; }
+        }
+        .close1 {
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 1px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            line-height: 28px;
+            color: #fff;
+            background: #1ba600;
+            cursor: pointer;
+            border-radius: 15px;
+            box-shadow: 1px 1px 3px #000;
+            text-decoration: none;
+        }
+        .close1:hover { background-color: #f30; }
+        .hi6 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            margin: 10px 0;
+            padding: 5px 0;
+            line-height: 1.3;
+        }
+
+        /* === ФУТЕР === */
+        .footer-privacy {
+            background-color: #000000;
+            color: #A9A9A9;
+            padding: 20px 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+            position: relative;
+            clear: both;
+        }
+        .footer-privacy a {
+            color: #D3D3D3;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .footer-privacy a:hover { color: #ffffff; }
+        @media (max-width: 600px) {
+            .footer-privacy {
+                font-size: 13px;
+                padding: 15px 10px;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* === COOKIE === */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: center;
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+        #cookie-banner a { color: #4fc3f7; text-decoration: underline; }
+        #cookie-banner button {
+            padding: 6px 18px;
+            background-color: #4fc3f7;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        #cookie-banner button:hover { background-color: #81d4fa; }
+        @media (max-width: 600px) {
+            #cookie-banner {
+                flex-direction: column;
+                gap: 8px;
+                font-size: 13px;
+                padding: 10px 12px;
+            }
+            #cookie-banner button {
+                width: 100%;
+                max-width: 200px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <h1>Вайбкодинг: что это такое простыми словами и как работает в 2026 году</h1>
+
+            
+            <p><strong>Вайбкодинг простыми словами</strong> — это способ создавать программы, сайты и скрипты с помощью искусственного интеллекта, не набирая каждую строчку кода вручную. Вместо этого человек объясняет задачу обычным языком, а ИИ предлагает готовое решение, которое затем можно доработать.</p>
+            <p>Еще несколько лет назад подобный подход казался фантастикой. Сегодня ChatGPT, Claude, Cursor, GitHub Copilot и другие AI-инструменты позволяют за считанные минуты собрать рабочий прототип сайта, написать Telegram-бота или автоматизировать рутинную задачу. При этом опытные разработчики используют вайбкодинг не реже новичков — просто для них это способ ускорить работу, а не заменить знания.</p>
+            <p>В этой статье разберем, что такое вайбкодинг простыми словами, как он работает, какие инструменты считаются лучшими в 2026 году, можно ли создавать проекты без знания программирования и почему вокруг этого подхода так много споров. В конце вас ждет практический пример создания простой веб-страницы с помощью ChatGPT, который можно повторить самостоятельно.</p>
+
+            <div class="pic">
+                <img class="featured-img" src="https://tstas69-spec.github.io/images/Vibe-Coding/vaibcoding-chto-eto-takoe.png" alt="Вайбкодинг что это такое простыми словами" loading="lazy" />
+                <div class="pic-description">Пример работы ChatGPT — <a href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank">продающая страница</a></div>
+            </div>
+
+            <h2>Что такое вайбкодинг простыми словами</h2>
+            <p>Если объяснить максимально просто, <strong>вайбкодинг (Vibe Coding)</strong> — это программирование через диалог с искусственным интеллектом. Вместо того чтобы самостоятельно писать код строка за строкой, человек формулирует задачу на обычном языке, а нейросеть предлагает готовое решение.</p>
+            <p>Например, раньше разработчик открывал редактор кода и самостоятельно создавал структуру сайта, подключал стили, писал JavaScript и проверял ошибки. Теперь можно написать всего одну фразу:</p>
+            <blockquote>«Создай современную страницу с описанием компании, кнопкой обратной связи и адаптивным дизайном.»</blockquote>
+            <p>Через несколько секунд ИИ выдаст полноценный HTML, CSS и JavaScript. Пользователю останется проверить результат, при необходимости уточнить требования и получить следующую версию.</p>
+            <p>Именно поэтому термин <em>vibe coding</em> часто переводят как «программирование по ощущениям» или «кодинг по идее». Конечно, речь не идет о том, что код появляется сам собой. Просто большая часть рутинной работы переходит к искусственному интеллекту.</p>
+
+            <h2>Простое объяснение на бытовом примере</h2>
+            <p>Представьте, что вы строите дом.</p>
+            <p>Раньше приходилось самостоятельно делать чертежи, рассчитывать материалы и контролировать каждый этап строительства.</p>
+            <p>Теперь рядом появился опытный помощник. Вы говорите:</p>
+            <blockquote>— Хочу одноэтажный дом с тремя спальнями и большой кухней.</blockquote>
+            <p>Помощник сразу показывает проект. Если что-то не нравится, вы просите изменить расположение комнат или увеличить окна.</p>
+            <p>С программированием происходит почти то же самое. Искусственный интеллект не читает мысли, а реагирует на ваши инструкции. Чем подробнее описание задачи, тем качественнее получится результат.</p>
+            <p>Поэтому главный навык вайбкодинга — не скорость набора кода, а умение правильно объяснить, что именно требуется получить.</p>
+
+            <h2>Почему появился термин Vibe Coding</h2>
+            <p>Сам подход существовал и раньше, когда разработчики использовали GitHub Copilot для автодополнения кода. Однако настоящий интерес возник после появления больших языковых моделей, способных создавать целые проекты по текстовому описанию.</p>
+            <p>Термин <strong>Vibe Coding</strong> стал широко известен в 2025 году после публикаций и обсуждений, связанных с инженером и исследователем искусственного интеллекта <strong>Андреем Карпатым (Andrej Karpathy)</strong>. Он описал ситуацию, когда разработчик перестает думать о каждой строке кода и начинает работать на уровне идеи: формулирует задачу, оценивает результат, вносит правки и снова общается с ИИ.</p>
+            <p>Эта концепция быстро распространилась в профессиональном сообществе. Уже через несколько месяцев практически все крупные AI-сервисы начали развивать инструменты для такого сценария работы.</p>
+            <p>Сегодня вайбкодинг используют не только программисты. Им активно пользуются:</p>
+            <ul>
+                <li>владельцы небольших компаний;</li>
+                <li>маркетологи;</li>
+                <li>дизайнеры;</li>
+                <li>студенты;</li>
+                <li>предприниматели;</li>
+                <li>специалисты по автоматизации бизнес-процессов.</li>
+            </ul>
+            <p>Для многих из них искусственный интеллект стал способом реализовать собственные идеи без необходимости годами изучать языки программирования.</p>
+
+            <h2>Как работает вайбкодинг</h2>
+            <p>На первый взгляд кажется, что искусственный интеллект просто пишет код вместо человека. На практике процесс немного сложнее и больше напоминает совместную работу.</p>
+            <p>Обычно он выглядит так.</p>
+
+            <h3>Шаг 1. Появляется идея</h3>
+            <p>Например:</p>
+            <blockquote>«Хочу сделать лендинг для нового продукта.»</blockquote>
+            <p>Или:</p>
+            <blockquote>«Нужно создать калькулятор стоимости услуг.»</blockquote>
+
+            <h3>Шаг 2. Формулируется промпт</h3>
+            <p>Человек максимально подробно объясняет задачу.</p>
+            <p>Например:</p>
+            <blockquote>Создай современный адаптивный лендинг для компании по разработке сайтов. Используй HTML, CSS и JavaScript. Добавь блок преимуществ, отзывы клиентов, форму обратной связи и плавную анимацию при прокрутке страницы.</blockquote>
+            <p>Чем подробнее описание, тем меньше времени уйдет на исправления.</p>
+
+            <h3>Шаг 3. Искусственный интеллект пишет код</h3>
+            <p>Через несколько секунд ChatGPT, Claude или Cursor предложат готовый вариант.</p>
+            <p>Иногда это несколько файлов.</p>
+            <p>Иногда полностью готовый проект.</p>
+
+            <h3>Шаг 4. Проверка результата</h3>
+            <p>Очень важно понимать одну особенность.</p>
+            <p>ИИ не знает, какой код действительно нужен именно вам. Он лишь прогнозирует наиболее вероятное решение на основе полученного запроса.</p>
+            <p>Поэтому практически всегда приходится:</p>
+            <ul>
+                <li>проверять результат;</li>
+                <li>запускать программу;</li>
+                <li>исправлять найденные ошибки;</li>
+                <li>просить ИИ улучшить отдельные части проекта.</li>
+            </ul>
+            <p>Именно этот этап отличает хорошего пользователя AI от новичка.</p>
+
+            <h3>Шаг 5. Итерации</h3>
+            <p>Редко, когда первая версия оказывается идеальной.</p>
+            <p>Обычно работа выглядит так:</p>
+            <ul>
+                <li>добавить новую функцию;</li>
+                <li>изменить дизайн;</li>
+                <li>ускорить загрузку страницы;</li>
+                <li>исправить найденные ошибки;</li>
+                <li>сделать мобильную версию.</li>
+            </ul>
+            <p>Каждая новая инструкция постепенно улучшает проект.</p>
+            <p>Поэтому опытные разработчики говорят, что современное программирование все больше становится похожим на разговор с очень быстрым помощником.</p>
+
+            <div class="pic">
+                <img class="featured-img" src="https://tstas69-spec.github.io/images/Vibe-Coding/vaibcoding-chto-eto.png" alt="Вайбкодинг что это такое" loading="lazy" />
+            </div>
+
+            <h2>Где используется вайбкодинг сегодня</h2>
+            <p>Несмотря на популярность термина, многие считают, что вайбкодинг нужен только профессиональным программистам. На самом деле это давно не так.</p>
+            <p>ИИ помогает решать десятки практических задач даже тем, кто никогда не писал код самостоятельно.</p>
+
+            <h3>Создание сайтов</h3>
+            <p>Самый распространенный сценарий.</p>
+            <p>Можно попросить ChatGPT создать:</p>
+            <ul>
+                <li>лендинг;</li>
+                <li>сайт-визитку;</li>
+                <li>страницу компании;</li>
+                <li>каталог товаров;</li>
+                <li>форму обратной связи;</li>
+                <li>адаптивную мобильную версию.</li>
+            </ul>
+            <p>Конечно, сложный интернет-магазин за один запрос создать не получится. Но первый рабочий вариант сайта часто появляется уже через несколько минут.</p>
+
+            <h3>Telegram-боты</h3>
+            <p>Еще одно популярное направление.</p>
+            <p>Например, можно попросить ИИ написать бота, который:</p>
+            <ul>
+                <li>отвечает на вопросы клиентов;</li>
+                <li>собирает заявки;</li>
+                <li>отправляет уведомления;</li>
+                <li>принимает команды;</li>
+                <li>сохраняет данные в базе.</li>
+            </ul>
+            <p>Если задача не слишком сложная, нейросеть подготовит практически готовый проект.</p>
+
+            <h3>Автоматизация рутинных задач</h3>
+            <p>Здесь возможности практически безграничны.</p>
+            <p>ИИ способен написать программу, которая:</p>
+            <ul>
+                <li>переименовывает тысячи файлов;</li>
+                <li>сортирует документы;</li>
+                <li>обрабатывает таблицы Excel;</li>
+                <li>анализирует CSV-файлы;</li>
+                <li>автоматически создает отчеты;</li>
+                <li>собирает данные с сайтов через API.</li>
+            </ul>
+            <p>Именно такие небольшие скрипты часто экономят часы однообразной работы.</p>
+
+            <h3>Python-скрипты</h3>
+            <p>Python остается одним из самых популярных языков для вайбкодинга.</p>
+            <p>С его помощью искусственный интеллект помогает создавать:</p>
+            <ul>
+                <li>калькуляторы;</li>
+                <li>парсеры сайтов;</li>
+                <li>программы обработки изображений;</li>
+                <li>инструменты анализа данных;</li>
+                <li>утилиты для автоматизации.</li>
+            </ul>
+            <p>Даже если пользователь плохо знаком с Python, ИИ обычно подробно объясняет, как запустить полученный код и какие библиотеки необходимо установить.</p>
+
+            <h3>MVP и прототипы</h3>
+            <p>Одно из главных преимуществ вайбкодинга — высокая скорость.</p>
+            <p>Раньше на создание первого прототипа сервиса могли уходить недели.</p>
+            <p>Сегодня достаточно нескольких часов, чтобы показать инвесторам или коллегам рабочую демонстрационную версию продукта.</p>
+            <p>Именно поэтому многие стартапы сначала используют AI для создания MVP, а уже затем дорабатывают проект традиционными методами разработки.</p>
+
+            <h2>Лучшие инструменты для вайбкодинга в 2026 году</h2>
+            <p>Выбор подходящего инструмента зависит не только от опыта, но и от того, какие задачи вы собираетесь решать. Одни сервисы лучше подходят для быстрого создания сайтов, другие — для полноценной разработки больших проектов.</p>
+
+            <!-- ===== ТАБЛИЦА 1: ИНСТРУМЕНТЫ ===== -->
+            <div class="table-wrapper">
+
+                <!-- Десктопная версия -->
+                <table class="table-desktop">
+                    <thead>
+                        <tr>
+                            <th>Инструмент</th>
+                            <th>Лучше всего подходит</th>
+                            <th>Преимущества</th>
+                            <th>Недостатки</th>
+                            <th>Рейтинг</th>
+                            <th>Тип пользователя</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ChatGPT</strong></td>
+                            <td>Универсальные задачи</td>
+                            <td>Пишет код, объясняет ошибки, помогает с архитектурой</td>
+                            <td>Не редактирует проект напрямую</td>
+                            <td><span class="stars">★★★★★</span></td>
+                            <td><span class="user-type">Новичок</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Claude</strong></td>
+                            <td>Большие проекты</td>
+                            <td>Хорошо удерживает контекст, аккуратно рефакторит код</td>
+                            <td>Некоторые функции доступны не во всех регионах</td>
+                            <td><span class="stars">★★★★☆</span></td>
+                            <td><span class="user-type">Продвинутый</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cursor</strong></td>
+                            <td>Профессиональная разработка</td>
+                            <td>Работает прямо в IDE, понимает весь проект</td>
+                            <td>Максимальная польза раскрывается при знании программирования</td>
+                            <td><span class="stars">★★★★★</span></td>
+                            <td><span class="user-type">Профессионал</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>GitHub Copilot</strong></td>
+                            <td>Помощь разработчикам</td>
+                            <td>Отличное автодополнение, интеграция с VS Code</td>
+                            <td>Не заменяет полноценный диалог с ИИ</td>
+                            <td><span class="stars">★★★★☆</span></td>
+                            <td><span class="user-type">Профессионал</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Windsurf</strong></td>
+                            <td>AI-разработка полного цикла</td>
+                            <td>Может анализировать сразу несколько файлов проекта</td>
+                            <td>Требует привыкания к интерфейсу</td>
+                            <td><span class="stars">★★★☆☆</span></td>
+                            <td><span class="user-type">Продвинутый</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Replit</strong></td>
+                            <td>Быстрые прототипы</td>
+                            <td>Работает прямо в браузере, не требует настройки среды</td>
+                            <td>Для крупных проектов возможностей меньше</td>
+                            <td><span class="stars">★★★☆☆</span></td>
+                            <td><span class="user-type">Новичок</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Мобильная версия (карточки) -->
+                <div class="table-mobile">
+                    <div class="card">
+                        <div class="field"><span class="label">Инструмент</span><span class="value"><strong>ChatGPT</strong></span></div>
+                        <div class="field"><span class="label">Лучше всего подходит</span><span class="value">Универсальные задачи</span></div>
+                        <div class="field"><span class="label">Преимущества</span><span class="value">Пишет код, объясняет ошибки, помогает с архитектурой</span></div>
+                        <div class="field"><span class="label">Недостатки</span><span class="value">Не редактирует проект напрямую</span></div>
+                        <div class="field"><span class="label">Рейтинг</span><span class="value"><span class="stars">★★★★★</span></span></div>
+                        <div class="field"><span class="label">Тип пользователя</span><span class="value"><span class="user-type">Новичок</span></span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Инструмент</span><span class="value"><strong>Claude</strong></span></div>
+                        <div class="field"><span class="label">Лучше всего подходит</span><span class="value">Большие проекты</span></div>
+                        <div class="field"><span class="label">Преимущества</span><span class="value">Хорошо удерживает контекст, аккуратно рефакторит код</span></div>
+                        <div class="field"><span class="label">Недостатки</span><span class="value">Некоторые функции доступны не во всех регионах</span></div>
+                        <div class="field"><span class="label">Рейтинг</span><span class="value"><span class="stars">★★★★☆</span></span></div>
+                        <div class="field"><span class="label">Тип пользователя</span><span class="value"><span class="user-type">Продвинутый</span></span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Инструмент</span><span class="value"><strong>Cursor</strong></span></div>
+                        <div class="field"><span class="label">Лучше всего подходит</span><span class="value">Профессиональная разработка</span></div>
+                        <div class="field"><span class="label">Преимущества</span><span class="value">Работает прямо в IDE, понимает весь проект</span></div>
+                        <div class="field"><span class="label">Недостатки</span><span class="value">Максимальная польза раскрывается при знании программирования</span></div>
+                        <div class="field"><span class="label">Рейтинг</span><span class="value"><span class="stars">★★★★★</span></span></div>
+                        <div class="field"><span class="label">Тип пользователя</span><span class="value"><span class="user-type">Профессионал</span></span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Инструмент</span><span class="value"><strong>GitHub Copilot</strong></span></div>
+                        <div class="field"><span class="label">Лучше всего подходит</span><span class="value">Помощь разработчикам</span></div>
+                        <div class="field"><span class="label">Преимущества</span><span class="value">Отличное автодополнение, интеграция с VS Code</span></div>
+                        <div class="field"><span class="label">Недостатки</span><span class="value">Не заменяет полноценный диалог с ИИ</span></div>
+                        <div class="field"><span class="label">Рейтинг</span><span class="value"><span class="stars">★★★★☆</span></span></div>
+                        <div class="field"><span class="label">Тип пользователя</span><span class="value"><span class="user-type">Профессионал</span></span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Инструмент</span><span class="value"><strong>Windsurf</strong></span></div>
+                        <div class="field"><span class="label">Лучше всего подходит</span><span class="value">AI-разработка полного цикла</span></div>
+                        <div class="field"><span class="label">Преимущества</span><span class="value">Может анализировать сразу несколько файлов проекта</span></div>
+                        <div class="field"><span class="label">Недостатки</span><span class="value">Требует привыкания к интерфейсу</span></div>
+                        <div class="field"><span class="label">Рейтинг</span><span class="value"><span class="stars">★★★☆☆</span></span></div>
+                        <div class="field"><span class="label">Тип пользователя</span><span class="value"><span class="user-type">Продвинутый</span></span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Инструмент</span><span class="value"><strong>Replit</strong></span></div>
+                        <div class="field"><span class="label">Лучше всего подходит</span><span class="value">Быстрые прототипы</span></div>
+                        <div class="field"><span class="label">Преимущества</span><span class="value">Работает прямо в браузере, не требует настройки среды</span></div>
+                        <div class="field"><span class="label">Недостатки</span><span class="value">Для крупных проектов возможностей меньше</span></div>
+                        <div class="field"><span class="label">Рейтинг</span><span class="value"><span class="stars">★★★☆☆</span></span></div>
+                        <div class="field"><span class="label">Тип пользователя</span><span class="value"><span class="user-type">Новичок</span></span></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <p>Для новичков самым простым вариантом остается ChatGPT — здесь достаточно описать задачу обычными словами. Если же вы регулярно занимаетесь разработкой, стоит обратить внимание на Cursor или Windsurf, которые работают непосредственно с кодовой базой.</p>
+
+            <div class="pic">
+                <img class="featured-img" src="https://tstas69-spec.github.io/images/Vibe-Coding/vaibcoding-eto.png" alt="Вайбкодинг что это" loading="lazy" />
+            </div>
+
+            <h2>Можно ли заниматься вайбкодингом без знания программирования</h2>
+            <p>Это один из самых популярных вопросов.</p>
+            <p>Короткий ответ — <strong>да, но с ограничениями</strong>.</p>
+            <p>Если цель — сделать небольшой сайт, лендинг, калькулятор, Telegram-бота или автоматизировать рутинную задачу, современных возможностей ИИ зачастую достаточно. Он не только пишет код, но и объясняет, куда его вставить, как запустить проект и как исправить возникающие ошибки.</p>
+            <p>Однако чем сложнее становится проект, тем чаще возникают ситуации, когда без понимания основ программирования уже не обойтись. Искусственный интеллект может предложить несколько вариантов решения, но выбрать подходящий и оценить последствия придется человеку.</p>
+            <p>Хорошая аналогия — использование калькулятора. Он быстро считает, но не объясняет, какую формулу следует применять. С вайбкодингом происходит примерно то же самое.</p>
+            <p>Если вы планируете регулярно создавать собственные проекты, стоит постепенно освоить хотя бы основы HTML, CSS, JavaScript или Python. Тогда эффективность работы с ИИ возрастет в несколько раз.</p>
+
+            <h2>Преимущества и недостатки вайбкодинга</h2>
+            <p>Как и любая технология, вайбкодинг имеет сильные и слабые стороны.</p>
+
+            <!-- ===== ГРАФИК ===== -->
+            <div class="chart-area">
+                <div class="chart-title">Оценка по шкале от 1 до 10 (где 10 — максимальная польза)</div>
+                <div class="chart-row">
+                    <div class="label">Скорость разработки <small>(+)</small></div>
+                    <div class="chart-bar-bg"><div class="chart-bar-fill bar-positive" style="width:90%;">9</div></div>
+                    <div class="value">9/10</div>
+                </div>
+                <div class="chart-row">
+                    <div class="label">Порог входа <small>(+)</small></div>
+                    <div class="chart-bar-bg"><div class="chart-bar-fill bar-positive" style="width:100%;">10</div></div>
+                    <div class="value">10/10</div>
+                </div>
+                <div class="chart-row">
+                    <div class="label">Автоматизация рутины <small>(+)</small></div>
+                    <div class="chart-bar-bg"><div class="chart-bar-fill bar-positive" style="width:90%;">9</div></div>
+                    <div class="value">9/10</div>
+                </div>
+                <div class="chart-row">
+                    <div class="label">Качество и надёжность кода <small>(+/-)</small></div>
+                    <div class="chart-bar-bg"><div class="chart-bar-fill bar-neutral" style="width:60%;">6</div></div>
+                    <div class="value">6/10</div>
+                </div>
+                <div class="chart-row">
+                    <div class="label">Безопасность <small>(–)</small></div>
+                    <div class="chart-bar-bg"><div class="chart-bar-fill bar-negative" style="width:40%;">4</div></div>
+                    <div class="value">4/10</div>
+                </div>
+                <div class="note">
+                    <strong>Как читать:</strong> высокие баллы (зелёный) — сильные стороны, низкие (красный) — зоны риска. 
+                    Вайбкодинг отлично ускоряет работу и снижает порог входа, но требует проверки кода и внимания к безопасности.
+                </div>
+            </div>
+
+            <p>Главное правило остается неизменным: <strong>не копируйте код вслепую</strong>. Даже если он выглядит правильным, его необходимо протестировать и убедиться, что он соответствует вашим требованиям.</p>
+
+            <h2>Частые ошибки новичков</h2>
+            <p>Практика показывает, что большинство проблем связано не с самим ИИ, а с неправильной постановкой задачи.</p>
+            <p>Самые распространенные ошибки:</p>
+            <ul>
+                <li>слишком короткий запрос вроде «Сделай сайт»;</li>
+                <li>отсутствие описания требований и целей проекта;</li>
+                <li>попытка создать большой сервис одним промптом;</li>
+                <li>использование кода без проверки;</li>
+                <li>отказ от тестирования после внесения изменений.</li>
+            </ul>
+            <p>Чем конкретнее описание, тем качественнее получится результат.</p>
+            <p>Например, вместо:</p>
+            <blockquote>Создай сайт.</blockquote>
+            <p>Лучше написать:</p>
+            <blockquote>Создай адаптивный лендинг для веб-студии. Используй светлый дизайн, добавь блок преимуществ, форму обратной связи, отзывы клиентов и кнопку заказа. Код раздели на HTML, CSS и JavaScript.</blockquote>
+            <p>Разница в качестве ответа обычно оказывается огромной.</p>
+
+            <h2>Практический мини-кейс: создаем веб-страницу с помощью ChatGPT за 10–15 минут</h2>
+            <p>Попробуем решить реальную задачу без написания кода вручную.</p>
+            <p>Предположим, нам нужен простой сайт-визитка компании.</p>
+
+            <h3>Шаг 1. Формулируем задачу</h3>
+            <p>Используем такой промпт:</p>
+            <blockquote>Создай современный адаптивный лендинг для компании по разработке сайтов. Используй HTML, CSS и JavaScript. Добавь первый экран с заголовком и кнопкой, блок преимуществ, описание услуг, отзывы клиентов, форму обратной связи и футер. Используй современный минималистичный дизайн. Код раздели по файлам и подробно объясни, как запустить проект.</blockquote>
+            <p><strong>Почему именно так?</strong></p>
+            <p>Промпт сразу задает структуру сайта, перечень блоков, используемые технологии и формат ответа. Благодаря этому ИИ не будет гадать, что именно требуется.</p>
+
+            <h3>Шаг 2. Получаем первый вариант</h3>
+            <p>Через несколько секунд ChatGPT обычно генерирует:</p>
+            <ul>
+                <li>index.html;</li>
+                <li>style.css;</li>
+                <li>script.js.</li>
+            </ul>
+            <p>После сохранения файлов сайт уже можно открыть в браузере.</p>
+
+            <h3>Шаг 3. Улучшаем дизайн</h3>
+            <p>Следующий запрос может выглядеть так:</p>
+            <blockquote>Сделай дизайн современнее. Добавь плавную анимацию появления блоков, градиентный фон, карточки с тенями и адаптацию под мобильные устройства.</blockquote>
+            <p>Такой подход позволяет постепенно дорабатывать проект без переписывания всего кода.</p>
+
+            <h3>Шаг 4. Добавляем новые функции</h3>
+            <p>Например:</p>
+            <blockquote>Добавь кнопку переключения светлой и темной темы, плавную прокрутку по разделам и проверку формы обратной связи перед отправкой.</blockquote>
+            <p>ИИ внесет изменения только в нужные части проекта.</p>
+
+            <h3>Шаг 5. Исправляем ошибки</h3>
+            <p>Если сайт работает неправильно, достаточно отправить сообщение:</p>
+            <blockquote>После добавления темной темы кнопка перестала менять цвет. Найди ошибку, объясни причину и исправь код, не изменяя остальной функционал.</blockquote>
+            <p>В большинстве случаев нейросеть быстро находит проблему и предлагает исправление.</p>
+            <p>Такой цикл — <strong>описание задачи → генерация кода → тестирование → уточнение требований</strong> — и является основой современного вайбкодинга.</p>
+
+            <h2>Готовые промты для вайбкодинга</h2>
+
+            <h3>Создание сайта</h3>
+            <blockquote>Создай адаптивный лендинг компании с современным дизайном. Используй HTML, CSS и JavaScript. Добавь первый экран, преимущества, услуги, отзывы, форму обратной связи и футер. Код раздели по файлам и подробно объясни запуск проекта.</blockquote>
+            <p><strong>Почему работает:</strong> промпт сразу определяет структуру, технологии и ожидаемый формат ответа.</p>
+
+            <h3>Создание Python-скрипта</h3>
+            <blockquote>Напиши Python-скрипт, который обрабатывает CSV-файл, удаляет дубликаты, сортирует данные по дате и сохраняет результат в новый файл. Подробно прокомментируй код.</blockquote>
+            <p><strong>Почему работает:</strong> задача разбита на конкретные действия, поэтому ИИ не приходится делать предположения.</p>
+
+            <h3>Исправление ошибок</h3>
+            <blockquote>Проанализируй следующий код. Найди ошибки, объясни каждую из них простыми словами, исправь код и предложи способ избежать подобных проблем в будущем.</blockquote>
+            <p><strong>Почему работает:</strong> нейросеть не только исправляет код, но и объясняет причины ошибок, что помогает быстрее учиться.</p>
+
+            <h2>Мифы о вайбкодинге</h2>
+
+            <h3>Миф 1. ИИ полностью заменит программистов.</h3>
+            <p>На практике он заменяет лишь часть рутинной работы. Архитектура, проектирование и принятие решений по-прежнему остаются за человеком.</p>
+
+            <h3>Миф 2. Код всегда работает с первого раза.</h3>
+            <p>Даже лучшие модели иногда допускают ошибки, поэтому тестирование остается обязательным.</p>
+
+            <h3>Миф 3. Можно создавать любые проекты без знаний.</h3>
+            <p>Небольшие приложения — да. Но сложные корпоративные системы требуют опыта и понимания принципов разработки.</p>
+
+            <h3>Миф 4. Вайбкодинг подходит только новичкам.</h3>
+            <p>Наоборот, опытные разработчики часто получают от него максимальную выгоду, потому что умеют быстро проверять и дорабатывать результат.</p>
+
+            <h2>Стоит ли изучать вайбкодинг в 2026 году</h2>
+            <p>Если вы работаете с цифровыми продуктами, ответ почти всегда положительный.</p>
+            <p>Вайбкодинг позволяет быстрее проверять идеи, создавать первые версии проектов и автоматизировать рутинные процессы. Даже базовые навыки работы с ИИ помогают экономить часы рабочего времени каждую неделю.</p>
+            <p>При этом важно помнить, что искусственный интеллект — это помощник, а не самостоятельный разработчик. Чем лучше человек понимает задачу и умеет формулировать запросы, тем выше качество результата.</p>
+            <p>Именно поэтому сегодня ценится не столько умение быстро печатать код, сколько способность правильно ставить задачи, критически оценивать ответы ИИ и доводить проект до рабочего состояния.</p>
+
+            <h2>Часто задаваемые вопросы</h2>
+
+            <h3>Чем вайбкодинг отличается от обычного программирования?</h3>
+            <p>При классической разработке код пишется вручную. В вайбкодинге значительную часть работы выполняет ИИ, а человек управляет процессом через текстовые запросы.</p>
+
+            <!-- ===== ТАБЛИЦА 2: СРАВНЕНИЕ ===== -->
+            <div class="table-wrapper">
+
+                <!-- Десктопная версия -->
+                <table class="table-desktop">
+                    <thead>
+                        <tr>
+                            <th>Критерий сравнения</th>
+                            <th>Классическое программирование</th>
+                            <th>Вайбкодинг</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Основной процесс</strong></td>
+                            <td>Написание кода строка за строкой вручную</td>
+                            <td>Диалог с ИИ на естественном языке + правка кода</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Кто главный исполнитель</strong></td>
+                            <td>Человек (разработчик)</td>
+                            <td>ИИ (генерирует), Человек (контролирует)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Скорость создания MVP</strong></td>
+                            <td>Недели / Месяцы</td>
+                            <td>Часы / Один день</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ключевой навык</strong></td>
+                            <td>Знание синтаксиса, алгоритмов, архитектуры</td>
+                            <td>Умение формулировать задачи (промптинг) и отлаживать код</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Роль человека</strong></td>
+                            <td>Создатель кода</td>
+                            <td>Архитектор и тестировщик</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Идеальный сценарий</strong></td>
+                            <td>Сложные, высоконагруженные, уникальные системы</td>
+                            <td>Прототипы, MVP, автоматизация, несложные приложения</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Мобильная версия (карточки) -->
+                <div class="table-mobile">
+                    <div class="card">
+                        <div class="field"><span class="label">Критерий</span><span class="value"><strong>Основной процесс</strong></span></div>
+                        <div class="field"><span class="label">Классическое</span><span class="value">Написание кода строка за строкой вручную</span></div>
+                        <div class="field"><span class="label">Вайбкодинг</span><span class="value">Диалог с ИИ на естественном языке + правка кода</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Критерий</span><span class="value"><strong>Кто главный исполнитель</strong></span></div>
+                        <div class="field"><span class="label">Классическое</span><span class="value">Человек (разработчик)</span></div>
+                        <div class="field"><span class="label">Вайбкодинг</span><span class="value">ИИ (генерирует), Человек (контролирует)</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Критерий</span><span class="value"><strong>Скорость создания MVP</strong></span></div>
+                        <div class="field"><span class="label">Классическое</span><span class="value">Недели / Месяцы</span></div>
+                        <div class="field"><span class="label">Вайбкодинг</span><span class="value">Часы / Один день</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Критерий</span><span class="value"><strong>Ключевой навык</strong></span></div>
+                        <div class="field"><span class="label">Классическое</span><span class="value">Знание синтаксиса, алгоритмов, архитектуры</span></div>
+                        <div class="field"><span class="label">Вайбкодинг</span><span class="value">Умение формулировать задачи (промптинг) и отлаживать код</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Критерий</span><span class="value"><strong>Роль человека</strong></span></div>
+                        <div class="field"><span class="label">Классическое</span><span class="value">Создатель кода</span></div>
+                        <div class="field"><span class="label">Вайбкодинг</span><span class="value">Архитектор и тестировщик</span></div>
+                    </div>
+                    <div class="card">
+                        <div class="field"><span class="label">Критерий</span><span class="value"><strong>Идеальный сценарий</strong></span></div>
+                        <div class="field"><span class="label">Классическое</span><span class="value">Сложные, высоконагруженные, уникальные системы</span></div>
+                        <div class="field"><span class="label">Вайбкодинг</span><span class="value">Прототипы, MVP, автоматизация, несложные приложения</span></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3>Можно ли создать приложение без знания языков программирования?</h3>
+            <p>Небольшие проекты — да. Но для развития и поддержки сложных приложений знание основ программирования остается важным преимуществом.</p>
+
+            <h3>Какой инструмент лучше выбрать новичку?</h3>
+            <p>Для первых экспериментов проще всего использовать ChatGPT. Когда появится опыт, можно перейти на Cursor, Windsurf или GitHub Copilot.</p>
+
+            <h3>Безопасно ли использовать код, созданный нейросетью?</h3>
+            <p>Да, если внимательно проверять результат, тестировать приложение и не использовать сгенерированный код без анализа.</p>
+
+            <h2>Заключение</h2>
+            <p>Вайбкодинг — это не отказ от программирования, а новый способ взаимодействия с ним. Вместо долгого написания кода человек концентрируется на идее, а искусственный интеллект берет на себя значительную часть рутинной работы.</p>
+            <p>Для новичков это возможность быстрее войти в мир разработки и создать первые проекты без многомесячного обучения. Для опытных специалистов — инструмент, который помогает ускорить создание прототипов, автоматизировать повторяющиеся задачи и сосредоточиться на более сложных инженерных решениях.</p>
+            <p>Скорее всего, в ближайшие годы именно такой формат работы станет привычным для большинства разработчиков. Побеждать будут не те, кто пишет код быстрее всех, а те, кто умеет эффективно сотрудничать с искусственным интеллектом и использовать его возможности с максимальной пользой.</p>
+            <p>Надеюсь, что удалось рассказать про вайбкодинг и что это такое простыми словами.</p>
+
+            <!-- ===== ФОРМА КОММЕНТАРИЕВ ===== -->
+            <div class="comment-form">
+                <h3>Оставить комментарий</h3>
+                <p>Задавайте вопросы, делитесь опытом или предложениями</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
+                    <button type="submit">Отправить комментарий</button>
+                </form>
+                <p>Все комментарии проходят модерацию перед публикацией.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="footer-privacy">
+        <div>
+            Отправляя формы заявки,<br />
+            вы подтверждаете согласие на обработку<br />
+            Администрацией сайта ваших персональных данных:<br />
+            имени и e-mail.<br />
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank">
+                Политика конфиденциальности
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===== COOKIE-БАННЕР ===== -->
+    <div id="cookie-banner">
+        <span>
+            Мы используем cookie для улучшения работы сайта. Продолжая просмотр, вы соглашаетесь с 
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank">политикой конфиденциальности</a>.
+        </span>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'">
+            Принять и закрыть
+        </button>
+    </div>
+
+    <!-- ===== YANDEX.METRIKA ===== -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <!-- ===== ПОП-АП ===== -->
+    <script type="text/javascript">
+        var delay_popup = 16000;
+        setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
+    </script>
+
+    <div id="bg_popup1">
+        <div id="popup1">
+            <h3 class="hi6">AI Аниматор!</h3>
+            <h3 class="hi6">Попробуй новую нейронку - AI - Аниматор!</h3>
+            <div style="text-align: center;">
+                <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+                   href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank" rel="noopener">Попробывать!</a>
+            </div>
+            <a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none'; return false;">X</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕРЫ ===== -->
+    <div id='follow1'>
+        <div class="hidemobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">Удобный доступ к зарубежным нейросетям!</a>
+        </div>
+    </div>
+
+    <div id='follow2'>
+        <div class="showmobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">ChatGPT 5.6 без VPN</a>
+        </div>
+    </div>
+
+</body>
+</html>
