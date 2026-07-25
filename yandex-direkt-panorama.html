@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>7 возможностей Яндекс Панорамы для рекламы</title>
+    <meta name="description" content="Яндекс Панорама — новый инструмент в Директе с умным охватом, машинным обучением и единым управлением медийной рекламой. 7 ключевых возможностей, сравнение с обычными кампаниями и визуализация эффективности.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* === БАЗОВЫЕ СТИЛИ === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #1e2a3a;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 16px;
+            padding-top: 100px;
+            background-color: #f7f9fc;
+        }
+        main {
+            margin-top: 30px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin-top: 60px;
+            }
+            body {
+                padding-top: 130px;
+                padding: 12px;
+                padding-top: 130px;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 8px;
+                padding-top: 130px;
+            }
+        }
+
+        /* === ТИПОГРАФИКА === */
+        h1 {
+            color: #1a2a3a;
+            margin-bottom: 12px;
+            font-size: 1.9em;
+            line-height: 1.3;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #3d4f62;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        h2 {
+            color: #1a5a8a;
+            margin-top: 38px;
+            margin-bottom: 14px;
+            padding-top: 12px;
+            border-top: 2px solid #e2e8f0;
+            font-size: 1.45em;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            color: #1a2a3a;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        p {
+            margin-bottom: 18px;
+            color: #1e2a3a;
+        }
+        ul, ol {
+            padding-left: 26px;
+            margin-bottom: 18px;
+        }
+        li {
+            margin-bottom: 8px;
+            color: #1e2a3a;
+        }
+
+        /* === ТАБЛИЦЫ — АДАПТИВНЫЕ === */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 24px 0;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: visible;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            min-width: 360px;
+        }
+        thead {
+            background: #1a2a3a;
+            color: #ffffff;
+        }
+        th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        td {
+            padding: 13px 16px;
+            border-bottom: 1px solid #eef2f6;
+            vertical-align: middle;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background-color: #f5f9ff;
+        }
+
+        @media (max-width: 600px) {
+            .table-wrapper {
+                border-radius: 10px;
+                overflow-x: visible;
+                border: none;
+                background: transparent;
+            }
+            table {
+                min-width: auto;
+                width: 100%;
+                display: block;
+                border: 1px solid #e2e8f0;
+                border-radius: 12px;
+                background: #ffffff;
+                overflow: hidden;
+            }
+            thead {
+                display: none;
+            }
+            tbody {
+                display: block;
+            }
+            tr {
+                display: block;
+                border-bottom: 1px solid #eef2f6;
+                padding: 6px 0;
+            }
+            tr:last-child {
+                border-bottom: none;
+            }
+            td {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 14px;
+                border-bottom: none;
+                font-size: 0.92em;
+                flex-wrap: wrap;
+            }
+            td:first-child {
+                font-weight: 600;
+                background: #f5f8fc;
+                border-radius: 6px 6px 0 0;
+                padding-top: 12px;
+            }
+            td:last-child {
+                padding-bottom: 12px;
+            }
+            td::before {
+                content: attr(data-label);
+                font-weight: 600;
+                color: #1a5a8a;
+                min-width: 110px;
+                font-size: 0.85em;
+                flex-shrink: 0;
+            }
+            .icon-group {
+                flex-wrap: wrap;
+            }
+            .icon-group .label {
+                font-size: 0.82em;
+                padding: 2px 10px;
+            }
+            .icon-group .icon {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            td {
+                font-size: 0.85em;
+                padding: 8px 10px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            td::before {
+                min-width: auto;
+                font-size: 0.8em;
+            }
+            .icon-group .label {
+                font-size: 0.75em;
+            }
+        }
+
+        .icon-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .icon-group .icon {
+            font-size: 1.4em;
+            line-height: 1;
+        }
+        .icon-group .label {
+            font-size: 0.88em;
+            background: #eef2f8;
+            padding: 2px 12px;
+            border-radius: 30px;
+            color: #1a2a3a;
+            font-weight: 600;
+        }
+
+        /* === СРАВНЕНИЕ === */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 24px 0;
+        }
+        .comparison-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e9edf4;
+        }
+        .comparison-card.old {
+            border-left: 4px solid #e74c3c;
+        }
+        .comparison-card.new {
+            border-left: 4px solid #27ae60;
+        }
+        .comparison-card h4 {
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .comparison-card ul li {
+            padding: 7px 0;
+            border-bottom: 1px solid #f0f2f5;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .comparison-card ul li:last-child {
+            border-bottom: none;
+        }
+        .comparison-card .icon {
+            font-size: 1.2em;
+        }
+        .comparison-card.old .icon {
+            color: #e74c3c;
+        }
+        .comparison-card.new .icon {
+            color: #27ae60;
+        }
+        @media (max-width: 600px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+        }
+
+        /* === ГРАФИК ЭФФЕКТИВНОСТИ — ОКОНЧАТЕЛЬНО ИСПРАВЛЕН === */
+        .efficiency-chart {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 24px 20px 20px;
+            margin: 24px 0;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .efficiency-chart .chart-title {
+            text-align: center;
+            font-weight: 700;
+            color: #1a2a3a;
+            font-size: 1.1em;
+            margin-bottom: 4px;
+            padding: 0 10px;
+        }
+        .efficiency-chart .chart-sub {
+            text-align: center;
+            font-size: 0.88em;
+            color: #5a6e82;
+            margin-bottom: 44px;  /* значительно увеличен отступ */
+            font-weight: 500;
+            padding: 0 10px;
+        }
+        .efficiency-chart .bar-wrap {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 150px;        /* уменьшена общая высота */
+            padding: 24px 8px 18px 8px; /* увеличен верхний отступ */
+            position: relative;
+        }
+        .efficiency-chart .bar-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 76px;
+        }
+        .efficiency-chart .bar-item .bar {
+            width: 44px;
+            border-radius: 8px 8px 0 0;
+            min-height: 8px;
+        }
+        /* Уменьшенные высоты для десктопа */
+        .efficiency-chart .bar-item .bar.b1 { background: linear-gradient(180deg, #2e86de, #5dade2); height: 115px; }
+        .efficiency-chart .bar-item .bar.b2 { background: linear-gradient(180deg, #27ae60, #58d68d); height: 135px; }
+        .efficiency-chart .bar-item .bar.b3 { background: linear-gradient(180deg, #f39c12, #f5b041); height: 88px; }
+        .efficiency-chart .bar-item .bar.b4 { background: linear-gradient(180deg, #e74c3c, #ec7063); height: 42px; }
+        .efficiency-chart .bar-item .bar-label {
+            margin-top: 12px;
+            font-size: 0.9em;
+            color: #1a2a3a;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .efficiency-chart .bar-item .bar-value {
+            font-size: 0.75em;
+            color: #5a6e82;
+            margin-top: 4px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .efficiency-chart .chart-footer {
+            text-align: center;
+            font-size: 0.92em;
+            color: #1a2a3a;
+            background: #e8f5e9;
+            padding: 8px 24px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 12px auto 0;
+            font-weight: 600;
+        }
+        .efficiency-chart .footer-wrap {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .efficiency-chart {
+                padding: 16px 10px 14px;
+            }
+            .efficiency-chart .chart-sub {
+                margin-bottom: 22px; /* на мобилке оставляем как было */
+            }
+            .efficiency-chart .bar-wrap {
+                height: 140px;
+                padding: 10px 4px 14px 4px;
+                gap: 4px;
+                justify-content: space-evenly;
+            }
+            .efficiency-chart .bar-item {
+                width: 54px;
+            }
+            .efficiency-chart .bar-item .bar {
+                width: 32px;
+            }
+            /* На мобилке высоты остаются прежними (уже были адаптированы) */
+            .efficiency-chart .bar-item .bar.b1 { height: 100px; }
+            .efficiency-chart .bar-item .bar.b2 { height: 118px; }
+            .efficiency-chart .bar-item .bar.b3 { height: 75px; }
+            .efficiency-chart .bar-item .bar.b4 { height: 35px; }
+            .efficiency-chart .bar-item .bar-label {
+                font-size: 0.76em;
+                margin-top: 8px;
+            }
+            .efficiency-chart .bar-item .bar-value {
+                font-size: 0.65em;
+                margin-top: 2px;
+            }
+            .efficiency-chart .chart-title {
+                font-size: 0.95em;
+            }
+            .efficiency-chart .chart-sub {
+                font-size: 0.78em;
+            }
+            .efficiency-chart .chart-footer {
+                font-size: 0.78em;
+                padding: 5px 14px;
+            }
+        }
+        @media (max-width: 400px) {
+            .efficiency-chart .bar-wrap {
+                height: 115px;
+                padding: 8px 2px 10px 2px;
+            }
+            .efficiency-chart .bar-item {
+                width: 42px;
+            }
+            .efficiency-chart .bar-item .bar {
+                width: 26px;
+            }
+            .efficiency-chart .bar-item .bar.b1 { height: 82px; }
+            .efficiency-chart .bar-item .bar.b2 { height: 96px; }
+            .efficiency-chart .bar-item .bar.b3 { height: 60px; }
+            .efficiency-chart .bar-item .bar.b4 { height: 28px; }
+            .efficiency-chart .bar-item .bar-label {
+                font-size: 0.65em;
+            }
+            .efficiency-chart .bar-item .bar-value {
+                display: none;
+            }
+            .efficiency-chart .chart-title {
+                font-size: 0.85em;
+            }
+        }
+
+        /* === АУДИТОРИЯ === */
+        .audience-diagram {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 16px 24px;
+            margin: 24px 0;
+            padding: 20px 16px;
+            background: #f5f8ff;
+            border-radius: 16px;
+            border: 1px solid #e0e8f2;
+        }
+        .audience-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .audience-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85em;
+            text-align: center;
+            padding: 10px;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+            line-height: 1.3;
+        }
+        .audience-circle.c1 { background: #2e86de; }
+        .audience-circle.c2 { background: #27ae60; }
+        .audience-circle.c3 { background: #e67e22; }
+        .audience-circle.center {
+            background: #8e44ad;
+            width: 120px;
+            height: 120px;
+            font-size: 0.95em;
+        }
+        .audience-label {
+            font-size: 0.85em;
+            color: #3d4f62;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        @media (max-width: 600px) {
+            .audience-diagram {
+                gap: 12px 16px;
+                padding: 14px 10px;
+            }
+            .audience-circle {
+                width: 72px;
+                height: 72px;
+                font-size: 0.7em;
+            }
+            .audience-circle.center {
+                width: 90px;
+                height: 90px;
+                font-size: 0.8em;
+            }
+        }
+        @media (max-width: 400px) {
+            .audience-circle {
+                width: 60px;
+                height: 60px;
+                font-size: 0.6em;
+            }
+            .audience-circle.center {
+                width: 76px;
+                height: 76px;
+                font-size: 0.7em;
+            }
+        }
+
+        /* === ФОРМА === */
+        .comment-form {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin: 34px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #1a2a3a;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 12px 14px;
+            margin: 10px 0;
+            border: 1px solid #dce2ea;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+            background: #fafbfc;
+            transition: border-color 0.2s;
+        }
+        .comment-form input:focus,
+        .comment-form textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            background: #ffffff;
+        }
+        .comment-form button {
+            background-color: #1a5a8a;
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            width: 100%;
+            max-width: 220px;
+            transition: background-color 0.2s;
+        }
+        .comment-form button:hover {
+            background-color: #2e6f9e;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #6a7e92;
+            margin-top: 14px;
+        }
+        @media (max-width: 600px) {
+            .comment-form {
+                padding: 16px 14px;
+            }
+            .comment-form button {
+                max-width: 100%;
+            }
+        }
+
+        /* === ФУТЕР === */
+        .footer-privacy {
+            background-color: #000000;
+            color: #a9a9a9;
+            padding: 22px 16px;
+            border-radius: 12px;
+            margin-top: 32px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .footer-privacy a {
+            color: #d3d3d3;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 6px;
+        }
+        .footer-privacy a:hover {
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .footer-privacy {
+                font-size: 13px;
+                padding: 16px 12px;
+            }
+        }
+
+        /* === БАННЕРЫ === */
+        #follow1, #follow2 {
+            background-color: #e6eeee;
+            z-index: 199;
+            top: 10px;
+            position: fixed;
+        }
+        .hidemobile {
+            visibility: visible;
+            display: block;
+        }
+        .showmobile {
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .hidemobile {
+                visibility: hidden;
+                display: none;
+            }
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            .showmobile {
+                display: inline;
+            }
+        }
+
+        /* === ПОП-АП === */
+        #bg_popup1 {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        #popup1 {
+            background: #204a55;
+            width: 480px;
+            max-width: 94%;
+            margin: 5% auto;
+            padding: 16px 20px 20px;
+            border: 2px solid #1ba600;
+            position: relative;
+            box-shadow: 0 0 20px #000;
+            border-radius: 15px;
+        }
+        .close1 {
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 2px;
+            right: 6px;
+            width: 28px;
+            height: 28px;
+            line-height: 30px;
+            color: #fff;
+            background: #1ba600;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 1px 1px 3px #000;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .close1:hover {
+            background-color: #f30;
+        }
+        .hi6 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            margin: 8px 0;
+            line-height: 1.3;
+        }
+        @media (max-width: 480px) {
+            .hi6 {
+                font-size: 18px;
+            }
+        }
+
+        /* === COOKIE === */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1a2a3a;
+            color: #f0f4f8;
+            padding: 14px 18px;
+            text-align: center;
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+        #cookie-banner a {
+            color: #6ab0e6;
+            text-decoration: underline;
+        }
+        #cookie-banner button {
+            padding: 6px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        #cookie-banner button:hover {
+            background-color: #4aa3df;
+        }
+        @media (max-width: 600px) {
+            #cookie-banner {
+                font-size: 13px;
+                padding: 10px 12px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            #cookie-banner button {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <h1>Что такое Яндекс Панорама и почему о ней начали говорить</h1>
+            <p class="lead"><strong>Яндекс Панорама</strong> — новый тип охватной рекламы в Яндекс Директе, который сейчас проходит закрытое бета-тестирование. Главная идея инструмента — объединить различные медийные форматы в одну рекламную кампанию, чтобы система самостоятельно распределяла показы между площадками и увеличивала число уникальных пользователей, увидевших рекламу.</p>
+
+            <p>На первый взгляд может показаться, что это всего лишь очередной рекламный формат. Однако при более внимательном изучении становится понятно: Яндекс пытается изменить сам подход к запуску медийных кампаний. Вместо того чтобы отдельно настраивать баннеры, видеорекламу и в перспективе наружные экраны, рекламодатель получает единый центр управления охватом.</p>
+
+            <p>Если тестирование пройдет успешно, «Панорама» может стать одним из самых заметных обновлений Яндекс Директа последних лет.</p>
+
+            <h2>Почему обычной медийной рекламы уже недостаточно</h2>
+            <p>Сегодня крупные рекламные кампании редко ограничиваются одним форматом. Пользователь может утром открыть главную страницу одного сервиса, днем посмотреть видео, вечером воспользоваться навигатором или музыкальным приложением. Если реклама размещается отдельно в каждом канале, возникают сразу несколько проблем.</p>
+            <ul>
+                <li><strong>Во-первых,</strong> один и тот же человек может увидеть объявление слишком много раз. Бюджет расходуется, а реальный охват почти не увеличивается.</li>
+                <li><strong>Во-вторых,</strong> разные кампании начинают конкурировать между собой. Баннеры и видеоролики могут показываться одной аудитории, тогда как другие потенциальные клиенты вообще не увидят рекламу.</li>
+                <li><strong>В-третьих,</strong> становится сложно оценить итоговую эффективность продвижения. Каждый формат показывает собственную статистику, но общей картины рекламодатель не получает.</li>
+            </ul>
+            <p>Именно эти задачи Яндекс и пытается решить с помощью нового инструмента.</p>
+
+            <h2>Возможность №1. Единая рекламная кампания вместо нескольких</h2>
+            <p>Главное отличие Яндекс Панорамы заключается в том, что различные медийные размещения объединяются внутри одной кампании. Вместо запуска нескольких независимых проектов рекламодатель получает единый механизм управления охватом.</p>
+            <p>На первом этапе доступны два основных формата:</p>
+            <ul>
+                <li>Прайм-баннер;</li>
+                <li>медийная видеореклама в Видеосети Яндекса.</li>
+            </ul>
+            <p>В дальнейшем разработчики планируют добавить цифровую наружную рекламу. Тогда в одной кампании смогут одновременно использоваться онлайн- и офлайн-площадки.</p>
+            <p>Для маркетологов это означает заметное упрощение работы. Не придется отдельно распределять бюджеты между различными форматами и затем пытаться свести результаты в единую статистику.</p>
+
+            <h2>Возможность №2. Умный охват без лишних повторов</h2>
+            <p>Самой интересной особенностью Панорамы можно назвать интеллектуальное распределение показов.</p>
+            <p>Представим простую ситуацию. Пользователь утром читает новости на одном сервисе Яндекса, днем включает видеоролик, а вечером пользуется картами. При традиционной настройке рекламы он может увидеть одно и то же объявление три или четыре раза подряд. Для рекламодателя это далеко не всегда выгодно. После нескольких повторов эффективность контактов начинает снижаться.</p>
+
+            <!-- ГРАФИК ЭФФЕКТИВНОСТИ — ИСПРАВЛЕН ОКОНЧАТЕЛЬНО -->
+            <div class="efficiency-chart">
+                <div class="chart-title">📊 Эффективность контакта в зависимости от частоты показов</div>
+                <div class="chart-sub">Панорама удерживает охват на пике, не допуская «перегрева» аудитории</div>
+                 <div></div>
+                <br />
+                <div class="bar-wrap">
+                   
+                    <div class="bar-item">
+                        <div class="bar b2"></div>
+                        <div class="bar-label">1-й показ</div>
+                        <div class="bar-value">макс. вовлечение</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar b1"></div>
+                        <div class="bar-label">2-й показ</div>
+                        <div class="bar-value">высокий интерес</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar b3"></div>
+                        <div class="bar-label">3-й показ</div>
+                        <div class="bar-value">снижение</div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar b4"></div>
+                        <div class="bar-label">4+ показов</div>
+                        <div class="bar-value">рекламная усталость</div>
+                    </div>
+                </div>
+                <div class="footer-wrap">
+                    <span class="chart-footer">✅ Алгоритмы Панорамы сокращают повторы, сохраняя эффективность</span>
+                </div>
+            </div>
+
+            <p>В Панораме алгоритмы машинного обучения анализируют пересечение аудиторий между площадками и стараются показывать рекламу тем пользователям, которые еще не видели объявление. В результате бюджет используется эффективнее. Вместо большого количества повторных показов одним людям система стремится увеличить общий охват кампании.</p>
+            <p><strong>Практическое наблюдение.</strong> Такой подход давно используется крупнейшими мировыми рекламными платформами. Теперь аналогичная логика постепенно появляется и в экосистеме Яндекса.</p>
+
+            <h2>Возможность №3. Управление частотой контактов</h2>
+            <p>Еще одна проблема медийной рекламы — слишком частые показы. Практически каждый сталкивался с ситуацией, когда один и тот же баннер буквально преследует пользователя на протяжении нескольких дней. Подобный эффект называют рекламной усталостью. Чем чаще человек видит одно и то же объявление, тем слабее становится его реакция.</p>
+            <p>Панорама позволяет централизованно контролировать частоту контактов сразу для всей рекламной кампании. Это особенно важно для продвижения брендов, когда необходимо поддерживать узнаваемость, но не вызывать раздражение у аудитории.</p>
+            <p>Для компаний такой подход дает сразу несколько преимуществ:</p>
+            <ul>
+                <li>более рациональное использование рекламного бюджета;</li>
+                <li>увеличение количества уникальных контактов;</li>
+                <li>снижение эффекта «баннерной слепоты»;</li>
+                <li>более равномерное распределение показов между площадками.</li>
+            </ul>
+
+            <h2>Возможность №4. Оптимизация с помощью машинного обучения</h2>
+            <p>Еще одна сильная сторона нового инструмента — встроенные стратегии оптимизации. Вместо ручной настройки большого количества параметров рекламодатель может выбрать цель кампании, а система сама будет стремиться достичь нужного результата.</p>
+            <p>На этапе закрытого тестирования доступны четыре стратегии.</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Стратегия</th>
+                            <th>Для каких задач подходит</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Стратегия"><span class="icon-group"><span class="icon">📈</span> <span class="label">Рост брендовых метрик</span></span></td>
+                            <td data-label="Для каких задач">Повышение узнаваемости компании или продукта</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Стратегия"><span class="icon-group"><span class="icon">🔍</span> <span class="label">Рост запросов в Поиске</span></span></td>
+                            <td data-label="Для каких задач">Увеличение интереса к бренду и количества поисковых запросов</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Стратегия"><span class="icon-group"><span class="icon">🌐</span> <span class="label">Рост визитов на сайт</span></span></td>
+                            <td data-label="Для каких задач">Привлечение дополнительного трафика</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Стратегия"><span class="icon-group"><span class="icon">🎯</span> <span class="label">Рост целевых действий</span></span></td>
+                            <td data-label="Для каких задач">Получение заявок, регистраций или других конверсий</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Фактически Яндекс переносит акцент с ручного управления рекламой на управление бизнес-результатом. Для многих рекламодателей это окажется удобнее, чем постоянная корректировка ставок и настроек.</p>
+
+            <h2>Возможность №5. Охват более 120 миллионов пользователей</h2>
+            <p>Одним из главных преимуществ Панорамы Яндекс называет возможность работать с аудиторией, которая превышает 120 миллионов уникальных пользователей в месяц. Причем речь идет не только об онлайн-площадках, но и о перспективах объединения цифровых наружных экранов в единую систему.</p>
+
+            <div class="audience-diagram">
+                <div class="audience-item">
+                    <div class="audience-circle c1">Сервисы<br>Яндекса</div>
+                    <div class="audience-label">Поиск, Карты, Музыка</div>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-circle c2">Видеосеть</div>
+                    <div class="audience-label">Медийная видеореклама</div>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-circle center">120 млн+<br>уникальных<br>пользователей</div>
+                    <div class="audience-label" style="font-weight: 700; color: #1a2a3a;">Единый охват без дублей</div>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-circle c3">Наружная<br>реклама</div>
+                    <div class="audience-label">Цифровые экраны (в планах)</div>
+                </div>
+            </div>
+
+            <p>Для крупных брендов это означает возможность запускать действительно масштабные рекламные кампании без необходимости использовать несколько независимых инструментов.</p>
+            <p>Например, сегодня компания может отдельно размещать рекламу в различных сервисах Яндекса, видеосети и других медийных каналах. После полноценного запуска Панорамы значительная часть этой работы может выполняться в рамках одной кампании.</p>
+            <p>Для рекламодателей это дает сразу несколько преимуществ:</p>
+            <ul>
+                <li>единое управление медийным размещением;</li>
+                <li>снижение количества пересекающихся показов;</li>
+                <li>более прозрачную аналитику;</li>
+                <li>удобное масштабирование рекламных кампаний.</li>
+            </ul>
+            <p>Конечно, максимальную отдачу такой подход принесет компаниям с федеральной аудиторией или большим количеством региональных клиентов. Однако со временем возможности нового инструмента могут оказаться востребованными и у среднего бизнеса.</p>
+
+            <h2>Возможность №6. Более точная оценка эффективности рекламы</h2>
+            <p>Одна из самых сложных задач медийной рекламы — понять, насколько успешно сработала вся рекламная кампания. Если используются несколько площадок, каждая из них показывает собственную статистику. В итоге маркетологу приходится самостоятельно объединять данные и оценивать реальные результаты.</p>
+            <p>Панорама предлагает другой подход. Поскольку различные форматы объединяются внутри одной кампании, рекламодатель получает более целостную картину продвижения. Можно оценивать общий охват, контролировать частоту контактов и отслеживать выполнение выбранной стратегии оптимизации.</p>
+            <p>Особенно интересны четыре цели, доступные уже на этапе тестирования:</p>
+            <ul>
+                <li>рост узнаваемости бренда;</li>
+                <li>увеличение числа поисковых запросов;</li>
+                <li>привлечение посетителей на сайт;</li>
+                <li>рост целевых действий.</li>
+            </ul>
+            <p>Такой подход показывает, что Яндекс постепенно смещает акцент с простых показателей вроде количества показов или кликов на реальные бизнес-результаты. Это соответствует общей тенденции развития рекламных платформ, где все больше решений принимают алгоритмы машинного обучения.</p>
+
+            <h2>Возможность №7. Подготовка к единой рекламной экосистеме</h2>
+            <p>Пожалуй, самая интересная особенность Панорамы заключается даже не в ее текущих возможностях, а в направлении развития. Сейчас рекламодателям доступны Прайм-баннер и медийная видеореклама. Но Яндекс уже сообщил о планах подключить цифровую наружную рекламу.</p>
+            <p>Если это произойдет, рекламные кампании смогут одновременно использовать:</p>
+            <ul>
+                <li>сервисы Яндекса;</li>
+                <li>Видеосеть Яндекса;</li>
+                <li>Рекламную сеть Яндекса;</li>
+                <li>цифровые экраны наружной рекламы.</li>
+            </ul>
+            <p>Фактически речь идет о создании единой медийной платформы, где рекламодатель будет управлять всей охватной рекламой из одного интерфейса. Это может существенно изменить привычную работу маркетологов. Вместо выбора отдельных площадок и ручного распределения бюджета система будет самостоятельно определять, где показ окажется наиболее эффективным.</p>
+
+            <h2>Чем Панорама отличается от обычной медийной рекламы</h2>
+
+            <div class="comparison-grid">
+                <div class="comparison-card old">
+                    <h4><span class="icon">❌</span> Обычные медийные кампании</h4>
+                    <ul>
+                        <li><span class="icon">📂</span> Несколько отдельных кампаний</li>
+                        <li><span class="icon">⚙️</span> Настройка каждого формата отдельно</li>
+                        <li><span class="icon">🔄</span> Возможны пересечения аудитории</li>
+                        <li><span class="icon">📊</span> Отдельная статистика</li>
+                        <li><span class="icon">🔧</span> Ограниченные возможности оптимизации</li>
+                        <li><span class="icon">💻</span> Работа только с выбранными площадками</li>
+                    </ul>
+                </div>
+                <div class="comparison-card new">
+                    <h4><span class="icon">✅</span> Яндекс Панорама</h4>
+                    <ul>
+                        <li><span class="icon">📁</span> Единая рекламная кампания</li>
+                        <li><span class="icon">🎛️</span> Совместное управление всеми форматами</li>
+                        <li><span class="icon">🧠</span> Алгоритмы уменьшают количество повторных показов</li>
+                        <li><span class="icon">📈</span> Общая аналитика по кампании</li>
+                        <li><span class="icon">🤖</span> Стратегии на основе машинного обучения</li>
+                        <li><span class="icon">🌍</span> Постепенное объединение онлайн- и офлайн-рекламы</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>Именно это отличие выглядит наиболее важным. Панорама — это не новый баннер и не еще один формат размещения. Скорее, это попытка изменить архитектуру медийной рекламы в Яндекс Директе.</p>
+
+            <h2>Кому подойдет новый инструмент</h2>
+            <p>Пока Панорама находится в закрытом тестировании и запускается через персонального менеджера Яндекса. Поэтому большинству рекламодателей остается лишь наблюдать за первыми результатами.</p>
+            <p>Наибольшую пользу новый инструмент может принести:</p>
+            <ul>
+                <li>крупным федеральным компаниям;</li>
+                <li>брендам, инвестирующим в узнаваемость;</li>
+                <li>рекламным агентствам;</li>
+                <li>сетевым магазинам;</li>
+                <li>автомобильному рынку;</li>
+                <li>девелоперам;</li>
+                <li>банкам и финансовым организациям.</li>
+            </ul>
+            <p>Для малого бизнеса Панорама вряд ли станет обязательным инструментом сразу после открытия доступа. Если компания получает клиентов преимущественно через поиск или контекстную рекламу с оплатой за конверсии, классические кампании Яндекс Директа еще долго останутся основным способом продвижения. Но если задача состоит в масштабном запуске нового бренда, продукта или федеральной рекламной кампании, единое управление охватом способно дать заметные преимущества.</p>
+
+            <h2>Стоит ли ждать открытого запуска Панорамы</h2>
+            <p>Пока делать окончательные выводы рано. Инструмент проходит закрытое бета-тестирование, а его эффективность еще предстоит подтвердить на реальных рекламных кампаниях.</p>
+            <p>Однако уже сейчас можно выделить несколько важных тенденций.</p>
+            <p><strong>Во-первых,</strong> Яндекс продолжает активно внедрять машинное обучение в рекламные продукты, передавая алгоритмам все больше задач по оптимизации.</p>
+            <p><strong>Во-вторых,</strong> компания движется к объединению различных рекламных форматов в единую экосистему. Это позволяет упростить управление кампаниями и сократить количество ручных настроек.</p>
+            <p><strong>В-третьих,</strong> основным показателем постепенно становится не число показов, а качество охвата и влияние рекламы на реальные бизнес-метрики.</p>
+            <p>Если эта концепция подтвердит свою эффективность после завершения тестирования, Панорама может стать одним из ключевых инструментов медийной рекламы в Яндекс Директе.</p>
+
+            <h2>Итоги</h2>
+            <p>Панорама — это не просто новый рекламный формат, а попытка объединить медийные возможности Яндекс Директа в единую систему. Уже на старте инструмент предлагает интеллектуальное распределение показов, управление частотой контактов, стратегии оптимизации на основе машинного обучения и работу с широкой аудиторией.</p>
+            <p>Пока доступ к сервису ограничен, но направление развития выглядит вполне логичным. Рынок цифровой рекламы постепенно уходит от ручной настройки отдельных кампаний к автоматическому управлению охватом, где главную роль играют алгоритмы и данные о поведении пользователей.</p>
+            <p>Именно поэтому за развитием Яндекс Панорамы стоит внимательно следить не только крупным брендам, но и компаниям среднего бизнеса. Если после завершения тестирования инструмент станет общедоступным, он может заметно изменить подход к запуску медийных рекламных кампаний в экосистеме Яндекса.</p>
+
+            <div class="comment-form">
+                <h3>💬 Оставить комментарий</h3>
+                <p>Задавайте вопросы, делитесь опытом или предложениями</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
+                    <button type="submit">Отправить комментарий</button>
+                </form>
+                <p>Все комментарии проходят модерацию перед публикацией.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <footer class="footer-privacy">
+        <div>
+            Отправляя формы заявки,<br>
+            вы подтверждаете согласие на обработку<br>
+            Администрацией сайта ваших персональных данных:<br>
+            имени и e-mail.<br>
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank">Политика конфиденциальности</a>
+        </div>
+    </footer>
+
+    <div id="cookie-banner">
+        <span>
+            Мы используем cookie для улучшения работы сайта. Продолжая просмотр, вы соглашаетесь с
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank">политикой конфиденциальности</a>.
+        </span>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'">Принять и закрыть</button>
+    </div>
+
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window,document,'script','https://mc.yandex.ru/metrika/tag.js','ym');
+        ym(109998907,'init',{webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute;left:-9999px;" alt=""></div>
+    </noscript>
+
+    <script type="text/javascript">
+        var delay_popup = 16000;
+        setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
+    </script>
+    <div id="bg_popup1">
+        <div id="popup1">
+            <h3 class="hi6">AI Аниматор!</h3>
+            <h3 class="hi6">Попробуй новую нейронку — AI-Аниматор!</h3>
+            <div style="text-align:center;">
+                <a style="display:inline-block;padding:12px 28px;cursor:pointer;background-image:linear-gradient(#0a0002,#0033ff);color:#ffffff;text-shadow:rgba(0,0,0,0.25) 0 -1px 0;background-color:#0a0002;border:5px solid red;border-color:rgba(255,0,51,1) rgba(255,0,51,1) rgba(255,0,51,1);border-radius:5px;line-height:20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;font-style:italic;text-decoration:none;height:54px;min-width:200px;margin:0 auto;"
+                   href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank" rel="noopener">Попробовать!</a>
+            </div>
+            <a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none';return false;">✕</a>
+        </div>
+    </div>
+
+    <div id="follow1">
+        <div class="hidemobile">
+            <a style="display:inline-block;padding:10px 25px;cursor:pointer;background-image:linear-gradient(#0a0002,#0033ff);color:#ffffff;text-shadow:rgba(0,0,0,0.25) 0 -1px 0;background-color:#0a0002;border:5px solid red;border-color:rgba(255,0,51,1) rgba(255,0,51,1) rgba(255,0,51,1);border-radius:5px;line-height:20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;font-style:italic;text-decoration:none;height:54px;width:100%;margin:auto;text-align:center;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">Удобный доступ к зарубежным нейросетям!</a>
+        </div>
+    </div>
+    <div id="follow2">
+        <div class="showmobile">
+            <a style="display:inline-block;padding:10px 20px;cursor:pointer;background-image:linear-gradient(#0a0002,#0033ff);color:#ffffff;text-shadow:rgba(0,0,0,0.25) 0 -1px 0;background-color:#0a0002;border:5px solid red;border-color:rgba(255,0,51,1) rgba(255,0,51,1) rgba(255,0,51,1);border-radius:5px;line-height:20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;font-style:italic;text-decoration:none;height:54px;width:100%;margin:auto;text-align:center;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">GPT 5.6 без VPN</a>
+        </div>
+    </div>
+
+</body>
+</html>
