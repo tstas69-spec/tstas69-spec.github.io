@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>AI Лаборатория</title>
+    <meta name="description" content="Официальные источники и практические материалы по искусственному интеллекту.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* ——— ВСЕ СТИЛИ ИЗ ШАБЛОНА ——— */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            padding-top: 100px;
+            background-color: #f9f9f9;
+        }
+        main { margin-top: 40px; }
+        @media (max-width: 600px) {
+            main { margin-top: 70px; }
+            body { padding-top: 130px; }
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover { text-decoration: underline; }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        ul, ol { padding-left: 25px; }
+        li { margin-bottom: 8px; }
+
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 { margin-top: 0; color: #2c3e50; }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover { background-color: #2980b9; }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        .footer-privacy {
+            background-color: #000000;
+            color: #A9A9A9;
+            padding: 20px 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .footer-privacy a {
+            color: #D3D3D3;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .footer-privacy a:hover { color: #ffffff; }
+        @media (max-width: 600px) {
+            .footer-privacy { font-size: 13px; padding: 15px 10px; }
+        }
+
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: center;
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+        #cookie-banner a { color: #4fc3f7; text-decoration: underline; }
+        #cookie-banner button {
+            padding: 6px 18px;
+            background-color: #4fc3f7;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            flex-shrink: 0;
+        }
+        #cookie-banner button:hover { background-color: #81d4fa; }
+        @media (max-width: 600px) {
+            #cookie-banner { flex-direction: column; gap: 8px; }
+            #cookie-banner button { width: 100%; max-width: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+            <h1>AI Лаборатория</h1>
+            <p class="lead"><strong>Официальные источники и практические материалы по искусственному интеллекту</strong></p>
+            <p>Добро пожаловать в <strong>AI Лабораторию</strong> — справочный раздел, где собраны официальные сайты ведущих разработчиков искусственного интеллекта, обзоры новых моделей, результаты практических тестов и полезные инструкции. Страница регулярно обновляется по мере выхода новых релизов и публикации материалов.</p>
+
+            <h2>Что нового в мире ИИ</h2>
+
+            <!-- OpenAI GPT -->
+            <h3>OpenAI GPT</h3>
+            <ul>
+                <li>
+                    <strong>🌐 Официальный сайт OpenAI</strong> — 
+                    <a href="https://openai.com" target="_blank">openai.com</a>.
+                    <span style="font-size:0.9em; color:#555;">Главный портал OpenAI с новостями, документацией и блогом компании.</span>
+                </li>
+                <li>
+                    <strong>📄 Обзор GPT-5.6</strong> — 
+                    <a href="https://tstas69-spec.github.io/gpt-5-6-reliz.html" target="_blank">Подробный разбор GPT-5.6</a>.
+                    <span style="font-size:0.9em; color:#555;">Анализ возможностей, отличий от предыдущих версий и практические тесты.</span>
+                </li>
+                <li>
+                    <strong>🧪 Обзор GPT-Work</strong> — 
+                    <a href="https://tstas69-spec.github.io/GPT-Work.html" target="_blank">Практическое тестирование GPT-Work</a>.
+                    <span style="font-size:0.9em; color:#555;">Оценка эффективности инструмента для решения рабочих задач.</span>
+                </li>
+            </ul>
+
+            <!-- Google Gemini -->
+            <h3>Google Gemini</h3>
+            <ul>
+                <li>
+                    <strong>🌐 Официальный сайт Google Gemini</strong> — 
+                    <a href="https://deepmind.google/technologies/gemini/" target="_blank">deepmind.google/gemini</a>.
+                    <span style="font-size:0.9em; color:#555;">Страница модели Gemini от Google DeepMind с описанием и техническими деталями.</span>
+                </li>
+                <li>
+                    <strong>📄 Обзор Gemini 3.5</strong> — 
+                    <a href="https://tstas69-spec.github.io/gemini-3/gemini-3.5-pro.html" target="_blank">Разбор Gemini 3.5 Pro</a>.
+                    <span style="font-size:0.9em; color:#555;">Сравнение с конкурентами, результаты бенчмарков и сценарии использования.</span>
+                </li>
+            </ul>
+
+            <!-- Anthropic Claude -->
+            <h3>Anthropic Claude</h3>
+            <ul>
+                <li>
+                    <strong>🌐 Официальный сайт Anthropic</strong> — 
+                    <a href="https://www.anthropic.com" target="_blank">anthropic.com</a>.
+                    <span style="font-size:0.9em; color:#555;">Портал компании-разработчика Claude с информацией о продуктах и исследованиях.</span>
+                </li>
+            </ul>
+
+            <!-- xAI Grok -->
+            <h3>xAI Grok</h3>
+            <ul>
+                <li>
+                    <strong>🌐 Официальный сайт xAI</strong> — 
+                    <a href="https://x.ai" target="_blank">x.ai</a> <span style="font-size:0.85em; color:#888;">(на английском)</span>.
+                    <span style="font-size:0.9em; color:#555;">Сайт компании Илона Маска, разрабатывающей модель Grok и другие AI-продукты.</span>
+                </li>
+            </ul>
+
+            <!-- Kimi (Moonshot AI) -->
+            <h3>Kimi (Moonshot AI)</h3>
+            <ul>
+                <li>
+                    <strong>🌐 Официальный сайт Moonshot AI</strong> — 
+                    <a href="https://www.moonshot.cn" target="_blank">moonshot.cn</a> <span style="font-size:0.85em; color:#888;">(на английском и китайском)</span>.
+                    <span style="font-size:0.9em; color:#555;">Платформа разработчика Kimi — китайского ассистента с продвинутым контекстным окном.</span>
+                </li>
+                <li>
+                    <strong>📄 Обзор Kimi-K3</strong> — 
+                    <a href="https://tstas69-spec.github.io/Kimi-K3.html" target="_blank">Тест модели Kimi K3</a>.
+                    <span style="font-size:0.9em; color:#555;">Анализ работы с большими объёмами данных и сравнение с западными аналогами.</span>
+                </li>
+            </ul>
+
+            <div style="margin-top:30px; padding:15px; background:#f0f4f8; border-radius:8px;">
+                <p><strong>Полезно знать:</strong> Материалы основаны на официальных публикациях разработчиков, практических тестах и собственном опыте использования современных ИИ-моделей. Раздел регулярно обновляется после выхода новых версий и значимых изменений.</p>
+            </div>
+
+            <!-- ===== ФОРМА КОММЕНТАРИЕВ ===== -->
+            <div class="comment-form">
+                <h3>Оставить комментарий</h3>
+                <p>Задавайте вопросы, делитесь опытом или предложениями</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
+                    <button type="submit">Отправить комментарий</button>
+                </form>
+                <p>Все комментарии проходят модерацию перед публикацией.</p>
+            </div>
+        </article>
+    </main>
+
+    <!-- ===== ФУТЕР С ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ ===== -->
+    <footer class="footer-privacy">
+        <div style="font-size:14px; color:#A9A9A9; line-height:1.5;">
+            Отправляя формы заявки,<br />
+            вы подтверждаете согласие на обработку<br />
+            Администрацией сайта ваших персональных данных:<br />
+            имени и e-mail.<br />
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank" 
+               style="color:#D3D3D3; text-decoration:underline; display:inline-block; margin-top:5px;">
+                Политика конфиденциальности
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===== COOKIE-БАННЕР ===== -->
+    <div id="cookie-banner">
+        <span>
+            Мы используем cookie для улучшения работы сайта. Продолжая просмотр, вы соглашаетесь с 
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank">политикой конфиденциальности</a>.
+        </span>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'">
+            Принять и закрыть
+        </button>
+    </div>
+
+    <!-- ===== YANDEX.METRIKA ===== -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+</body>
+</html>
