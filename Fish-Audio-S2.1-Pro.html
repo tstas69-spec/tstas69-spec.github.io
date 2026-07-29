@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>7 возможностей Fish Audio S2.1 Pro</title>
+    <meta name="description" content="Обзор новой модели Fish Audio S2.1 Pro: мгновенная генерация речи, поддержка 83 языков, клонирование голоса, API и сравнение с ElevenLabs. Разбор возможностей для разработчиков и создателей контента.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* === ПОЛНЫЙ КОМПЛЕКТ СТИЛЕЙ ИЗ ОБРАЗЦА === */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            padding-top: 100px;
+            background-color: #f9f9f9;
+        }
+        main {
+            margin-top: 40px;
+        }
+        @media (max-width: 600px) {
+            main {
+                margin-top: 70px;
+            }
+            body {
+                padding-top: 130px;
+            }
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 16px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 40px;
+            padding-top: 14px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+            margin-bottom: 16px;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 28px;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+        }
+        .step-label {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            background: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card strong, .block strong {
+            color: #2c3e50;
+        }
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 28px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 22px;
+            line-height: 1.8;
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        /* === Стили для таблиц === */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            min-width: 500px;
+        }
+        thead {
+            background: #2c3e50;
+            color: white;
+        }
+        th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background-color: #f5f9ff;
+        }
+        .model-name {
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .badge {
+            display: inline-block;
+            background: #ecf0f1;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #2c3e50;
+            white-space: nowrap;
+        }
+        .badge-leak {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-confirmed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        /* === Стили для иконок в таблице === */
+        .icon-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .icon-group .icon {
+            font-size: 1.3em;
+            line-height: 1;
+        }
+        .icon-group .label {
+            font-size: 0.85em;
+            background: #f1f4fa;
+            padding: 2px 10px;
+            border-radius: 30px;
+            color: #1e2a44;
+        }
+
+        /* === Стили для графика контекстного окна === */
+        .chart-area {
+            margin: 20px 0 16px;
+        }
+        .chart-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .chart-row .label {
+            width: 150px;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95em;
+            flex-shrink: 0;
+        }
+        .chart-row .label small {
+            font-weight: 400;
+            color: #7a8aa5;
+            font-size: 0.8em;
+            display: block;
+        }
+        .chart-bar-bg {
+            flex: 1;
+            height: 30px;
+            background: #eef2f8;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 14px;
+            font-size: 0.85em;
+            font-weight: 600;
+            color: white;
+            min-width: 40px;
+        }
+        .bar-gemini-pro { background: linear-gradient(90deg, #1a73e8, #4a9af5); }
+        .bar-gpt { background: linear-gradient(90deg, #10a37f, #34d399); }
+        .bar-claude { background: linear-gradient(90deg, #d97706, #f59e0b); }
+        .bar-gemini-flash { background: linear-gradient(90deg, #7c8ba0, #a8b8cf); }
+
+        .chart-row .value {
+            width: 70px;
+            text-align: right;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9em;
+            flex-shrink: 0;
+        }
+        .chart-row .value small {
+            font-weight: 400;
+            font-size: 0.7em;
+            color: #7a8aa5;
+        }
+
+        .note {
+            background: #f8faff;
+            border: 1px dashed #d0d9e8;
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-size: 0.9em;
+            color: #3d4e6b;
+            margin: 16px 0;
+        }
+        .note strong {
+            color: #2c3e50;
+        }
+
+        /* === Mobile optimization === */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .pic {
+                margin: 15px 0;
+            }
+            .card, .block {
+                padding: 12px 15px;
+            }
+            .comment-form {
+                padding: 15px;
+            }
+            .comment-form button {
+                max-width: 100%;
+            }
+            ul, ol {
+                padding-left: 18px;
+            }
+            .toc {
+                padding: 12px 15px;
+            }
+            .table-wrapper {
+                border-radius: 6px;
+            }
+            table {
+                font-size: 0.85em;
+                min-width: 400px;
+            }
+            th, td {
+                padding: 10px 12px;
+            }
+            .chart-row {
+                flex-wrap: wrap;
+                gap: 4px;
+            }
+            .chart-row .label {
+                width: 100%;
+                font-size: 0.9em;
+            }
+            .chart-row .label small {
+                display: inline;
+                margin-left: 6px;
+            }
+            .chart-row .value {
+                width: auto;
+                text-align: left;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+            table {
+                font-size: 0.78em;
+                min-width: 320px;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+
+        /* === Стили для баннеров follow1 и follow2 === */
+        #follow1,
+        #follow2 {
+            background-color: #e6eeee;
+            z-index: 199;
+            top: 10px;
+            position: fixed;
+        }
+
+        /* === Стили для скрытия/показа баннеров === */
+        .hidemobile {
+            visibility: visible;
+            display: block;
+        }
+        .showmobile {
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .hidemobile {
+                visibility: hidden;
+                display: none;
+            }
+        }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            .showmobile {
+                display: inline;
+            }
+        }
+
+        /* === Стили для затемненного фона поп-апа === */
+        #bg_popup1 {
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* === Стили для окна поп-апа === */
+        #popup1 {
+            background: #204a55;
+            width: 480px;
+            height: 250px;
+            margin: 5% auto;
+            padding: 5px 20px 13px;
+            border: 2px solid #1ba600;
+            position: relative;
+            -webkit-box-shadow: 0 0 20px #000;
+            -moz-box-shadow: 0 0 20px #000;
+            box-shadow: 0 0 20px #000;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+        }
+        @media all and (max-width: 480px) {
+            #popup1 {
+                width: 100%;
+            }
+        }
+
+        /* === Стили для кнопки закрытия === */
+        .close1 {
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 1px;
+            right: 5px;
+            width: 25px;
+            height: 25px;
+            line-height: 28px;
+            color: #fff;
+            background: #1ba600;
+            cursor: pointer;
+            -ms-border-radius: 15px;
+            -o-border-radius: 15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            -moz-box-shadow: 1px 1px 3px #000;
+            -webkit-box-shadow: 1px 1px 3px #000;
+            box-shadow: 1px 1px 3px #000;
+            text-decoration: none;
+        }
+        .close1:hover {
+            background-color: #f30;
+        }
+
+        /* === Стили для заголовков поп-апа === */
+        .hi6 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            padding: 5px 0;
+            line-height: 1.3;
+        }
+
+        /* Стиль для изображения */
+        .featured-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin: 16px 0;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .img-caption {
+            font-size: 0.9em;
+            color: #666;
+            text-align: center;
+            margin-top: -8px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* ===== НОВЫЕ СТИЛИ ДЛЯ ФУТЕРА (ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ) ===== */
+        .footer-privacy {
+            background-color: #000000;
+            color: #A9A9A9;
+            padding: 20px 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .footer-privacy a {
+            color: #D3D3D3;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .footer-privacy a:hover {
+            color: #ffffff;
+        }
+        @media (max-width: 600px) {
+            .footer-privacy {
+                font-size: 13px;
+                padding: 15px 10px;
+            }
+        }
+
+        /* ===== СТИЛИ ДЛЯ COOKIE-БАННЕРА ===== */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: center;
+            z-index: 1000;
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+        #cookie-banner span {
+            display: inline-block;
+        }
+        #cookie-banner a {
+            color: #4fc3f7;
+            text-decoration: underline;
+        }
+        #cookie-banner a:hover {
+            color: #81d4fa;
+        }
+        #cookie-banner button {
+            margin-left: 0;
+            padding: 6px 18px;
+            background-color: #4fc3f7;
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            flex-shrink: 0;
+            transition: background-color 0.2s;
+        }
+        #cookie-banner button:hover {
+            background-color: #81d4fa;
+        }
+        @media (max-width: 600px) {
+            #cookie-banner {
+                font-size: 13px;
+                padding: 10px 12px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            #cookie-banner button {
+                width: 100%;
+                max-width: 200px;
+                padding: 8px;
+            }
+        }
+
+        /* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ВИЗУАЛИЗАЦИИ ===== */
+        .summary-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 28px 0 32px;
+            justify-content: space-between;
+        }
+        .summary-card {
+            flex: 1 1 30%;
+            min-width: 130px;
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 18px 14px;
+            text-align: center;
+            border-bottom: 4px solid #3498db;
+        }
+        .summary-card .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            display: block;
+            line-height: 1.2;
+        }
+        .summary-card .label {
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        .delay-scale {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 26px 28px 28px;
+            margin: 28px 0 32px;
+            border: 1px solid #e9edf2;
+        }
+        .delay-scale h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 18px;
+            color: #0b1e33;
+        }
+        .scale-track {
+            position: relative;
+            height: 28px;
+            background: #e2e8f0;
+            border-radius: 40px;
+            overflow: visible;
+            margin: 10px 0 16px;
+            display: flex;
+            align-items: center;
+        }
+        .scale-segment {
+            height: 100%;
+            border-radius: 40px 0 0 40px;
+            display: flex;
+            align-items: center;
+            padding-left: 14px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: white;
+        }
+        .scale-segment.green {
+            width: 18%;
+            background: #22c55e;
+            border-radius: 40px;
+        }
+        .scale-segment.yellow {
+            width: 30%;
+            background: #eab308;
+            border-radius: 0;
+            color: #1e293b;
+        }
+        .scale-segment.red {
+            width: 52%;
+            background: #ef4444;
+            border-radius: 0 40px 40px 0;
+        }
+        .scale-markers {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #1e293b;
+            font-weight: 500;
+            padding: 0 4px;
+        }
+        .scale-markers span {
+            background: white;
+            padding: 0 10px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+        .fish-badge {
+            background: #2563eb;
+            color: white;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.7rem;
+            margin-left: 4px;
+        }
+        .scale-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 28px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #1e293b;
+            border-top: 1px dashed #d1d9e6;
+            padding-top: 20px;
+        }
+        .scale-legend .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 40px;
+            margin-right: 6px;
+        }
+        .scale-legend .dot.green-dot { background: #22c55e; }
+        .scale-legend .dot.yellow-dot { background: #eab308; }
+        .scale-legend .dot.red-dot { background: #ef4444; }
+        .scale-legend .dot.fish-dot {
+            background: #2563eb;
+            width: 14px;
+            height: 14px;
+            border: 2px solid #1e40af;
+            position: relative;
+            top: 2px;
+        }
+
+        .speed-chart {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 26px 28px 28px;
+            margin: 28px 0 32px;
+            border: 1px solid #e9edf2;
+        }
+        .speed-chart h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 22px;
+            color: #0b1e33;
+        }
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        .bar-item .bar-label {
+            width: 140px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1e293b;
+            flex-shrink: 0;
+        }
+        .bar-item .bar-track {
+            flex: 1;
+            height: 30px;
+            background: #e2e8f0;
+            border-radius: 40px;
+            overflow: hidden;
+        }
+        .bar-item .bar-fill {
+            height: 100%;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 14px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            min-width: 50px;
+        }
+        .bar-item .bar-fill.fish { background: linear-gradient(90deg, #2563eb, #3b82f6); width: 100%; }
+        .bar-item .bar-fill.gpt { background: #94a3b8; width: 81%; }
+        .bar-item .bar-fill.gemini { background: #94a3b8; width: 45%; }
+        .bar-item .bar-value {
+            font-weight: 600;
+            color: #0b1e33;
+            min-width: 60px;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+
+        .compare-table-wrap {
+            overflow-x: auto;
+            margin: 28px 0 32px;
+            border-radius: 12px;
+            border: 1px solid #e9edf2;
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 480px;
+        }
+        .compare-table th {
+            background: #f1f5f9;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: #0b1e33;
+            border-bottom: 2px solid #d1d9e6;
+        }
+        .compare-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e9edf2;
+            vertical-align: middle;
+        }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table .feature { font-weight: 500; color: #0b1e33; }
+        .badge-green {
+            background: #dcfce7;
+            color: #15803d;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        .badge-yellow {
+            background: #fef9c3;
+            color: #a16207;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        .badge-gray {
+            background: #f1f5f9;
+            color: #64748b;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        .check-yes { color: #15803d; font-weight: 700; }
+        .highlight-cell { background: #eff6ff; font-weight: 600; color: #1e40af; }
+
+        .faq-item { margin-bottom: 20px; }
+        .faq-item strong { display: block; font-weight: 600; color: #0b1e33; margin-bottom: 4px; }
+
+        /* ===== ВИЗУАЛИЗАЦИЯ ДЛЯ ПУНКТА 4 ===== */
+        .agent-visual {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f0fa 100%);
+            border-radius: 16px;
+            padding: 28px 30px 30px;
+            margin: 28px 0 32px;
+            border: 1px solid #cbddee;
+        }
+        .agent-visual h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #0b1e33;
+            text-align: center;
+        }
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        .agent-item {
+            background: white;
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e2eaf3;
+            transition: transform 0.2s;
+        }
+        .agent-item:hover {
+            transform: translateY(-3px);
+        }
+        .agent-item .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .agent-item .label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #1e293b;
+            display: block;
+        }
+        .agent-item .desc {
+            font-size: 0.75rem;
+            color: #64748b;
+            display: block;
+            margin-top: 4px;
+        }
+        .agent-flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 6px 14px;
+            margin-top: 16px;
+            padding-top: 18px;
+            border-top: 1px dashed #b8cfe0;
+        }
+        .agent-flow .step {
+            background: #2563eb;
+            color: white;
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .agent-flow .arrow {
+            color: #94a3b8;
+            font-size: 1.2rem;
+        }
+        .agent-flow .result {
+            background: #22c55e;
+            color: white;
+            padding: 4px 18px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .summary-card { flex: 1 1 100%; }
+            .bar-item .bar-label { width: 100px; font-size: 0.8rem; }
+            .bar-item .bar-value { min-width: 50px; font-size: 0.8rem; }
+            .scale-markers { font-size: 0.7rem; flex-wrap: wrap; gap: 4px; }
+            .compare-table { font-size: 0.85rem; min-width: 360px; }
+            .agent-grid { grid-template-columns: 1fr 1fr; }
+            .agent-visual { padding: 20px 16px; }
+            .agent-flow { gap: 4px 10px; }
+            .agent-flow .step, .agent-flow .result { font-size: 0.7rem; padding: 3px 12px; }
+        }
+        @media (max-width: 400px) {
+            .agent-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <h1>Что нового в Fish Audio S2.1 Pro и почему о нем заговорили разработчики</h1>
+
+            <div class="lead">
+                Рынок нейросетевой озвучки развивается настолько быстро, что новые модели появляются практически каждый месяц. Однако далеко не каждый релиз вызывает интерес не только у создателей контента, но и у разработчиков голосовых сервисов. Именно поэтому выход Fish Audio S2.1 Pro оказался заметным событием.
+            </div>
+
+            <!-- Тизер-сводка (3 главные цифры) -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <span class="number">70–90 мс</span>
+                    <span class="label">Задержка (TTFA)</span>
+                </div>
+                <div class="summary-card">
+                    <span class="number">83</span>
+                    <span class="label">Поддерживаемых языка</span>
+                </div>
+                <div class="summary-card">
+                    <span class="number">56,3</span>
+                    <span class="label">Символов в секунду</span>
+                </div>
+            </div>
+
+            <p>Главная причина — модель ориентирована не столько на классическую озвучку текста, сколько на работу в реальном времени. По данным независимого бенчмарка Artificial Analysis, модель занимает 13-е место в рейтинге Speech Arena с Elo-рейтингом 1153 и генерирует речь со скоростью 56,3 символа в секунду — быстрее, чем GPT-Realtime-2 (45,8 симв/с) и Gemini 3.1 Flash TTS (25,3 симв/с). Разработчики также заявляют задержку в диапазоне 70–90 мс (цифра отличается у разных источников — сама Fish Audio в блоге указывает ~70 мс TTFA, независимые обзоры — около 90 мс), поддержку 83 языков и доступ через API.</p>
+
+            <p>Такой набор характеристик делает S2.1 Pro интересной не только блогерам, но и компаниям, создающим голосовых ассистентов, AI-агентов, системы автоматического обслуживания клиентов и другие сервисы, где важна естественная речь.</p>
+
+            <p>В этой статье разберем, какие возможности появились в Fish Audio S2.1 Pro, чем новая модель отличается от предыдущих версий и действительно ли она способна составить конкуренцию признанным лидерам рынка, таким как ElevenLabs.</p>
+
+            <h2>Что такое Fish Audio S2.1 Pro</h2>
+
+            <p>Fish Audio — компания, специализирующаяся на генерации речи с помощью искусственного интеллекта. Открытая линейка моделей Fish Speech уже собрала больше 20 тысяч звёзд на GitHub, что для голосовых моделей — довольно редкий показатель доверия со стороны разработчиков.</p>
+
+            <p>Новая версия S2.1 Pro ориентирована уже не на демонстрацию возможностей технологии, а на промышленное применение. Это заметно по нескольким изменениям относительно предыдущей S2-Pro:</p>
+
+            <ul>
+                <li>снижена задержка генерации речи и увеличена пропускная способность;</li>
+                <li>языковая поддержка расширена умеренно — с 80+ до 83 языков (это не революция, а скорее шлифовка);</li>
+                <li>добавлены гарантии по TTFA (time-to-first-audio) и обработке данных для продакшн-нагрузок;</li>
+                <li>появилась поддержка MCP и agent-skill — то есть модель изначально рассчитана на интеграцию в голосовых агентов, а не только на озвучку готового текста.</li>
+            </ul>
+
+            <p>Fish Audio прямо позиционирует S2.1 Pro как рекомендованную production-модель, а не экспериментальную демонстрацию.</p>
+
+            <h2>1. Почти мгновенная генерация речи</h2>
+
+            <p>Самая обсуждаемая характеристика новой модели — низкая задержка (TTFA), по разным источникам от 70 до 90 мс.</p>
+
+            <p>Для сравнения, порог, после которого пауза в диалоге начинает восприниматься как заметная — около 500–700 мс. Значение в районе 70–90 мс укладывается в диапазон, где задержка между репликами человеком практически не улавливается.</p>
+
+            <!-- ИНФОГРАФИКА: Шкала задержки vs восприятие -->
+            <div class="delay-scale">
+                <h4>⚡ Задержка генерации: как её ощущает человек</h4>
+                <div class="scale-track">
+                    <div class="scale-segment green">0–100 мс</div>
+                    <div class="scale-segment yellow">200–400 мс</div>
+                    <div class="scale-segment red">500+ мс</div>
+                </div>
+                <div class="scale-markers">
+                    <span>🐟 Fish Audio <span class="fish-badge">70–90 мс</span></span>
+                    <span>ElevenLabs ~200 мс</span>
+                    <span>⚠️ Порог заметности</span>
+                </div>
+                <div class="scale-legend">
+                    <span><span class="dot green-dot"></span> Не ощущается</span>
+                    <span><span class="dot yellow-dot"></span> Едва заметно</span>
+                    <span><span class="dot red-dot"></span> Ощутимая пауза</span>
+                    <span><span class="dot fish-dot"></span> Fish Audio S2.1 Pro</span>
+                </div>
+            </div>
+
+            <p>Это имеет значение для конкретных сценариев:</p>
+
+            <ul>
+                <li>голосовых помощников и AI-операторов колл-центров;</li>
+                <li>интеллектуальных телефонных систем;</li>
+                <li>голосовых переводчиков и цифровых аватаров;</li>
+                <li>образовательных платформ с интерактивной озвучкой.</li>
+            </ul>
+
+            <p>Именно поэтому в описании модели акцент сделан не только на качестве голоса, но и на скорости его появления — для диалоговых сценариев это отдельная метрика, которую конкуренты указывают не всегда.</p>
+
+            <!-- ГИСТОГРАММА: скорость генерации -->
+            <div class="speed-chart">
+                <h4>📊 Скорость генерации речи (символов в секунду)</h4>
+                <div class="bar-item">
+                    <span class="bar-label">Fish Audio S2.1 Pro</span>
+                    <div class="bar-track">
+                        <div class="bar-fill fish">56,3</div>
+                    </div>
+                    <span class="bar-value">56,3</span>
+                </div>
+                <div class="bar-item">
+                    <span class="bar-label">GPT-Realtime-2</span>
+                    <div class="bar-track">
+                        <div class="bar-fill gpt">45,8</div>
+                    </div>
+                    <span class="bar-value">45,8</span>
+                </div>
+                <div class="bar-item">
+                    <span class="bar-label">Gemini 3.1 Flash TTS</span>
+                    <div class="bar-track">
+                        <div class="bar-fill gemini">25,3</div>
+                    </div>
+                    <span class="bar-value">25,3</span>
+                </div>
+            </div>
+
+            <h2>2. Поддержка 83 языков</h2>
+
+            <p>Вторая заявленная особенность S2.1 Pro — поддержка 83 языков против 80+ у предыдущей S2-Pro. Прирост скромный, и делать его центральным аргументом статьи не стоит — но сама архитектура (единая модель для десятков языков вместо отдельных моделей под каждый рынок) остаётся практическим плюсом для продуктов, которые масштабируются на несколько локалей одновременно.</p>
+
+            <p>Для международных сервисов это снижает объём инфраструктуры: не нужно поддерживать отдельный TTS-пайплайн под каждый язык, и добавление новой локали не требует смены модели целиком.</p>
+
+            <h2>3. Качественное клонирование голоса</h2>
+
+            <p>Клонирование в S2.1 Pro работает по короткому образцу — по данным Fish Audio, для создания голосовой модели достаточно 2–10 секунд референсного аудио. Модель сохраняет не только тембр, но и темп речи, интонационный рисунок и эмоциональную окраску — есть отдельный синтаксис для управления эмоциями через теги в квадратных скобках (например, [whispers sweetly], [laughing nervously]), причём набор тегов не фиксированный: модель принимает произвольные текстовые описания, а не только заранее заданный список.</p>
+
+            <p>Отдельно стоит отметить поддержку многоголосых сцен — один запрос может вернуть реплики нескольких говорящих, что закрывает сценарии озвучки диалогов, подкастов-скетчей и интерактивных приложений без необходимости собирать отдельные образцы на каждого персонажа.</p>
+
+            <p>Для задач, где нужна не просто узнаваемость голоса, а естественность интонации в диалоге (а не в дикторском монологе), это более гибкий инструмент, чем классические TTS с фиксированным набором пресетов.</p>
+
+            <h2>4. Подходит для голосовых ИИ-ассистентов</h2>
+
+            <p>Ставка на низкую задержку и поддержку MCP делает S2.1 Pro моделью, изначально рассчитанной на встраивание в агентные системы, а не только на генерацию готовых аудиофайлов. Это применимо к:</p>
+
+            <ul>
+                <li>голосовым AI-агентам и чат-ботам с голосовым интерфейсом;</li>
+                <li>системам автоматизированной телефонии и колл-центрам;</li>
+                <li>голосовым помощникам в приложениях и на устройствах;</li>
+                <li>интерактивным обучающим и справочным сервисам.</li>
+            </ul>
+
+            <!-- ВИЗУАЛИЗАЦИЯ ДЛЯ ПУНКТА 4: Сценарии использования -->
+            <div class="agent-visual">
+                <h4>🤖 Где применяется S2.1 Pro в голосовых агентах</h4>
+                <div class="agent-grid">
+                    <div class="agent-item">
+                        <span class="icon">📞</span>
+                        <span class="label">Колл-центры</span>
+                        <span class="desc">Автоматические операторы</span>
+                    </div>
+                    <div class="agent-item">
+                        <span class="icon">💬</span>
+                        <span class="label">Чат-боты</span>
+                        <span class="desc">Голосовой интерфейс</span>
+                    </div>
+                    <div class="agent-item">
+                        <span class="icon">📱</span>
+                        <span class="label">Приложения</span>
+                        <span class="desc">Голосовые помощники</span>
+                    </div>
+                    <div class="agent-item">
+                        <span class="icon">🎓</span>
+                        <span class="label">Образование</span>
+                        <span class="desc">Интерактивное обучение</span>
+                    </div>
+                </div>
+                <div class="agent-flow">
+                    <span class="step">Входной текст</span>
+                    <span class="arrow">→</span>
+                    <span class="step">MCP / agent-skill</span>
+                    <span class="arrow">→</span>
+                    <span class="step">Fish Audio S2.1 Pro</span>
+                    <span class="arrow">→</span>
+                    <span class="result">Естественная речь</span>
+                </div>
+            </div>
+
+            <p>Ключевое отличие от «озвучки текста» здесь в том, что модель проектировалась под сценарий диалога с переменной длиной реплик и необходимостью быстро отвечать — а не под заранее известный сценарий с длинным текстом для начитки.</p>
+
+            <h2>5. API для разработчиков</h2>
+
+            <p>Из технической документации: запросы на клонирование голоса идут на эндпоинт POST https://api.fish.audio/v1/clone, авторизация — через заголовок Authorization: Bearer, тело запроса — multipart/form-data с полями audio_file (референсный образец), text (текст для озвучки), опционально voice_id (ранее сохранённый клон) и emotion. В ответ приходит JSON с audio_url и метаданными по задержке и длительности, либо сразу бинарный MP3 при заголовке Accept: audio/mpeg.</p>
+
+            <p>Такой формат API привычен для разработчиков, уже работавших с любым другим TTS-провайдером, и не требует отдельной SDK для базовой интеграции — можно завести рабочий прототип на curl или Postman за один тестовый запрос.</p>
+
+            <h2>6. Бесплатный доступ для тестирования</h2>
+
+            <p>Здесь важно разделить два разных предложения, которые в новостных публикациях об S2.1 Pro часто путают:</p>
+
+            <ol>
+                <li><strong>Временная промо-акция</strong> — безлимитный бесплатный доступ по API, который был открыт при запуске модели и закрылся 24 июля 2026 года. На момент публикации этой статьи акция уже не действует.</li>
+                <li><strong>Постоянный бесплатный тариф s2.1-pro-free</strong> — та же модель, доступна на постоянной основе бесплатно, но с ограничениями fair-use (без гарантий по TTFA и обработке данных, которые есть в платной production-версии). Именно этот тариф остаётся актуальным способом протестировать модель без оплаты.</li>
+            </ol>
+
+            <p>То есть модель по-прежнему можно попробовать бесплатно — но не в безлимитном режиме, как это преподносилось в июньских анонсах. Для прототипирования и оценки качества голоса на русском языке этого тарифа достаточно; для продакшн-нагрузки с гарантированной задержкой понадобится платная версия.</p>
+
+            <h2>7. Чем Fish Audio отличается от ElevenLabs</h2>
+
+            <!-- ТАБЛИЦА сравнения (тепловая) -->
+            <div class="compare-table-wrap">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Возможность</th>
+                            <th>Fish Audio S2.1 Pro</th>
+                            <th>ElevenLabs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature">Задержка (TTFA)</td>
+                            <td class="highlight-cell">~70–90 мс</td>
+                            <td>~200 мс</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Клонирование голоса</td>
+                            <td><span class="check-yes">✅</span> По образцу 2–10 сек</td>
+                            <td><span class="check-yes">✅</span> Есть</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Языки</td>
+                            <td><span class="badge-green">83</span></td>
+                            <td><span class="badge-yellow">28</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Бесплатный тариф</td>
+                            <td><span class="badge-green">Есть</span> (fair-use лимиты)</td>
+                            <td><span class="badge-yellow">10 минут/мес</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Скорость генерации</td>
+                            <td class="highlight-cell">56,3 симв/с ⚡</td>
+                            <td>Ниже в независимых замерах</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Открытый код</td>
+                            <td><span class="badge-green">Есть</span> (линейка Fish Speech)</td>
+                            <td><span class="badge-gray">Нет</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Fish Audio выигрывает по охвату языков, скорости генерации и открытости кодовой базы — что для разработчиков, которым важна возможность форкнуть или доработать модель под себя, может быть решающим фактором. ElevenLabs остаётся сильнее по зрелости экосистемы, готовым интеграциям и репутации на рынке — для команд, которым важнее стабильность проверенного вендора, чем скорость и цена, это по-прежнему разумный выбор.</p>
+
+            <h2>Стоит ли переходить на Fish Audio S2.1 Pro</h2>
+
+            <p>Модель имеет смысл тестировать в первую очередь тем, кто:</p>
+
+            <ul>
+                <li>строит голосовых агентов или диалоговые интерфейсы, где критична задержка ответа;</li>
+                <li>работает с мультиязычным контентом и не хочет держать отдельную инфраструктуру под каждый язык;</li>
+                <li>готов мириться с тем, что бесплатный тариф не даёт SLA-гарантий, характерных для платной версии.</li>
+            </ul>
+
+            <p>Тем, у кого уже есть отлаженная интеграция с ElevenLabs или другим провайдером и нет проблем с задержкой или стоимостью, срочно переезжать смысла нет — но добавить S2.1 Pro в список кандидатов для A/B-сравнения стоит, особенно если в проекте есть русскоязычный или многоязычный контент.</p>
+
+            <h2>FAQ</h2>
+
+            <div class="faq-item">
+                <strong>Поддерживает ли Fish Audio русский язык?</strong>
+                <p>Да, русский входит в число 83 поддерживаемых языков.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Можно ли бесплатно клонировать голос?</strong>
+                <p>Да, через тариф s2.1-pro-free — с ограничениями fair-use и без гарантий по задержке. Отдельная июньская акция с безлимитным бесплатным доступом закрылась 24 июля 2026 года.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Подходит ли модель для голосовых агентов?</strong>
+                <p>Да, S2.1 Pro поддерживает MCP и agent-skill, что упрощает встраивание в агентные системы.</p>
+            </div>
+
+            <div class="faq-item">
+                <strong>Какая задержка у S2.1 Pro?</strong>
+                <p>По данным Fish Audio — около 70 мс TTFA, по независимым замерам — около 90 мс. Итоговая цифра зависит от нагрузки и региона.</p>
+            </div>
+
+            <!-- ===== ФОРМА КОММЕНТАРИЕВ (из образца) ===== -->
+            <div class="comment-form">
+                <h3>Оставить комментарий</h3>
+                <p>Задавайте вопросы, делитесь опытом или предложениями</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="email" name="email" placeholder="Ваш email (не публикуется)" required>
+                    <textarea name="comment" rows="5" placeholder="Ваш комментарий..." required></textarea>
+                    <button type="submit">Отправить комментарий</button>
+                </form>
+                <p>Все комментарии проходят модерацию перед публикацией.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- ===== НОВЫЙ ФУТЕР С ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ (ЧЁРНЫЙ ФОН) ===== -->
+    <footer class="footer-privacy">
+        <div style="font-size: 14px; color: #A9A9A9; line-height: 1.5;">
+            Отправляя формы заявки,<br />
+            вы подтверждаете согласие на обработку<br />
+            Администрацией сайта ваших персональных данных:<br />
+            имени и e-mail.<br />
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank" 
+               style="color: #D3D3D3; text-decoration: underline; display: inline-block; margin-top: 5px;">
+                Политика конфиденциальности
+            </a>
+        </div>
+    </footer>
+
+    <!-- ===== COOKIE-БАННЕР ===== -->
+    <div id="cookie-banner">
+        <span>
+            Мы используем cookie для улучшения работы сайта. Продолжая просмотр, вы соглашаетесь с 
+            <a href="https://ruinterbiz.ru/polis-conf.html" target="_blank">политикой конфиденциальности</a>.
+        </span>
+        <button onclick="document.getElementById('cookie-banner').style.display='none'">
+            Принять и закрыть
+        </button>
+    </div>
+
+    <!-- ===== YANDEX.METRIKA ===== -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+        ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+
+    <!-- ===== СКРИПТ ПОП-АПА ===== -->
+    <script type="text/javascript">
+        var delay_popup = 16000;
+        setTimeout("document.getElementById('bg_popup1').style.display='block'", delay_popup);
+    </script>
+
+    <!-- ===== ПОП-АП ===== -->
+    <div id="bg_popup1">
+        <div id="popup1">
+            <h3 class="hi6">AI Аниматор!</h3>
+            <h3 class="hi6">Попробуй новую нейронку - AI - Аниматор!</h3>
+            <div style="text-align: center;">
+                <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+                   href="https://cpc.ruinterbiz.ru/Demo/lend-demo-rk-2.html" target="_blank" rel="noopener">Попробывать!</a>
+            </div>
+            <a class="close1" href="#" title="Закрыть" onclick="document.getElementById('bg_popup1').style.display='none'; return false;">X</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW1 (десктоп) ===== -->
+    <div id='follow1'>
+        <div class="hidemobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">Удобный доступ к зарубежным нейросетям!</a>
+        </div>
+    </div>
+
+    <!-- ===== БАННЕР FOLLOW2 (мобильный) ===== -->
+    <div id='follow2'>
+        <div class="showmobile">
+            <a style="align: center;padding:10px 25px; cursor: pointer; background-image: linear-gradient(#0a0002, #0033ff); color: #ffffff; text-shadow: rgba(0, 0, 0, 0.247059) 0px -1px 0px; background-color: #0a0002; border: 5px solid red; border-color: rgba(255, 0, 51, 1) rgba(255, 0, 51, 1) rgba(255, 0, 51, 1); border-radius: 5px; line-height: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; font-style: italic; text-decoration: none; height: 54px; width: 100%; margin: auto;"
+               href="https://cpc.ruinterbiz.ru/proxi/gpt-bez-vpn.html" target="_blank" rel="noopener">GPT 5.6 без VPN</a>
+        </div>
+    </div>
+
+</body>
+</html>
