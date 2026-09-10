@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>3 خطوات لإنشاء MTProto الخاص بك لتليجرام</title>
+    <meta name="description" content="كيفية إعداد وكيل MTProto لتليجرام بدليل خطوة بخطوة. تثبيت وكيل MTProto على VPS في 3 خطوات.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* Стили из образца-без меню.html */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .step-label {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            background: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card strong, .block strong {
+            color: #2c3e50;
+        }
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .pic {
+                margin: 15px 0;
+            }
+            .card, .block {
+                padding: 12px 15px;
+            }
+            .comment-form {
+                padding: 15px;
+            }
+            .comment-form button {
+                max-width: 100%;
+            }
+            ul, ol {
+                padding-left: 18px;
+            }
+            .toc {
+                padding: 12px 15px;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <h1>كيفية إعداد وكيل MTProto لتليجرام: دليل خطوة بخطوة</h1>
+            
+            <p class="lead">MTProto لتليجرام هو الوكيل الأكثر شيوعًا للتشغيل المتواصل للمراسلة. هذا الوكيل هو بروتوكول تليجرام الرسمي.</p>
+            <p>في هذا الدليل المكون من 3 خطوات، ستتعلم كيفية تثبيت وكيل MTProto لتليجرام بسرعة على خادم مستأجر وتوصيله بمراسلتك.</p>
+
+            <h2>متطلبات تثبيت وكيل MTProto لتليجرام</h2>
+            <p><strong>الحد الأدنى من المتطلبات</strong></p>
+            <ul>
+                <li><strong>نظام التشغيل:</strong> Ubuntu 20.04 / 22.04 (تثبيت نظيف)</li>
+                <li><strong>الخادم (VPS):</strong> نواة واحدة، 512 ميجابايت RAM — هذا يكفي</li>
+                <li><strong>وصول SSH</strong> (root أو مستخدم لديه sudo)</li>
+                <li><strong>المنفذ 443 مفتوح</strong> (مطلوب للتمويه كـ HTTPS)</li>
+            </ul>
+            <p>سيتم بناء الدليل بأكمله على مثال مزود Aeza. يمكنك استخدام أي مزود آخر يقدم تأجير خوادم VPS في أوروبا.</p>
+            <p>إذن، هيا بنا:</p>
+
+            <h2>الخطوة 1 — استئجار خادم خارجي والاتصال</h2>
+            <p>سجّل في <a href="https://aeza.net/?ref=455016" target="_blank">Aeza.net</a> وانتقل إلى القائمة على اليسار، أضف خدمة (انظر لقطة الشاشة، المسطرة باللون الأحمر). في الوسط، اختر الموقع، ابحث عن أوروبا بسعر 5.93 يورو، في لقطة الشاشة تم اختيار فيينا كمثال.</p>
+            <p>على اليمين، تحقق من أن النسخ الاحتياطية معطلة، فهي غير ضرورية، مظللة بمستطيل في لقطة الشاشة. التجديد التلقائي اختياري.</p>
+            <p>مرر لأسفل قليلاً وبدّل إلى Ubuntu 20.04 / 22.04، افتراضيًا يكون 26.04، وهو لا يزال جديدًا، يجب تبديله!</p>
+            <p>لا حاجة لتثبيت أي شيء آخر، مطلوب نظام تشغيل نظيف.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/mtproto-dly-telegramm-1.png" alt="mtproto لتليجرام" loading="lazy">
+                <p class="pic-description">استئجار خادم في لوحة Aeza</p>
+            </div>
+
+            <p>بعد ذلك، انقر على دفع. الدفع متاح من بطاقات الروبل إلى العملات المشفرة.</p>
+            <p>بعد الدفع، يتم فتحها من 2 إلى 15 دقيقة، ويتم الإخطار بذلك عبر البريد الإلكتروني. بعد ذلك، انتقل إلى القائمة اليسرى إلى علامة التبويب "خدماتي":</p>
+
+            <div class="pic">
+                <img src="images/mtproto/moi-uslugi-1.1.png" alt="وكيل mtproto لتليجرام" loading="lazy">
+                <p class="pic-description">علامة التبويب "خدماتي" في لوحة Aeza</p>
+            </div>
+
+            <p>وانقر على اسم الخادم، المسطر باللون الأحمر. ستفتح نافذة ببيانات تسجيل الدخول، انظر لقطة الشاشة.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/dannie-servera-1.2.png" alt="وكيل تليجرام mtproto كيفية الاتصال" loading="lazy">
+                <p class="pic-description">بيانات الخادم: IP، تسجيل الدخول، كلمة المرور</p>
+            </div>
+
+            <p>ستكون البيانات بهذا التنسيق:</p>
+            <ul>
+                <li><strong>ip:</strong> 86.163.135.43 (سيكون IP خادمك مختلفًا)؛</li>
+                <li><strong>تسجيل الدخول:</strong> root (غالبًا ما يكون تسجيل الدخول هكذا)؛</li>
+                <li><strong>كلمة المرور:</strong> E7D4sF3csSjg (ستكون كلمة مرور خادمك مختلفة)؛</li>
+            </ul>
+            <p>لتهيئة الخادم، ستحتاج إلى الوصول إلى الخادم نفسه مع البيانات (تسجيل الدخول، كلمة المرور، وعنوان IP، لذا من المهم حفظها). كل هذا يتم من جهاز كمبيوتر (لم أختبره من الهاتف، ربما يكون ممكنًا، اكتب في التعليقات)، تحت Windows أو macOS.</p>
+            <p>على Windows، ستحتاج إلى برنامج خاص، وسيستخدم مستخدمو macOS الطرفية المدمجة.</p>
+            <p>إذن، هيا بنا:</p>
+            <p><strong>Windows</strong> — حمّل وثبّت البرنامج للاتصال بخادمنا: انتقل إلى <a href="https://www.putty.org/" target="_blank">https://www.putty.org/</a>، حمّل وثبّت. بعد التثبيت، سيظهر اختصار على سطح المكتب، شغّله كما هو موضح في لقطة الشاشة.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/ustanovka-i-zapusk-putty-4.jpg" alt="لقطة شاشة: تثبيت وتشغيل Putty" loading="lazy">
+                <p class="pic-description">تثبيت وتشغيل Putty على Windows</p>
+            </div>
+
+            <p>اتصل بخادمنا، أدخل IP الخادم، المنفذ 22، وانقر على Open، كما هو موضح في الشكل أدناه.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/podkluchenie-ip-2.jpg" alt="لقطة شاشة: الاتصال بالخادم في Putty" loading="lazy">
+                <p class="pic-description">الاتصال بالخادم عبر Putty</p>
+            </div>
+
+            <p>بعد ذلك، انتقل إلى علامة التبويب الاتصال (Connection) وفي السطر الأول، في حقل الإدخال، أدخل أي رقم من 20 إلى 50، على سبيل المثال 50، كما هو موضح في الشكل.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/nastroika-connection-3.png" alt="لقطة شاشة: تهيئة Connection في Putty" loading="lazy">
+                <p class="pic-description">تهيئة معلمات Connection في Putty</p>
+            </div>
+
+            <p>انقر على Open</p>
+            <p>عند تسجيل الدخول إلى الخادم لأول مرة، تحتاج إلى النقر على Accept في النافذة التي تظهر. بعد ذلك، في النافذة التالية، أدخل تسجيل الدخول وكلمة المرور بالتناوب، مع الضغط على Enter في كل مرة.</p>
+            <p><strong>انتباه!</strong> عند إدخال كلمة المرور، لا تظهر الأحرف على الشاشة، وهذا طبيعي. للصق كلمة المرور المنسوخة — فقط انقر بزر الماوس الأيمن مرة واحدة في نافذة التفويض على الخلفية السوداء ثم اضغط Enter، انظر لقطة الشاشة.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/vvod-logo-pass-5.jpg" alt="لقطة شاشة: إدخال تسجيل الدخول وكلمة المرور في Putty" loading="lazy">
+                <p class="pic-description">إدخال تسجيل الدخول وكلمة المرور في Putty</p>
+            </div>
+
+            <p>إذا كان الاتصال ناجحًا، سيتم تحميل بيانات النظام وستظهر دعوة لإصدار أوامر إلى خادمك. في المثال أدناه، هذه هي الدعوة في السطر الأخير وتبدو هكذا — root@TESTVDS:~# يعني هذا السطر أن الخادم جاهز لقبول وتنفيذ أوامرك.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/uspeschnoe-podcluchenie-6.jpg" alt="خادم وكيل mtproto لتليجرام" loading="lazy">
+                <p class="pic-description">اتصال ناجح بالخادم</p>
+            </div>
+
+            <p>كل شيء رائع، تم الاتصال، انتقل للأسفل قليلاً، التالي هو تعليمات macOS. على الرغم من أنني أوصي بمراجعة التعليمات وفهم جمال استخدام أجهزة Mac.</p>
+            <p><strong>macOS</strong> — إذا كان لديك Mac، فسنستخدم الطرفية المدمجة، لأنه لا معنى لتثبيت برامج طرف ثالث فقط لتسجيل الدخول إلى الخادم مرة واحدة لبضع دقائق.</p>
+            <p>إذن، في Launchpad، اكتب كلمة Terminal في البحث، وسترى هذا</p>
+
+            <div class="pic">
+                <img src="images/mtproto/terminal-macos-7.jpg" alt="لقطة شاشة: البحث عن الطرفية على macOS" loading="lazy">
+                <p class="pic-description">البحث عن الطرفية على macOS</p>
+            </div>
+
+            <p>افتح الطرفية، اكتب الأمر، واضغط Enter</p>
+            <pre>ssh your_login@server_IP_address</pre>
+            <p>أي، إذا كان تسجيل الدخول الخاص بي root وعنوان IP للخادم 79.137.202.97، فسيكون الأمر في الطرفية</p>
+            <pre>ssh root@79.137.202.97</pre>
+            <p>بعد ذلك، الصق كلمة المرور، اضغط Enter — تم.</p>
+            <p>إذا كان الاتصال ناجحًا، يجب أن يبدو كما في لقطة الشاشة — root@server_name.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/podkluch-k-serveru-8.png" alt="وكيل mtproto لتليجرام" loading="lazy">
+                <p class="pic-description">الاتصال بالخادم عبر طرفية macOS</p>
+            </div>
+
+            <h2>الخطوة 2 — تهيئة خادم وكيل MTProto لتليجرام</h2>
+            <p>بعد ذلك، تحتاج إلى إدخال أمر واحد فقط والضغط على Enter:</p>
+            <pre>sudo apt update && sudo apt upgrade -y && sudo apt install docker.io ufw -y && sudo ufw allow OpenSSH && sudo ufw allow 443/tcp && sudo ufw --force enable && SECRET=$(docker run --rm nineseconds/mtg:2 generate-secret --hex google.com) && docker run -d --name mtg --restart=always -p 443:443 nineseconds/mtg:2 simple-run -n 1.1.1.1 -i prefer-ipv4 0.0.0.0:443 "$SECRET" && echo "✅ الرابط الجاهز: tg://proxy?server=$(curl -s ifconfig.me)&port=443&secret=$SECRET"</pre>
+            <p>يتم إدخال الأمر بالكامل، بدون مسافات، كما هو. أثناء التثبيت، سيتم طرح سؤال، يجب الإجابة بـ — yes. بعد ذلك، ستظهر 3 أو 4 نوافذ، كما هو موضح في لقطة الشاشة أدناه، تحتاج إلى الضغط على Enter أربع مرات.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/zapros-na-enter-9.png" alt="لقطة شاشة: طلب تأكيد التثبيت" loading="lazy">
+                <p class="pic-description">طلب تأكيد التثبيت</p>
+            </div>
+
+            <p>ستكون نتيجة التثبيت خادمًا أوروبيًا جاهزًا مع وكيل MTProto لتليجرام. انظر لقطة الشاشة أدناه.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/mtproto-gotov-10.png" alt="لقطة شاشة: وكيل MTProto جاهز" loading="lazy">
+                <p class="pic-description">وكيل MTProto جاهز على الخادم</p>
+            </div>
+
+            <p>هذا كل شيء، اكتمل التثبيت.</p>
+            <p><strong>ما يفعله ويثبته هذا الأمر على خادمك:</strong></p>
+            <ul>
+                <li>يحدّث قائمة الحزم</li>
+                <li>يثبّت جميع تحديثات النظام</li>
+                <li>يثبّت أداة curl</li>
+                <li>يتم تثبيت Docker تلقائيًا</li>
+                <li>يهيّئ وكيل MTProto على المنفذ 443</li>
+                <li>يمكّن تقنية Fake TLS — التمويه كـ HTTPS عادي</li>
+                <li>يولّد مفتاحًا سريًا</li>
+            </ul>
+            <p>كل هذا يستغرق 1–2 دقيقة. فقط انتظر.</p>
+            <p>بعد ذلك، انسخ الرابط الكامل لتليجرام — <code>tg://proxy?server=194.33.35.192&port=443&secret=ee3a44c56ab55a1a368eb3b260a2550432676f6f676c652e636f6d</code></p>
+            <p>وأحضره إلى الشكل الموضح في لقطة الشاشة</p>
+
+            <div class="pic">
+                <img src="images/mtproto/dannie-dly-telegi-11.png" alt="لقطة شاشة: بيانات الاتصال في تليجرام" loading="lazy">
+                <p class="pic-description">بيانات توصيل الوكيل في تليجرام</p>
+            </div>
+
+            <p><strong>كن حذرًا!</strong> الخادم = أرقام، المنفذ = أرقام، السر = الرموز كاملة!</p>
+            <p>أرسل هذه البيانات إلى هاتفك أو امسح رمز QR. يمكنك بأمان توصيل 50 — 70 جهازًا وحتى الربح من هذا.</p>
+
+            <h2>الخطوة 3 — توصيل وكيل MTProto لتليجرام</h2>
+            <p>انتقل إلى قائمة الإعدادات وابحث عن — البيانات والتخزين، كما هو موضح في لقطة الشاشة، وانقر على هذا العنصر.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/telegramm-12.jpg" alt="لقطة شاشة: قائمة البيانات والتخزين في تليجرام" loading="lazy">
+                <p class="pic-description">قائمة "البيانات والتخزين" في تليجرام</p>
+            </div>
+
+            <p>بعد ذلك، في النافذة التالية، مرر لأسفل وابحث عن العنصر — إعدادات الوكيل، انظر لقطة الشاشة.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/telegramm-proksi-13.jpg" alt="لقطة شاشة: عنصر إعدادات الوكيل في تليجرام" loading="lazy">
+                <p class="pic-description">عنصر "إعدادات الوكيل" في تليجرام</p>
+            </div>
+
+            <p>انقر عليه وستصل إلى نافذة تهيئة الوكيل الخاص بك</p>
+
+            <div class="pic">
+                <img src="images/mtproto/vstavka-proksi-14.png" alt="لقطة شاشة: نافذة تهيئة الوكيل في تليجرام" loading="lazy">
+                <p class="pic-description">نافذة تهيئة الوكيل في تليجرام</p>
+            </div>
+
+            <p>الصق البيانات المُعدّة، كما هو موضح في لقطة الشاشة أعلاه. عنوان الخادم، المنفذ، والمفتاح السري. يجب أن ترى ما يلي:</p>
+
+            <div class="pic">
+                <img src="images/mtproto/podklych-proksi-15.png" alt="وكيل mtproto لتليجرام" loading="lazy">
+                <p class="pic-description">توصيل الوكيل في تليجرام</p>
+            </div>
+
+            <p>شغّل تليجرام على هاتفك أو الكمبيوتر. يجب أن يعمل الاتصال، وسيبدأ تليجرام في العمل. قد يستغرق الأمر بضع دقائق عند الاتصال الأول حتى يتم تحديث الدردشات.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/rabochi-telegramm-16.png" alt="mtproto لتليجرام" loading="lazy">
+                <p class="pic-description">تليجرام يعمل عبر وكيل MTProto</p>
+            </div>
+
+            <h3>الخاتمة</h3>
+            <p>لقد أكملت بنجاح جميع الخطوات الثلاث:</p>
+            <ol>
+                <li>✅ استأجرت VPS في Aeza</li>
+                <li>✅ ثبّتت وكيل MTProto بأمر واحد</li>
+                <li>✅ حصلت على الرابط ووصّلت تليجرام</li>
+            </ol>
+            <p>الآن لديك <strong>وكيل MTProto خاص بك لتليجرام</strong> — مستقر، سريع، وآمن.</p>
+
+            <h3>الأسئلة الشائعة — FAQ</h3>
+            <p><strong>1. هل يمكنني تثبيت MTProto على Windows؟</strong><br>نعم، لكن التعليمات أكثر تعقيدًا. للبساطة والاستقرار، من الأفضل استخدام Ubuntu على VPS.</p>
+            <p><strong>2. كم تستهلك حركة المرور للوكيل؟</strong><br>تعتمد كل حركة المرور تقريبًا عليك — كم تستخدم تليجرام. عادة لا يزيد عن 2-3 جيجابايت شهريًا.</p>
+            <p><strong>3. كيف أحذف الوكيل؟</strong><br>على الخادم، نفّذ:</p>
+            <pre>docker stop mtproto-proxy && docker rm mtproto-proxy</pre>
+            <p><strong>4. هل أحتاج لتجديد الخادم كل شهر؟</strong><br>نعم، هذا استئجار. إذا لم تجدد، سيتوقف الوكيل. سيتوقف تليجرام ببساطة عن الاتصال، وستعود إلى الإنترنت العادي بدون وكيل.</p>
+            <p>آمل أنني تمكنت من شرح كيفية إعداد MTProto لتليجرام.</p>
+
+            <!-- Форма комментариев -->
+            <div class="comment-form">
+                <h3>اترك تعليقًا</h3>
+                <p>اطرح الأسئلة، شارك تجربتك أو اقتراحاتك</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="اسمك" required>
+                    <input type="email" name="email" placeholder="بريدك الإلكتروني (لن يُنشر)" required>
+                    <textarea name="comment" rows="5" placeholder="تعليقك..." required></textarea>
+                    <button type="submit">إرسال التعليق</button>
+                </form>
+                <p>تخضع جميع التعليقات للمراجعة قبل النشر.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2023-2026 مدونتي. جميع المواد محمية.</p>
+    </footer>
+
+  
+    
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+</body>
+</html>

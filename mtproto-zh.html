@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>3步创建你自己的Telegram MTProto代理</title>
+    <meta name="description" content="如何为Telegram设置MTProto代理的分步指南。3步在VPS上安装MTProto代理。">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* Стили из образца-без меню.html */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .step-label {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            background: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card strong, .block strong {
+            color: #2c3e50;
+        }
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .pic {
+                margin: 15px 0;
+            }
+            .card, .block {
+                padding: 12px 15px;
+            }
+            .comment-form {
+                padding: 15px;
+            }
+            .comment-form button {
+                max-width: 100%;
+            }
+            ul, ol {
+                padding-left: 18px;
+            }
+            .toc {
+                padding: 12px 15px;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <h1>如何为Telegram设置MTProto代理：分步指南</h1>
+            
+            <p class="lead">Telegram的MTProto是保证即时通讯软件不间断运行的最流行代理。该代理是Telegram的官方协议。</p>
+            <p>在这份3步指南中，你将了解如何在租用的服务器上快速安装Telegram的MTProto代理，并将其连接到你的即时通讯软件。</p>
+
+            <h2>为Telegram安装MTProto代理的要求</h2>
+            <p><strong>最低要求</strong></p>
+            <ul>
+                <li><strong>操作系统：</strong> Ubuntu 20.04 / 22.04（全新安装）</li>
+                <li><strong>服务器（VPS）：</strong> 1核，512 MB RAM — 这就足够了</li>
+                <li><strong>SSH访问</strong>（root或具有sudo的用户）</li>
+                <li><strong>开放端口443</strong>（用于伪装成HTTPS）</li>
+            </ul>
+            <p>整个指南将以Aeza提供商为例。你可以使用任何其他在欧洲提供VPS服务器租赁的提供商。</p>
+            <p>那么，开始吧：</p>
+
+            <h2>第1步 — 租用海外服务器并连接</h2>
+            <p>在 <a href="https://aeza.net/?ref=455016" target="_blank">Aeza.net</a> 注册，然后转到左侧菜单，添加服务（见截图，红色下划线）。在中间选择一个位置，寻找价格为5.93欧元的欧洲，截图中以维也纳为例。</p>
+            <p>在右侧检查备份是否已禁用，它们不需要，截图中用矩形标出。自动续费可选。</p>
+            <p>向下滚动一点，切换到Ubuntu 20.04 / 22.04，默认是26.04，它还比较新，必须切换！</p>
+            <p>不需要安装其他任何东西，需要干净的操作系统。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/mtproto-dly-telegramm-1.png" alt="Telegram的mtproto" loading="lazy">
+                <p class="pic-description">在Aeza面板中租用服务器</p>
+            </div>
+
+            <p>接下来点击支付。支付方式从卢布卡到加密货币。</p>
+            <p>付款后2到15分钟开通，并通过邮件通知。接下来转到左侧菜单的“我的服务”选项卡：</p>
+
+            <div class="pic">
+                <img src="images/mtproto/moi-uslugi-1.1.png" alt="Telegram的mtproto代理" loading="lazy">
+                <p class="pic-description">Aeza面板中的“我的服务”选项卡</p>
+            </div>
+
+            <p>然后点击服务器名称，红色下划线。将打开一个包含登录数据的窗口，见截图。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/dannie-servera-1.2.png" alt="Telegram mtproto代理如何连接" loading="lazy">
+                <p class="pic-description">服务器数据：IP、登录名、密码</p>
+            </div>
+
+            <p>数据将采用以下格式：</p>
+            <ul>
+                <li><strong>ip：</strong> 86.163.135.43（你的服务器IP会不同）；</li>
+                <li><strong>登录名：</strong> root（通常登录名是这样的）；</li>
+                <li><strong>密码：</strong> E7D4sF3csSjg（你的服务器密码会不同）；</li>
+            </ul>
+            <p>要配置服务器，你需要使用数据（登录名、密码和IP地址）访问服务器本身，因此保存它们很重要。这一切都在电脑上完成（我没有在手机上测试过，也许可以，请在评论中写下），在Windows或macOS下。</p>
+            <p>在Windows下需要一个特殊的程序，macOS用户将使用内置终端。</p>
+            <p>那么，开始吧：</p>
+            <p><strong>Windows</strong> — 下载并安装连接到我们服务器的程序：转到 <a href="https://www.putty.org/" target="_blank">https://www.putty.org/</a> 下载并安装。安装后桌面上会出现快捷方式，如图所示启动它。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/ustanovka-i-zapusk-putty-4.jpg" alt="截图：安装和启动Putty" loading="lazy">
+                <p class="pic-description">在Windows上安装和启动Putty</p>
+            </div>
+
+            <p>连接到我们的服务器，输入服务器IP、端口22，然后点击Open，如下图所示。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/podkluchenie-ip-2.jpg" alt="截图：在Putty中连接到服务器" loading="lazy">
+                <p class="pic-description">通过Putty连接到服务器</p>
+            </div>
+
+            <p>接下来，转到连接（Connection）选项卡，在第一行的输入框中输入20到50之间的任意数字，例如50，如图所示。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/nastroika-connection-3.png" alt="截图：在Putty中配置Connection" loading="lazy">
+                <p class="pic-description">在Putty中配置Connection参数</p>
+            </div>
+
+            <p>点击Open</p>
+            <p>第一次登录服务器时，需要在出现的窗口中点击Accept。然后，在下一个窗口中依次输入登录名和密码，每次都按Enter。</p>
+            <p><strong>注意！</strong> 输入密码时屏幕上不显示字符，这是正常的。要粘贴复制的密码 — 只需在黑色背景的授权窗口中单击一次鼠标右键（右键），然后按Enter，见截图。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/vvod-logo-pass-5.jpg" alt="截图：在Putty中输入登录名和密码" loading="lazy">
+                <p class="pic-description">在Putty中输入登录名和密码</p>
+            </div>
+
+            <p>如果连接成功，将加载系统数据，并出现向你的服务器发出命令的提示。在下面的示例中，这是最后一行的提示，看起来像 — root@TESTVDS:~# 这一行表示服务器已准备好接受并执行你的命令。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/uspeschnoe-podcluchenie-6.jpg" alt="Telegram的mtproto代理服务器" loading="lazy">
+                <p class="pic-description">成功连接到服务器</p>
+            </div>
+
+            <p>好了，太棒了，连接已建立，往下看一点，接下来是macOS的说明。虽然我建议查看说明并了解使用Mac的好处。</p>
+            <p><strong>macOS</strong> — 如果你有Mac，那么我们将使用内置终端，因为为了几分钟登录一次服务器而安装第三方程序没有意义。</p>
+            <p>那么，在启动台中搜索框中输入“终端”或“Terminal”，你会看到这个</p>
+
+            <div class="pic">
+                <img src="images/mtproto/terminal-macos-7.jpg" alt="截图：在macOS上搜索终端" loading="lazy">
+                <p class="pic-description">在macOS上搜索终端</p>
+            </div>
+
+            <p>打开终端，输入命令并按Enter</p>
+            <pre>ssh 你的登录名@服务器IP地址</pre>
+            <p>也就是说，如果我的登录名是root，服务器IP是79.137.202.97，那么终端中的命令将是</p>
+            <pre>ssh root@79.137.202.97</pre>
+            <p>接下来，粘贴密码，按Enter — 完成。</p>
+            <p>如果连接成功，应该像截图中那样 — root@服务器名称。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/podkluch-k-serveru-8.png" alt="Telegram的mtproto代理" loading="lazy">
+                <p class="pic-description">通过macOS终端连接到服务器</p>
+            </div>
+
+            <h2>第2步 — 为Telegram配置MTProto代理服务器</h2>
+            <p>接下来，只需输入一条命令并按Enter：</p>
+            <pre>sudo apt update && sudo apt upgrade -y && sudo apt install docker.io ufw -y && sudo ufw allow OpenSSH && sudo ufw allow 443/tcp && sudo ufw --force enable && SECRET=$(docker run --rm nineseconds/mtg:2 generate-secret --hex google.com) && docker run -d --name mtg --restart=always -p 443:443 nineseconds/mtg:2 simple-run -n 1.1.1.1 -i prefer-ipv4 0.0.0.0:443 "$SECRET" && echo "✅ 准备好的链接: tg://proxy?server=$(curl -s ifconfig.me)&port=443&secret=$SECRET"</pre>
+            <p>命令需完整输入，不加空格，照原样输入。安装过程中会问一个问题，需要回答 — yes。然后会弹出3或4个窗口，如下面的截图所示，需要按Enter四次。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/zapros-na-enter-9.png" alt="截图：安装确认请求" loading="lazy">
+                <p class="pic-description">安装确认请求</p>
+            </div>
+
+            <p>安装的结果将是一台准备好的欧洲服务器，带有Telegram的MTProto代理。见下面的截图。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/mtproto-gotov-10.png" alt="截图：准备好的MTProto代理" loading="lazy">
+                <p class="pic-description">服务器上准备好的MTProto代理</p>
+            </div>
+
+            <p>好了，安装完成。</p>
+            <p><strong>这条命令在你的服务器上做了什么并安装了什么：</strong></p>
+            <ul>
+                <li>更新软件包列表</li>
+                <li>安装所有系统更新</li>
+                <li>安装curl工具</li>
+                <li>自动安装Docker</li>
+                <li>在端口443上配置MTProto代理</li>
+                <li>启用Fake TLS技术 — 伪装成普通HTTPS</li>
+                <li>生成密钥</li>
+            </ul>
+            <p>所有这些需要1–2分钟。只需等待。</p>
+            <p>接下来完整复制Telegram的链接 — <code>tg://proxy?server=194.33.35.192&port=443&secret=ee3a44c56ab55a1a368eb3b260a2550432676f6f676c652e636f6d</code></p>
+            <p>并将其整理成截图中所示的形式</p>
+
+            <div class="pic">
+                <img src="images/mtproto/dannie-dly-telegi-11.png" alt="截图：在Telegram中连接的数据" loading="lazy">
+                <p class="pic-description">在Telegram中连接代理的数据</p>
+            </div>
+
+            <p><strong>请注意！</strong> 服务器 = 数字，端口 = 数字，密钥 = 完整的乱码！</p>
+            <p>将这些数据发送到你的手机或扫描二维码。你可以放心地连接50 — 70台设备，甚至以此赚钱。</p>
+
+            <h2>第3步 — 连接Telegram的MTProto代理</h2>
+            <p>转到设置菜单，找到 — 数据和存储，如截图所示，然后点击此项。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/telegramm-12.jpg" alt="截图：Telegram中的数据和存储菜单" loading="lazy">
+                <p class="pic-description">Telegram中的“数据和存储”菜单</p>
+            </div>
+
+            <p>接下来，在下一个窗口中向下滚动，找到 — 代理设置，见截图。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/telegramm-proksi-13.jpg" alt="截图：Telegram中的代理设置项" loading="lazy">
+                <p class="pic-description">Telegram中的“代理设置”项</p>
+            </div>
+
+            <p>点击它，你将进入代理配置窗口</p>
+
+            <div class="pic">
+                <img src="images/mtproto/vstavka-proksi-14.png" alt="截图：Telegram中的代理配置窗口" loading="lazy">
+                <p class="pic-description">Telegram中的代理配置窗口</p>
+            </div>
+
+            <p>粘贴准备好的数据，如上面的截图所示。服务器地址、端口和密钥。你应该看到以下内容：</p>
+
+            <div class="pic">
+                <img src="images/mtproto/podklych-proksi-15.png" alt="Telegram的mtproto代理" loading="lazy">
+                <p class="pic-description">在Telegram中连接代理</p>
+            </div>
+
+            <p>在你的手机或电脑上启动Telegram。连接应该会生效，Telegram将开始工作。第一次连接时可能需要几分钟，直到聊天更新完毕。</p>
+
+            <div class="pic">
+                <img src="images/mtproto/rabochi-telegramm-16.png" alt="Telegram的mtproto" loading="lazy">
+                <p class="pic-description">通过MTProto代理工作的Telegram</p>
+            </div>
+
+            <h3>结论</h3>
+            <p>你已成功完成所有3个步骤：</p>
+            <ol>
+                <li>✅ 在Aeza租用了VPS</li>
+                <li>✅ 用一条命令安装了MTProto代理</li>
+                <li>✅ 获取了链接并连接了Telegram</li>
+            </ol>
+            <p>现在你拥有了<strong>自己的私人Telegram MTProto代理</strong> — 稳定、快速且安全。</p>
+
+            <h3>FAQ — 常见问题</h3>
+            <p><strong>1. 可以在Windows上安装MTProto吗？</strong><br>可以，但说明更复杂。为了简单和稳定，最好在VPS上使用Ubuntu。</p>
+            <p><strong>2. 代理消耗多少流量？</strong><br>几乎所有流量都取决于你 — 你使用Telegram的时间。通常每月不超过2-3 GB。</p>
+            <p><strong>3. 如何删除代理？</strong><br>在服务器上执行：</p>
+            <pre>docker stop mtproto-proxy && docker rm mtproto-proxy</pre>
+            <p><strong>4. 需要每月续费服务器吗？</strong><br>是的，这是租赁。如果不续费，代理将关闭。Telegram将只是停止连接，你将回到没有代理的普通互联网。</p>
+            <p>希望我成功讲述了如何为Telegram设置MTProto。</p>
+
+            <!-- Форма комментариев -->
+            <div class="comment-form">
+                <h3>发表评论</h3>
+                <p>提出问题、分享经验或建议</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="你的名字" required>
+                    <input type="email" name="email" placeholder="你的邮箱（不会公开）" required>
+                    <textarea name="comment" rows="5" placeholder="你的评论..." required></textarea>
+                    <button type="submit">提交评论</button>
+                </form>
+                <p>所有评论在发布前都会经过审核。</p>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2023-2026 我的博客。所有材料均受保护。</p>
+    </footer>
+
+  
+    
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+</body>
+</html>
