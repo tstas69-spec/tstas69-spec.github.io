@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>۳ مرحله برای ساخت MTProto شخصی برای تلگرام</title>
+    <meta name="description" content="نحوه اتصال پروکسی MTProto برای تلگرام به صورت مرحله به مرحله. نصب پروکسی MTProto روی VPS در ۳ مرحله.">
+    <meta name="yandex-verification" content="8168fc75f48014cc" />
+    <style>
+        /* Стили из образца-без меню.html */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+        header, footer {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            border-bottom: none;
+            padding-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            line-height: 1.3;
+        }
+        .lead {
+            font-size: 1.15em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+            font-size: 1.4em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .step-label {
+            font-weight: bold;
+            color: #e74c3c;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            word-break: break-word;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc {
+            background: #f1f8ff;
+            border-left: 4px solid #3498db;
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .card, .block {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .card strong, .block strong {
+            color: #2c3e50;
+        }
+        .warning {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .pic {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .pic img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .pic-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .comment-form {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .comment-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .comment-form input,
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 1em;
+        }
+        .comment-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            max-width: 200px;
+        }
+        .comment-form button:hover {
+            background-color: #2980b9;
+        }
+        .comment-form p:last-child {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 15px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            word-break: break-all;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-all;
+            direction: ltr;
+            text-align: left;
+        }
+        /* Mobile optimization */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.5em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .pic {
+                margin: 15px 0;
+            }
+            .card, .block {
+                padding: 12px 15px;
+            }
+            .comment-form {
+                padding: 15px;
+            }
+            .comment-form button {
+                max-width: 100%;
+            }
+            ul, ol {
+                padding-left: 18px;
+            }
+            .toc {
+                padding: 12px 15px;
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                padding: 8px;
+            }
+            h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <article>
+
+            <h1>نحوه اتصال پروکسی MTProto برای تلگرام — راهنمای مرحله به مرحله</h1>
+            
+            <p class="lead">MTProto برای تلگرام محبوب‌ترین پروکسی برای کار بدون وقفه پیام‌رسان است. این پروکسی پروتکل رسمی تلگرام است.</p>
+            <p>در این راهنمای ۳ مرحله‌ای یاد می‌گیرید که چگونه به سرعت پروکسی MTProto را برای تلگرام روی سرور اجاره‌ای نصب کرده و آن را به پیام‌رسان خود متصل کنید.</p>
+
+            <h2>الزامات نصب پروکسی MTProto برای تلگرام</h2>
+            <p><strong>حداقل الزامات</strong></p>
+            <ul>
+                <li><strong>سیستم‌عامل:</strong> Ubuntu 20.04 / 22.04 (نصب تمیز)</li>
+                <li><strong>سرور (VPS):</strong> ۱ هسته، ۵۱۲ مگابایت رم — این مقدار کافی است</li>
+                <li><strong>دسترسی SSH</strong> (روت یا کاربر دارای sudo)</li>
+                <li><strong>پورت باز ۴۴۳</strong> (برای استتار به عنوان HTTPS لازم است)</li>
+            </ul>
+            <p>کل این راهنما بر اساس مثال ارائه‌دهنده Aeza ساخته شده است. می‌توانید از هر ارائه‌دهنده دیگری که اجاره سرورهای VPS در اروپا را ارائه می‌دهد استفاده کنید.</p>
+            <p>و حالا شروع می‌کنیم:</p>
+
+            <h2>مرحله ۱ — اجاره سرور خارجی و اتصال به آن</h2>
+            <p>در <a href="https://aeza.net/?ref=455016" target="_blank">Aeza.net</a> ثبت‌نام کنید و از منوی سمت چپ، گزینه افزودن سرویس را انتخاب کنید (به تصویر نگاه کنید، با رنگ قرمز زیر خط کشیده شده). در مرکز، موقعیت مکانی را انتخاب کنید، اروپا با قیمت ۵.۹۳ یورو را جستجو کنید؛ در تصویر به عنوان مثال وین انتخاب شده است.</p>
+            <p>در سمت راست بررسی کنید که پشتیبان‌گیری (backup) غیرفعال باشد، لازم نیست، در تصویر با مستطیل مشخص شده است. تمدید خودکار به دلخواه.</p>
+            <p>کمی به پایین اسکرول کنید و روی Ubuntu 20.04 / 22.04 سوییچ کنید؛ به طور پیش‌فرض 26.04 قرار دارد که هنوز خام است، تغییر آن الزامی است!</p>
+            <p>نیازی به نصب چیز دیگری نیست، یک سیستم‌عامل تمیز لازم است.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/mtproto-dly-telegramm-1.png" alt="MTProto برای تلگرام" loading="lazy">
+                <p class="pic-description">اجاره سرور در پنل Aeza</p>
+            </div>
+
+            <p>سپس روی پرداخت کلیک کنید. پرداخت از کارت‌های روبلی تا ارزهای دیجیتال امکان‌پذیر است.</p>
+            <p>پس از پرداخت، از ۲ تا ۱۵ دقیقه باز می‌شود و از طریق ایمیل اطلاع‌رسانی می‌شود. سپس از منوی چپ به تب سرویس‌های من بروید:</p>
+
+            <div class="pic">
+                <img src="images/mtproto/moi-uslugi-1.1.png" alt="پروکسی MTProto برای تلگرام" loading="lazy">
+                <p class="pic-description">تب "سرویس‌های من" در پنل Aeza</p>
+            </div>
+
+            <p>و روی نام سرور کلیک کنید، با رنگ قرمز زیر خط کشیده شده. پنجره‌ای با اطلاعات ورود باز می‌شود، به تصویر نگاه کنید.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/dannie-servera-1.2.png" alt="پروکسی MTProto برای تلگرام نحوه اتصال" loading="lazy">
+                <p class="pic-description">اطلاعات سرور: IP، نام کاربری، رمز عبور</p>
+            </div>
+
+            <p>اطلاعات به این شکل خواهد بود:</p>
+            <ul>
+                <li><strong>ip:</strong> 86.163.135.43 (IP سرور شما متفاوت خواهد بود);</li>
+                <li><strong>نام کاربری:</strong> root (اغلب نام کاربری همین است);</li>
+                <li><strong>رمز عبور:</strong> E7D4sF3csSjg (رمز عبور سرور شما متفاوت خواهد بود);</li>
+            </ul>
+            <p>برای پیکربندی سرور به دسترسی به خود سرور با اطلاعات (نام کاربری، رمز عبور و آدرس IP) نیاز دارید، بنابراین ذخیره آن‌ها مهم است. همه این کارها از کامپیوتر انجام می‌شود (روی گوشی تست نکردم، شاید ممکن باشد، در نظرات بنویسید)، تحت Windows یا MacOS.</p>
+            <p>در ویندوز به یک برنامه ویژه نیاز دارید، دارندگان MacOS از ترمینال داخلی استفاده می‌کنند.</p>
+            <p>و حالا شروع می‌کنیم:</p>
+            <p><strong>Windows</strong> — برنامه‌ای برای اتصال به سرورمان دانلود و نصب کنید: به <a href="https://www.putty.org/" target="_blank">https://www.putty.org/</a> بروید، دانلود و نصب کنید. پس از نصب، یک میانبر روی دسکتاپ ظاهر می‌شود، آن را اجرا کنید، همانطور که در تصویر نشان داده شده است.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/ustanovka-i-zapusk-putty-4.jpg" alt="اسکرین‌شات: نصب و اجرای Putty" loading="lazy">
+                <p class="pic-description">نصب و اجرای Putty در ویندوز</p>
+            </div>
+
+            <p>به سرورمان متصل شوید، IP سرور، پورت ۲۲ را وارد کنید و روی Open کلیک کنید، همانطور که در تصویر زیر نشان داده شده است.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/podkluchenie-ip-2.jpg" alt="اسکرین‌شات: اتصال به سرور در Putty" loading="lazy">
+                <p class="pic-description">اتصال به سرور از طریق Putty</p>
+            </div>
+
+            <p>سپس به تب Connection بروید و در خط اول در فیلد ورودی هر عددی از ۲۰ تا ۵۰ وارد کنید، مثلاً ۵۰، همانطور که در تصویر نشان داده شده است.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/nastroika-connection-3.png" alt="اسکرین‌شات: تنظیم Connection در Putty" loading="lazy">
+                <p class="pic-description">تنظیم پارامترهای Connection در Putty</p>
+            </div>
+
+            <p>روی Open کلیک کنید</p>
+            <p>هنگامی که برای اولین بار وارد سرور می‌شوید، باید در پنجره‌ای که ظاهر می‌شود روی Accept کلیک کنید. سپس در پنجره بعدی به ترتیب نام کاربری و رمز عبور را وارد کنید و هر بار Enter را فشار دهید.</p>
+            <p><strong>توجه!</strong> هنگام وارد کردن رمز عبور، کاراکترها روی صفحه نمایش داده نمی‌شوند، این طبیعی است. برای چسباندن رمز عبور کپی‌شده — کافی است یک بار روی کلیک راست ماوس در پنجره احراز هویت روی پس‌زمینه مشکی کلیک کنید و سپس Enter را فشار دهید، به تصویر نگاه کنید.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/vvod-logo-pass-5.jpg" alt="اسکرین‌شات: وارد کردن نام کاربری و رمز عبور در Putty" loading="lazy">
+                <p class="pic-description">وارد کردن نام کاربری و رمز عبور در Putty</p>
+            </div>
+
+            <p>در صورت اتصال موفق، بارگذاری اطلاعات سیستم انجام می‌شود و دعوتی برای ارسال دستورات به سرور شما ظاهر می‌شود. در مثال زیر — این دعوت در آخرین خط است و به این شکل است — root@TESTVDS:~# این خط به این معنی است که سرور آماده دریافت و اجرای دستورات شما است.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/uspeschnoe-podcluchenie-6.jpg" alt="سرور پروکسی MTProto برای تلگرام" loading="lazy">
+                <p class="pic-description">اتصال موفق به سرور</p>
+            </div>
+
+            <p>همه چیز عالی است، اتصال برقرار شد، کمی پایین‌تر بروید، ادامه دستورالعمل برای MacOS است. هرچند توصیه می‌کنم دستورالعمل را ارزیابی کنید و لذت استفاده از مک‌ها را درک کنید.</p>
+            <p><strong>MacOS</strong> — اگر مک دارید، از ترمینال داخلی استفاده می‌کنیم، زیرا نیازی به نصب برنامه‌های جانبی برای یک بار ورود چند دقیقه‌ای به سرور نیست.</p>
+            <p>بنابراین، در Launchpad در جستجو کلمه Terminal یا ترمینال را وارد کنید، این را می‌بینید</p>
+
+            <div class="pic">
+                <img src="images/mtproto/terminal-macos-7.jpg" alt="اسکرین‌شات: جستجوی ترمینال در MacOS" loading="lazy">
+                <p class="pic-description">جستجوی ترمینال در MacOS</p>
+            </div>
+
+            <p>ترمینال را باز کنید، دستور را وارد کنید و Enter را فشار دهید</p>
+            <pre>ssh ваш_логин@IP-адрес_сервера</pre>
+            <p>یعنی اگر نام کاربری من root و IP سرور 79.137.202.97 باشد، دستور در ترمینال این خواهد بود</p>
+            <pre>ssh root@79.137.202.97</pre>
+            <p>سپس رمز عبور را وارد کنید، Enter را فشار دهید، تمام.</p>
+            <p>در صورت اتصال موفق باید مانند تصویر شود — root@نام سرور.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/podkluch-k-serveru-8.png" alt="پروکسی MTProto برای تلگرام" loading="lazy">
+                <p class="pic-description">اتصال به سرور از طریق ترمینال MacOS</p>
+            </div>
+
+            <h2>مرحله ۲ — پیکربندی سرور پروکسی MTProto برای تلگرام</h2>
+            <p>سپس باید فقط یک دستور وارد کنید و Enter را فشار دهید:</p>
+            <pre>sudo apt update && sudo apt upgrade -y && sudo apt install docker.io ufw -y && sudo ufw allow OpenSSH && sudo ufw allow 443/tcp && sudo ufw --force enable && SECRET=$(docker run --rm nineseconds/mtg:2 generate-secret --hex google.com) && docker run -d --name mtg --restart=always -p 443:443 nineseconds/mtg:2 simple-run -n 1.1.1.1 -i prefer-ipv4 0.0.0.0:443 "$SECRET" && echo "✅ ГОТОВАЯ ССЫЛКА: tg://proxy?server=$(curl -s ifconfig.me)&port=443&secret=$SECRET"</pre>
+            <p>دستور به طور کامل، بدون فاصله، همانطور که هست وارد می‌شود. در طول نصب سؤالی پرسیده می‌شود، باید پاسخ دهید — yes. سپس ۳ یا ۴ پنجره ظاهر می‌شود، همانطور که در تصویر زیر نشان داده شده است، باید Enter را وارد کنید، چهار بار.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/zapros-na-enter-9.png" alt="اسکرین‌شات: درخواست تأیید نصب" loading="lazy">
+                <p class="pic-description">درخواست تأیید نصب</p>
+            </div>
+
+            <p>نتیجه نصب یک سرور اروپایی آماده با پروکسی MTProto برای تلگرام خواهد بود. به تصویر زیر نگاه کنید.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/mtproto-gotov-10.png" alt="اسکرین‌شات: پروکسی MTProto آماده" loading="lazy">
+                <p class="pic-description">پروکسی MTProto آماده روی سرور</p>
+            </div>
+
+            <p>تمام، در این مرحله نصب کامل شد.</p>
+            <p><strong>این دستور چه کاری انجام می‌دهد و چه چیزی روی سرور شما نصب می‌کند:</strong></p>
+            <ul>
+                <li>لیست بسته‌ها را به‌روزرسانی می‌کند</li>
+                <li>همه به‌روزرسانی‌های سیستم را نصب می‌کند</li>
+                <li>ابزار curl را نصب می‌کند</li>
+                <li>Docker به طور خودکار نصب می‌شود</li>
+                <li>پروکسی MTProto روی پورت ۴۴۳ پیکربندی می‌شود</li>
+                <li>فناوری Fake TLS فعال می‌شود — استتار به عنوان HTTPS معمولی</li>
+                <li>کلید مخفی تولید می‌شود</li>
+            </ul>
+            <p>همه اینها ۱–۲ دقیقه طول می‌کشد. فقط صبر کنید.</p>
+            <p>سپس لینک کامل تلگرام را کپی کنید — <code>tg://proxy?server=194.33.35.192&port=443&secret=ee3a44c56ab55a1a368eb3b260a2550432676f6f676c652e636f6d</code></p>
+            <p>و آن را به شکلی که در تصویر نشان داده شده درآورید</p>
+
+            <div class="pic">
+                <img src="images/mtproto/dannie-dly-telegi-11.png" alt="اسکرین‌شات: داده‌های اتصال در Telegram" loading="lazy">
+                <p class="pic-description">داده‌های اتصال پروکسی در Telegram</p>
+            </div>
+
+            <p><strong>مراقب باشید!</strong> سرور = اعداد، پورت = اعداد، رمز = کل رشته به هم ریخته!</p>
+            <p>این داده‌ها را برای خود به گوشی بفرستید یا کد QR را اسکن کنید. می‌توانید با خیال راحت ۵۰ تا ۷۰ دستگاه را متصل کنید و حتی از این راه درآمد کسب کنید.</p>
+
+            <h2>مرحله ۳ — اتصال پروکسی MTProto برای تلگرام</h2>
+            <p>به منوی تنظیمات بروید و بخش — داده‌ها و حافظه را پیدا کنید، همانطور که در تصویر نشان داده شده است و روی این گزینه کلیک کنید.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/telegramm-12.jpg" alt="اسکرین‌شات: منوی داده‌ها و حافظه در Telegram" loading="lazy">
+                <p class="pic-description">منوی "داده‌ها و حافظه" در Telegram</p>
+            </div>
+
+            <p>سپس در پنجره بعدی به پایین اسکرول کنید و گزینه — تنظیم پروکسی را پیدا کنید، به تصویر نگاه کنید.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/telegramm-proksi-13.jpg" alt="اسکرین‌شات: گزینه تنظیم پروکسی در Telegram" loading="lazy">
+                <p class="pic-description">گزینه "تنظیم پروکسی" در Telegram</p>
+            </div>
+
+            <p>روی آن کلیک کنید و وارد پنجره تنظیمات پروکسی خود می‌شوید</p>
+
+            <div class="pic">
+                <img src="images/mtproto/vstavka-proksi-14.png" alt="اسکرین‌شات: پنجره تنظیمات پروکسی در Telegram" loading="lazy">
+                <p class="pic-description">پنجره تنظیمات پروکسی در Telegram</p>
+            </div>
+
+            <p>داده‌های آماده‌شده را وارد کنید، همانطور که در تصویر بالا نشان داده شده است. آدرس سرور، پورت و کلید مخفی. باید موارد زیر را ببینید:</p>
+
+            <div class="pic">
+                <img src="images/mtproto/podklych-proksi-15.png" alt="پروکسی MTProto برای تلگرام" loading="lazy">
+                <p class="pic-description">اتصال پروکسی در Telegram</p>
+            </div>
+
+            <p>تلگرام خود را روی گوشی یا کامپیوتر اجرا کنید. باید اتصال برقرار شود و تلگرام کار کند. ممکن است در اولین اتصال چند دقیقه طول بکشد تا چت‌ها به‌روزرسانی شوند.</p>
+
+            <div class="pic">
+                <img src="images/mtproto/rabochi-telegramm-16.png" alt="MTProto برای تلگرام" loading="lazy">
+                <p class="pic-description">تلگرام در حال کار از طریق پروکسی MTProto</p>
+            </div>
+
+            <h3>نتیجه‌گیری</h3>
+            <p>شما با موفقیت هر ۳ مرحله را گذراندید:</p>
+            <ol>
+                <li>✅ یک VPS در Aeza اجاره کردید</li>
+                <li>✅ پروکسی MTProto را با یک دستور نصب کردید</li>
+                <li>✅ لینک را دریافت کردید و Telegram را متصل کردید</li>
+            </ol>
+            <p>اکنون شما <strong>پروکسی MTProto خصوصی خود را برای Telegram دارید</strong> — پایدار، سریع و امن.</p>
+
+            <h3>سؤالات متداول</h3>
+            <p><strong>۱. آیا می‌توان MTProto را روی Windows نصب کرد؟</strong><br>بله، اما دستورالعمل پیچیده‌تر است. برای سادگی و پایداری بهتر است از Ubuntu روی VPS استفاده کنید.</p>
+            <p><strong>۲. پروکسی چقدر ترافیک مصرف می‌کند؟</strong><br>تقریباً تمام ترافیک به شما بستگی دارد — چقدر در Telegram می‌گذرانید. معمولاً بیش از ۲-۳ گیگابایت در ماه نیست.</p>
+            <p><strong>۳. چگونه پروکسی را حذف کنم؟</strong><br>روی سرور اجرا کنید:</p>
+            <pre>docker stop mtproto-proxy && docker rm mtproto-proxy</pre>
+            <p><strong>۴. آیا باید هر ماه سرور را تمدید کنم؟</strong><br>بله، این اجاره است. اگر تمدید نکنید — پروکسی قطع می‌شود. Telegram به سادگی متصل نمی‌شود و شما به اینترنت معمولی بدون پروکسی برمی‌گردید.</p>
+            <p>امیدوارم توانسته باشم نحوه اتصال MTProto برای تلگرام را توضیح دهم.</p>
+
+            <!-- Форма комментариев -->
+            <div class="comment-form">
+                <h3>نظر بگذارید</h3>
+                <p>سؤال بپرسید، تجربه یا پیشنهادات خود را به اشتراک بگذارید</p>
+                <form action="#" method="post">
+                    <input type="text" name="name" placeholder="نام شما" required>
+                    <input type="email" name="email" placeholder="ایمیل شما (منتشر نمی‌شود)" required>
+                    <textarea name="comment" rows="5" placeholder="نظر شما..." required></textarea>
+                    <button type="submit">ارسال نظر</button>
+                </form>
+                <p>همه نظرات قبل از انتشار بررسی می‌شوند.</p>
+            </div>
+
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2023-2026 وبلاگ من. تمامی مطالب محفوظ است.</p>
+    </footer>
+
+  
+    
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(109998907, 'init', {webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109998907" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+</body>
+</html>
